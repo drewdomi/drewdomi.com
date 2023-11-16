@@ -11,9 +11,14 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.3.1",
+    "@astrojs/tailwind": "^5.0.2",
     "@fontsource/roboto": "^5.0.8",
     "@fontsource/rubik": "^5.0.17",
     "astro": "^3.5.4",
+    "tailwindcss": "^3.3.5",
     "typescript": "^5.2.2"
+  },
+  "devDependencies": {
+    "daisyui": "^4.0.9"
   }
 }

@@ -1,4 +1,7 @@
 ---
+import '@fontsource/roboto';
+import '@fontsource/rubik/';
+
 interface Props {
 	title: string;
 }
@@ -21,4 +24,7 @@ const { title } = Astro.props;
 	</body>
 </html>
 <style is:global>
+	*{
+		font-family: 'Roboto';
+	}
 </style>

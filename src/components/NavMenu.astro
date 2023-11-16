@@ -1,0 +1,32 @@
+---
+import { Icon } from "astro-icon";
+---
+
+<div class="dropdown dropdown-end">
+  <Icon name="majesticons:menu-line" tabindex="0" class="btn-ghost" />
+  <ul
+    tabindex="0"
+    class="dropdown-content z-[1] menu p-2 shadow-md bg-base-100 rounded-md w-44 font-medium border"
+  >
+    <li><a>Início</a></li>
+    <li><a>Projetos</a></li>
+    <li><a>Blog</a></li>
+    <li><a>Contato</a></li>
+  </ul>
+</div>
+
+<style>
+  svg {
+    width: 40px;
+    /* margin: 4px; */
+    padding: 8px;
+    cursor: pointer;
+    border: solid 0.2px;
+    opacity: 0.8;
+    border-radius: 4px;
+  }
+
+  li a:hover {
+    text-decoration: underline;
+  }
+</style>

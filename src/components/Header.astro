@@ -1,30 +1,31 @@
 ---
 import { Icon } from "astro-icon";
-
 import NavMenu from "../components/NavMenu.astro";
 import ToggleTheme from "../components/ToogleTheme.astro";
 ---
 
-<header class="navbar p-[10px] px-5 shadow-sm">
-  <div class="navbar-start">
-    <a href="/" id="logo">
-      <Icon name="logo" />
-      <span>DrewDomi</span>
-    </a>
-  </div>
-  <div class="navbar-center hidden md:block">
-    <ul class="flex flex-row gap-6">
-      <li><a>Início</a></li>
-      <li><a>Projetos</a></li>
-      <li><a>Blog</a></li>
-      <li><a>Contato</a></li>
-    </ul>
-  </div>
-  <div class="navbar-end gap-4">
-    <ToggleTheme />
-    <span class="md:hidden">
-      <NavMenu />
-    </span>
+<header class="shadow-sm">
+  <div class="navbar p-[10px] px-5 max-w-3xl mx-auto">
+    <div class="navbar-start">
+      <a href="/" id="logo">
+        <Icon name="logo" />
+        <span>DrewDomi</span>
+      </a>
+    </div>
+    <div class="navbar-center hidden md:block">
+      <ul class="flex flex-row gap-6">
+        <li><a>Início</a></li>
+        <li><a>Projetos</a></li>
+        <li><a>Blog</a></li>
+        <li><a>Contato</a></li>
+      </ul>
+    </div>
+    <div class="navbar-end gap-4">
+      <ToggleTheme role="button"/>
+      <span class="md:hidden">
+        <NavMenu />
+      </span>
+    </div>
   </div>
 </header>
 
@@ -38,13 +39,13 @@ import ToggleTheme from "../components/ToogleTheme.astro";
     }
   }
   #logo {
-    display: flex;
-    align-items: center;
-    justify-content: left;
-    gap: 6px;
-    font-family: "Rubik";
+    @apply flex
+    items-center
+    justify-start
+    gap-2;
     font-size: 18px;
     transition: 1s ease;
+    font-family: "Rubik";
   }
 
   #logo:hover svg {
@@ -52,9 +53,9 @@ import ToggleTheme from "../components/ToogleTheme.astro";
   }
 
   svg {
-    height: 18px;
+    @apply h-4
   }
   li a:hover {
-    text-decoration: underline;
+    @apply underline
   }
 </style>

@@ -3,10 +3,14 @@ import { Icon } from "astro-icon";
 ---
 
 <div class="dropdown dropdown-end">
-  <Icon name="majesticons:menu-line" tabindex="0" class="btn-ghost" />
+  <Icon
+    name="majesticons:menu-line"
+    tabindex="0"
+    class="btn btn-sm btn-ghost btn-primary"
+  />
   <ul
     tabindex="0"
-    class="dropdown-content z-[1] menu p-2 shadow-md bg-base-100 rounded-md w-44 font-medium border"
+    class="dropdown-content z-[1] menu py-2 px-0 mt-2 shadow-md rounded-md w-44 font-medium border"
   >
     <li><a>Início</a></li>
     <li><a>Projetos</a></li>
@@ -17,16 +21,17 @@ import { Icon } from "astro-icon";
 
 <style>
   svg {
-    width: 40px;
-    /* margin: 4px; */
+    height: 38px;
     padding: 8px;
     cursor: pointer;
     border: solid 0.2px;
-    opacity: 0.8;
     border-radius: 4px;
   }
-
   li a:hover {
     text-decoration: underline;
+  }
+  a {
+    border-radius: 0;
+    font-size: medium;
   }
 </style>

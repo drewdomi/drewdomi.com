@@ -13,8 +13,16 @@ const { label, href, icon } = Astro.props;
 <a
   href={href}
   target="_blank"
-  class="font-title bg-primary btn btn-primary text-[#EFEFEF]"
+  class="font-title bg-primary btn btn-primary text-[#EFEFEF] shadow-md"
   >
   <Icon name={icon} class="block w-4" />
   {label}
 </a>
+
+<style>
+  .btn {
+    min-height: 2.3rem;
+    height: 2.3rem;
+    padding: 0 20px;
+  }
+</style>

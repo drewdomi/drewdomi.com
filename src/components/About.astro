@@ -6,12 +6,26 @@ import SectionTitle from "./SectionTitle.astro";
 <section class="text-center md:text-left mt-5 grid">
   <h1 class="font-medium text-2xl font-title">Andrew Domingues</h1>
   <h4 class="text-[16px]">Front-end Developer & UI/UX Desiner</h4>
-  <img
-    class="rounded-full border-2 justify-self-center mt-5"
-    width="100"
-    src="/drew.png"
-    alt="Drew Photo"
-  />
+
+  <div class="justify-self-center">
+    <label class="swap swap-flip">
+      <input type="checkbox" />
+      <div class="swap-off">
+        <img
+          class="rounded-full border-2 justify-self-center mt-5 w-[100px]"
+          src="/drew.png"
+          alt="Drew Photo"
+        />
+      </div>
+      <div class="swap-on">
+        <img
+          class="rounded-full border-2 justify-self-center mt-5 w-[100px]"
+          src="/favicon.svg"
+          alt="Drew Logo"
+        />
+      </div>
+    </label>
+  </div>
 
   <SectionTitle title="Sobre" />
 
@@ -24,8 +38,16 @@ import SectionTitle from "./SectionTitle.astro";
     com o objetivo primordial de garantir a plena satisfação dos usuários.
   </p>
   <div class="flex justify-center gap-4 mt-8">
-    <Button label="GitHub" href="https://github.com/drewdomi" icon="bi:github" />
-    <Button label="Ver CV" href="https://github.com/drewdomi" icon="ph:file-pdf-bold" />
+    <Button
+      label="GitHub"
+      href="https://github.com/drewdomi"
+      icon="bi:github"
+    />
+    <Button
+      label="Ver CV"
+      href="https://github.com/drewdomi"
+      icon="ph:file-pdf-bold"
+    />
   </div>
 </section>
 

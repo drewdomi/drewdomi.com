@@ -1,0 +1,80 @@
+---
+import Button from "./Button.astro";
+import SectionTitle from "./SectionTitle.astro";
+---
+
+<section class="text-center sm:text-left mt-20 grid">
+  <div id="title">
+    <h1 class="font-medium text-2xl font-title mb-1">Andrew Domingues</h1>
+    <h4 class="text-[16px]">Front-end Developer & UI/UX Desiner</h4>
+  </div>
+
+  <div class="justify-self-center" id="img">
+    <label class="swap swap-flip">
+      <input type="checkbox" />
+      <div class="swap-off">
+        <img
+          class="rounded-full border-2 justify-self-center mt-5 w-[100px] shadow-md"
+          src="/drew.png"
+          alt="Drew Photo"
+        />
+      </div>
+      <div class="swap-on">
+        <img
+          class="rounded-full border-2 justify-self-center mt-5 w-[100px] shadow-md"
+          src="/favicon.svg"
+          alt="Drew Logo"
+        />
+      </div>
+    </label>
+  </div>
+
+  <article class="text-left" id="about">
+    <SectionTitle title="Sobre" />
+
+    <p class="text-justify text-[14px]">
+      Sou um apaixonado desenvolvedor Front-End especializado em usabilidade e
+      experiência do usuário (UX). Minha dedicação é criar interfaces elegantes
+      e intuitivas, seguindo as melhores práticas de design para proporcionar
+      uma experiência única aos usuários. Meu compromisso vai além da estética!
+      Busco incessantemente harmonizar funcionalidade e beleza em meus projetos,
+      sempre com o objetivo primordial de garantir a plena satisfação dos
+      usuários.
+    </p>
+  </article>
+
+  <div class="flex justify-center gap-4 mt-8 sm:m-0" id="btns">
+    <Button
+      label="GitHub"
+      href="https://github.com/drewdomi"
+      icon="bi:github"
+    />
+    <Button
+      label="Ver CV"
+      href="https://github.com/drewdomi"
+      icon="ph:file-pdf-bold"
+    />
+  </div>
+</section>
+
+<style>
+  @media (min-width: 640px) {
+    section {
+      grid-template-columns: 1fr 100px;
+      grid-template-rows: 1fr 48x 1fr;
+    }
+    #title{
+      align-self: center;
+    }
+    #about{
+      grid-column: 1 / -1;
+      grid-row: 3;
+    }
+    #btns{
+      grid-row: 2;
+      grid-column: 1 / -1;
+      align-self: center;
+      justify-content: start;
+    }
+  }
+</style>

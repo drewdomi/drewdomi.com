@@ -1,0 +1,61 @@
+---
+import { Icon } from "astro-icon";
+import NavMenu from "../components/NavMenu.astro";
+import ToggleTheme from "../components/ToogleTheme.astro";
+---
+
+<header class="shadow-md fixed w-full top-0 backdrop-blur-sm z-[2]">
+  <div class="navbar p-[10px] px-5 max-w-3xl mx-auto">
+    <div class="navbar-start">
+      <a href="/" id="logo">
+        <Icon name="logo" />
+        <span>DrewDomi</span>
+      </a>
+    </div>
+    <div class="navbar-center hidden md:block">
+      <ul class="flex flex-row gap-6">
+        <li><a>Início</a></li>
+        <li><a>Projetos</a></li>
+        <li><a>Blog</a></li>
+        <li><a>Contato</a></li>
+      </ul>
+    </div>
+    <div class="navbar-end gap-4">
+      <ToggleTheme role="button"/>
+      <span class="md:hidden">
+        <NavMenu />
+      </span>
+    </div>
+  </div>
+</header>
+
+<style>
+  @keyframes rotateAnim {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  #logo {
+    @apply flex
+    items-center
+    justify-start
+    gap-2;
+    font-size: 18px;
+    transition: 1s ease;
+    font-family: "Rubik";
+  }
+
+  #logo:hover svg {
+    animation: rotateAnim 1.5s 2 linear alternate-reverse;
+  }
+
+  svg {
+    @apply h-4
+  }
+  li a:hover {
+    @apply underline
+  }
+</style>

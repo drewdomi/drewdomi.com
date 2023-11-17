@@ -1,0 +1,32 @@
+---
+import Button from "./Button.astro";
+import SectionTitle from "./SectionTitle.astro";
+---
+
+<section class="text-center md:text-left mt-5 grid">
+  <h1 class="font-medium text-2xl font-title">Andrew Domingues</h1>
+  <h4 class="text-[16px]">Front-end Developer & UI/UX Desiner</h4>
+  <img
+    class="rounded-full border-2 justify-self-center mt-5"
+    width="100"
+    src="/drew.png"
+    alt="Drew Photo"
+  />
+
+  <SectionTitle title="Sobre" />
+
+  <p class="text-justify text-[14px]">
+    Sou um apaixonado desenvolvedor Front-End especializado em usabilidade e
+    experiência do usuário (UX). Minha dedicação é criar interfaces elegantes e
+    intuitivas, seguindo as melhores práticas de design para proporcionar uma
+    experiência única aos usuários. Meu compromisso vai além da estética! Busco
+    incessantemente harmonizar funcionalidade e beleza em meus projetos, sempre
+    com o objetivo primordial de garantir a plena satisfação dos usuários.
+  </p>
+  <div class="flex justify-center gap-4 mt-8">
+    <Button label="GitHub" href="https://github.com/drewdomi" icon="bi:github" />
+    <Button label="Ver CV" href="https://github.com/drewdomi" icon="ph:file-pdf-bold" />
+  </div>
+</section>
+
+<style></style>

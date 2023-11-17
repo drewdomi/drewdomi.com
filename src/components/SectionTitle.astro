@@ -1,0 +1,23 @@
+---
+interface Props {
+  title: string
+}
+
+const { title } = Astro.props
+---
+
+<h2 class="justify-self-start mt-8 mb-5 font-title inline-block">
+  {title}
+</h2>
+
+<style>
+  h2::after{
+    content: '';
+    display: block;
+    height: 4px;
+    width: 100%;
+    opacity: 0.3;
+    border-radius: 1px;
+    @apply bg-base-content
+  }
+</style>

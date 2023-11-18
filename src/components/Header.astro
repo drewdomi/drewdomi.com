@@ -9,19 +9,19 @@ import ToggleTheme from "../components/ToogleTheme.astro";
     <div class="navbar-start">
       <a href="/" id="logo">
         <Icon name="logo" />
-        <span>DrewDomi</span>
+        <span class="py-[4px] px-2"> DrewDomi</span>
       </a>
     </div>
     <div class="navbar-center hidden md:block">
-      <ul class="flex flex-row gap-6">
-        <li><a>Início</a></li>
-        <li><a>Projetos</a></li>
-        <li><a>Blog</a></li>
-        <li><a>Contato</a></li>
+      <ul class="flex flex-row">
+        <li><a href="#a">Início</a></li>
+        <li><a href="#b">Projetos</a></li>
+        <li><a href="#c">Blog</a></li>
+        <li><a href="#d">Contato</a></li>
       </ul>
     </div>
     <div class="navbar-end gap-4">
-      <ToggleTheme role="button"/>
+      <ToggleTheme />
       <span class="md:hidden">
         <NavMenu />
       </span>
@@ -41,8 +41,7 @@ import ToggleTheme from "../components/ToogleTheme.astro";
   #logo {
     @apply flex
     items-center
-    justify-start
-    gap-2;
+    justify-start;
     font-size: 18px;
     transition: 1s ease;
     font-family: "Rubik";
@@ -53,9 +52,26 @@ import ToggleTheme from "../components/ToogleTheme.astro";
   }
 
   svg {
-    @apply h-4
+    @apply h-4;
   }
-  li a:hover {
-    @apply underline
+  li {
+    display: flex;
+  }
+  li a {
+    width: 100%;
+    padding: 6px 16px;
+  }
+  li a::after {
+    content: "";
+    height: 2px;
+    width: 0;
+    display: block;
+    position: relative;
+    top: 0;
+    transition: width 0.3s ease-in-out;
+    @apply bg-neutral-content;
+  }
+  li a:hover::after {
+    width: 100%;
   }
 </style>

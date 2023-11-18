@@ -36,3 +36,17 @@ import { Icon } from "astro-icon";
     @apply text-neutral-content;
   }
 </style>
+
+<script>
+  const closeByClickLink = () => {
+    const elem = document.activeElement as HTMLElement
+    if (elem) elem.blur()
+  }
+
+  const links = document.querySelectorAll("ul li")
+  links.forEach((item) => {
+    item.addEventListener("click", () => {
+      setTimeout(closeByClickLink, 200)
+    })
+  })
+</script>

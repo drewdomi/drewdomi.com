@@ -1,16 +1,1 @@
-<svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_173_264)">
-<mask id="mask0_173_264" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="60" height="60">
-<path d="M60 0H0V60H60V0Z" fill="white"/>
-</mask>
-<g mask="url(#mask0_173_264)">
-<path d="M30 60C46.5685 60 60 46.5685 60 30C60 13.4315 46.5685 0 30 0C13.4315 0 0 13.4315 0 30C0 46.5685 13.4315 60 30 60Z" fill="black"/>
-<path d="M30 0C13.4531 0 0 13.4531 0 30C0 46.5469 13.4531 60 30 60C35.25 60 40.1719 58.6406 44.4375 56.2969L22.6875 25.9219V43.0781H19.5V19.5937H22.6875L46.3594 55.125C54.5625 49.7812 60 40.5469 60 30C60 13.4531 46.5469 0 30 0ZM40.3594 39.6562L36.8437 34.3594V19.5937H40.3594V39.6562Z" fill="white"/>
-</g>
-</g>
-<defs>
-<clipPath id="clip0_173_264">
-<rect width="60" height="60" fill="white"/>
-</clipPath>
-</defs>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="none"><g clip-path="url(#a)"><mask id="b" width="60" height="60" x="0" y="0" maskUnits="userSpaceOnUse" style="mask-type:luminance"><path fill="#fff" d="M60 0H0v60h60V0Z"/></mask><g mask="url(#b)"><path fill="#000" d="M30 60c16.569 0 30-13.431 30-30C60 13.431 46.569 0 30 0 13.431 0 0 13.431 0 30c0 16.569 13.431 30 30 30Z"/><path fill="#fff" d="M30 0C13.453 0 0 13.453 0 30s13.453 30 30 30c5.25 0 10.172-1.36 14.438-3.703l-21.75-30.375v17.156H19.5V19.594h3.188l23.671 35.531C54.562 49.781 60 40.547 60 30 60 13.453 46.547 0 30 0Zm10.36 39.656-3.516-5.297V19.594h3.515v20.062Z"/></g></g><defs><clipPath id="a"><path fill="#fff" d="M0 0h60v60H0z"/></clipPath></defs></svg>

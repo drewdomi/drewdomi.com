@@ -1,0 +1,55 @@
+---
+import Button from "./Button.astro";
+import SectionTitle from "./SectionTitle.astro";
+
+import { Icon } from "astro-icon";
+---
+
+<section>
+  <SectionTitle title="Skills" />
+
+  <div id="icons">
+    <div>
+      <Icon name="react" />
+      <Icon name="angular" />
+      <Icon name="nextjs" />
+    </div>
+    <div>
+      <Icon name="typescript" />
+      <Icon name="javascript" />
+    </div>
+    <div>
+      <Icon name="chakraui" />
+      <Icon name="figma" />
+      <Icon name="tailwindcss" />
+    </div>
+    <div>
+      <Icon name="jest" />
+      <Icon name="git" />
+    </div>
+  </div>
+
+  <div class="flex justify-center">
+    <Button
+      notBlank
+      href="#b"
+      label="Projetos"
+      rightIcon="fluent:arrow-right-12-filled"
+    />
+  </div>
+</section>
+
+<style>
+  svg {
+    @apply inline
+    w-[60px]
+    cursor-pointer;
+  }
+
+  #icons div {
+    @apply flex
+    justify-center
+    gap-[60px]
+    mb-[50px];
+  }
+</style>

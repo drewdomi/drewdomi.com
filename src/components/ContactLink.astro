@@ -1,0 +1,28 @@
+---
+import { Icon } from "astro-icon";
+
+interface Props {
+  label: string;
+  href: string;
+  leftIcon?: string;
+}
+
+const { label, href, leftIcon } = Astro.props;
+---
+
+<div>
+  <a href={href} class="font-medium btn btn-link text-[16px]">
+    {leftIcon && <Icon name={leftIcon} className="block w-[16px]" />}
+    {label}
+  </a>
+</div>
+
+<style>
+  a {
+    @apply text-info;
+    min-height: 2.2rem;
+    height: 2.2rem;
+    text-decoration: none;
+    font-weight: 400;
+  }
+</style>

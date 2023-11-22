@@ -1,0 +1,25 @@
+---
+import ContactLink from "./ContactLink.astro";
+import SectionTitle from "./SectionTitle.astro";
+---
+
+<section>
+  <SectionTitle title="Contato" />
+  <div class="pl-4">
+    <ContactLink
+      label="GITHUB: /drewdomi"
+      leftIcon="bi:github"
+      href="https://github.com/drewdomi"
+    />
+    <ContactLink
+      label="LINKEDIN: /in/drewdomi"
+      leftIcon="bi:linkedin"
+      href="https://linkedin.com/in/drewdomi"
+    />
+    <ContactLink
+      label="EMAIL: drewdomi@proton.me"
+      leftIcon="bi:envelope-fill"
+      href="mailto:drewdomi@proton.me"
+    />
+  </div>
+</section>

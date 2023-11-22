@@ -4,25 +4,28 @@ import { Icon } from "astro-icon";
 interface Props {
   label: string;
   href: string;
-  icon?: string;
+  notBlank?: boolean;
+  leftIcon?: string;
+  rightIcon?: string;
 }
 
-const { label, href, icon } = Astro.props;
+const { label, href, notBlank, leftIcon, rightIcon } = Astro.props;
 ---
 
 <a
   href={href}
-  target="_blank"
-  class="font-title bg-primary btn btn-primary text-[#EFEFEF] shadow-md"
-  >
-  <Icon name={icon} class="block w-4" />
+  target={notBlank ? "_self" : "_blank"}
+  class="font-title font-medium bg-primary btn btn-primary text-[#EFEFEF] shadow-md text-[18px]"
+>
+  {leftIcon && <Icon name={leftIcon} className="block w-[18px]" />}
   {label}
+  {rightIcon && <Icon name={rightIcon} className="block w-[18px]" />}
 </a>
 
 <style>
   .btn {
-    min-height: 2.3rem;
-    height: 2.3rem;
-    padding: 0 20px;
+    min-height: 2.2rem;
+    height: 2.2rem;
+    padding: 0 18px;
   }
 </style>

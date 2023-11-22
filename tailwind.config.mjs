@@ -9,12 +9,12 @@ export default {
 		},
 		extend: {},
 	},
-	plugins: [require('daisyui')],
+	plugins: [require( 'daisyui' )],
 	daisyui: {
 		themes: [
 			{
 				dark: {
-					...require("daisyui/src/theming/themes")['dark'],
+					...require( "daisyui/src/theming/themes" )['dark'],
 					'primary': '#005AAD',
 					'accent': '#0E1337',
 					'error': '#CA1D1D',
@@ -28,7 +28,7 @@ export default {
 					"base-content": "#EFEFEF",
 				},
 				light: {
-					...require("daisyui/src/theming/themes")['light'],
+					...require( "daisyui/src/theming/themes" )['light'],
 					'primary': '#005AAD',
 					'accent': '#0E1337',
 					'error': '#CA1D1D',

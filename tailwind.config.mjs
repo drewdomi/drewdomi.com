@@ -23,8 +23,8 @@ export default {
 					'footer': '#005AAD',
 					"neutral-content": "#EFEFEF",
 					"base-100": "#2B2B2B",
-					"base-200": "#2B2B2B",
-					"base-300": "#2B2B2B",
+					"base-200": "#EFEFEF",
+					"base-300": "#59C8FF",
 					"base-content": "#EFEFEF",
 				},
 				light: {
@@ -37,8 +37,8 @@ export default {
 					'footer': '#005AAD',
 					"neutral-content": "#2B2B2B",
 					"base-100": "#EFEFEF",
-					"base-200": "#EFEFEF",
-					"base-300": "#EFEFEF",
+					"base-200": "#2B2B2B",
+					"base-300": "#4482FA",
 					"base-content": "#2B2B2B",
 				},
 			}

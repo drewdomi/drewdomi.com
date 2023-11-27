@@ -3,3 +3,10 @@
 
 export const SITE_TITLE = 'DrewDomi';
 export const SITE_DESCRIPTION = 'Meu site pessoal/portfólio';
+
+export const LINKS = {
+  about: "/",
+  projects: "projects",
+  blog: "blog",
+  contato: "/#contact",
+};

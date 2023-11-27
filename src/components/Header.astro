@@ -2,22 +2,24 @@
 import { Icon } from "astro-icon";
 import NavMenu from "../components/NavMenu.astro";
 import ToggleTheme from "../components/ToogleTheme.astro";
+
+import { LINKS } from "../consts";
 ---
 
 <header class="shadow-md fixed w-full top-0 backdrop-blur-sm z-[2]">
   <div class="navbar p-[10px] px-5 max-w-3xl mx-auto">
     <div class="navbar-start">
-      <a href="/" id="logo">
+      <a href={LINKS.about} id="logo">
         <Icon name="logo" />
-        <span class="py-[4px] px-2 font-title"> DrewDomi</span>
+        <span class="py-[4px] px-2 font-title">DrewDomi</span>
       </a>
     </div>
     <div class="navbar-center hidden md:block">
       <ul class="flex flex-row">
-        <li><a href="#a">Início</a></li>
-        <li><a href="#b">Projetos</a></li>
-        <li><a href="#c">Blog</a></li>
-        <li><a href="#d">Contato</a></li>
+        <li><a href={LINKS.about}>Sobre</a></li>
+        <li><a href={LINKS.projects}>Projetos</a></li>
+        <li><a href={LINKS.blog}>Blog</a></li>
+        <li><a href={LINKS.contato}>Contato</a></li>
       </ul>
     </div>
     <div class="navbar-end gap-4">

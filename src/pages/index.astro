@@ -3,9 +3,11 @@ import Layout from "../layouts/Layout.astro";
 import About from "../components/About.astro";
 import Skills from "../components/Skills.astro";
 import Contact from "../components/Contact.astro";
+
+import { SITE_TITLE } from '../consts'
 ---
 
-<Layout title="Drew Domi">
+<Layout title={SITE_TITLE}>
   <About />
   <Skills />
   <Contact />

@@ -2,24 +2,24 @@
 import Layout from "../../layouts/Layout.astro";
 import SectionTitle from "../../components/SectionTitle.astro";
 import CardPost from "../../components/projects/CardPost.astro";
+
+import { getCollection } from "astro:content";
+const posts = await getCollection("projects");
 ---
 
-<Layout title="Projetos">
+<Layout title="Projetos" desc='Projetos Drewdomi'>
   <SectionTitle title="Projetos" />
   <div class="grid grid-cols-1 sm:grid-cols-2 gap-[40px]">
-    <CardPost
-      href="projects"
-      image="/projects/post1.png"
-      altImage="Project1"
-      title="Projetc title 1"
-      desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore officia!"
+    {
+      posts.map(post => (
+      <CardPost
+      href={`projects/${post.slug}`}
+      image={post.data.image}
+      altImage={post.data.altImage}
+      title={post.data.title}
+      desc={post.data.desc}
     />
-    <CardPost
-      href="projects"
-      image="/projects/post2.png"
-      altImage="Project2"
-      title="Projetc title 2"
-      desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore officia!"
-    />
+      ))
+    }
   </div>
 </Layout>

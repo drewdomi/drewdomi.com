@@ -1,0 +1,20 @@
+---
+import type { CollectionEntry } from "astro:content";
+import Layout from "../layouts/Layout.astro";
+
+import { LINKS } from "../consts";
+import SectionTitle from "../components/SectionTitle.astro";
+
+type Props = CollectionEntry<"projects">["data"];
+const { title, desc, image, altImage } = Astro.props;
+---
+
+<Layout title={title} desc={desc}>
+  <div class="pt-4">
+    <img width="100%" src={image} alt={altImage} />
+  </div>
+  <section>
+    <SectionTitle title={title} />
+    <slot />
+  </section>
+</Layout>

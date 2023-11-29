@@ -4,10 +4,10 @@ import About from "../components/About.astro";
 import Skills from "../components/Skills.astro";
 import Contact from "../components/Contact.astro";
 
-import { SITE_TITLE } from '../consts'
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
 ---
 
-<Layout title={SITE_TITLE}>
+<Layout title={SITE_TITLE} desc={SITE_DESCRIPTION}>
   <About />
   <Skills />
   <Contact />

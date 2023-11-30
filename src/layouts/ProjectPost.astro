@@ -1,20 +1,27 @@
 ---
 import type { CollectionEntry } from "astro:content";
+
 import Layout from "../layouts/Layout.astro";
 
-import { LINKS } from "../consts";
-import SectionTitle from "../components/SectionTitle.astro";
-
 type Props = CollectionEntry<"projects">["data"];
-const { title, desc, image, altImage } = Astro.props;
+const { title, desc, image, altImage, releaseDate } = Astro.props;
 ---
 
 <Layout title={title} desc={desc}>
-  <div class="pt-4">
-    <img width="100%" src={image} alt={altImage} />
-  </div>
   <section>
-    <SectionTitle title={title} />
+    <div class="pt-2">
+      <img class="rounded-3xl shadow-md" width="100%" src={image} alt={altImage} />
+    </div>
+    <div class="text-md breadcrumbs mt-3 mb-2">
+      <ul>
+        <li><a class="text-secondary gap-0.5" href="/projects">Projetos</a></li>
+        <li class="text-2xl font-title font-medium items-center">
+          {title}
+          <span class="badge badge-info ml-3">{releaseDate}</span>
+        </li>
+      </ul>
+    </div>
+    
     <slot />
   </section>
 </Layout>

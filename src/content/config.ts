@@ -6,6 +6,7 @@ const projects = defineCollection({
 		desc: z.string(),
 		image: z.string(),
 		altImage: z.string(),
+		releaseDate: z.string()
 	}),
 });
 

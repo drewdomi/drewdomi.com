@@ -1,11 +1,12 @@
 ---
 import type { CollectionEntry } from "astro:content";
-import { Icon } from 'astro-icon'
+import { Icon } from "astro-icon";
 
 import Layout from "../layouts/Layout.astro";
 
 type Props = CollectionEntry<"projects">["data"];
-const { title, desc, image, altImage, releaseDate, site, stacks } = Astro.props;
+const { title, desc, image, altImage, releaseDate, site, github, stacks } =
+  Astro.props;
 ---
 
 <Layout title={title} desc={desc}>
@@ -31,12 +32,24 @@ const { title, desc, image, altImage, releaseDate, site, stacks } = Astro.props;
       <p class="mb-2 gap-2 flex">
         <span class="badge badge-success ml-3 mr-1">Site</span>
         <a href={site} target="_blank" class="link flex items-center gap-2">
-          {site} <Icon name="bi:box-arrow-up-right" class="w-[14px]"/>
+          {site}
+          <Icon name="bi:box-arrow-up-right" class="w-[14px]" />
         </a>
       </p>
+
+      <p class="mb-2 gap-2 flex">
+        <span class="badge badge-warning ml-3 mr-1">Github</span>
+        <a href={github} target="_blank" class="link flex items-center gap-2">
+          {
+            github.replace('https://github.com/drewdomi/', '')
+          }
+          <Icon name="bi:box-arrow-up-right" class="w-[14px]" />
+        </a>
+      </p>
+
       <p class="mb-2">
-        <span class="badge badge-success ml-3 mr-1">Stacks</span>
-        {stacks.join(', ')}
+        <span class="badge badge-error ml-3 mr-1">Stacks</span>
+        {stacks.join(", ")}
       </p>
     </div>
 

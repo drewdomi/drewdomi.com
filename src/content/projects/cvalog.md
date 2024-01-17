@@ -1,0 +1,17 @@
+---
+title: "CVA Log"
+desc: "Sistema de registros das ambulancias da Cruz Vermelha Amares - Portugal"
+cover: "/projects/post1.png"
+altCover: "Dashboard do sistema CVA Log"
+releaseDate: "2023"
+images:
+  - ""
+
+stacks:
+  - Angular
+  - PrimeNG
+  - NestJS
+---
+
+O sistema CVP log é uma ferramenta para o processo de gestão de saída das ambulâncias da Cruz Vermelha de Portugal, unidade de Amares. Fornecendo uma interface intuitiva e eficiente para os socorristas possam registar as ocorrências, evitando possíveis equívocos no momento do registo, assim agilizando e padronizando o mesmo. Conta com funcionalidades para gerenciamento da tribulação, ambulâncias disponíveis, e níveis de usuários no sistema. Guardando todas as ocorrências em um meio digital facilita para recuperar os dados das saídas gerando assim um histórico completo de todas as saídas e quem registrou elas.
+Conta também com modelos de cadastro para chamados específicos ex: Saída VSL

@@ -1,11 +1,11 @@
 ---
-import type { CollectionEntry } from "astro:content";
-import { Icon } from "astro-icon";
+import { Icon } from "astro-icon"
+import type { CollectionEntry } from "astro:content"
 
-import Layout from "../layouts/Layout.astro";
+import Layout from "../layouts/Layout.astro"
 
 type Props = CollectionEntry<"projects">["data"];
-const { title, desc, image, altImage, releaseDate, site, github, stacks } =
+const { title, desc, cover, altCover, images, releaseDate, site, github, stacks } =
   Astro.props;
 ---
 
@@ -15,8 +15,8 @@ const { title, desc, image, altImage, releaseDate, site, github, stacks } =
       <img
         class="rounded-xl shadow-md object-cover"
         width="100%"
-        src={image}
-        alt={altImage}
+        src={cover}
+        alt={altCover}
       />
     </div>
     <div class="text-sm breadcrumbs mt-3 mb-2">
@@ -29,28 +29,36 @@ const { title, desc, image, altImage, releaseDate, site, github, stacks } =
       </ul>
     </div>
     <div class="pb-2">
-      <p class="mb-2 gap-2 flex">
-        <span class="badge badge-success ml-3 mr-1">Site</span>
-        <a href={site} target="_blank" class="link flex items-center gap-2">
-          {site}
-          <Icon name="bi:box-arrow-up-right" class="w-[14px]" />
-        </a>
-      </p>
-
+      {site && (
+        <p class="mb-2 gap-2 flex">
+          <span class="badge badge-success ml-3 mr-1">Site</span>
+            <a href={site} target="_blank" class="link flex items-center gap-2">
+              {site}
+              <Icon name="bi:box-arrow-up-right" class="w-[14px]" />
+            </a>
+        </p>
+        )}
       <p class="mb-2">
-        <span class="badge badge-error ml-3 mr-1">Stacks</span>
+        <span class="badge badge-warning ml-3 mr-1">Stack</span>
         {stacks.join(", ")}
       </p>
 
-      <p class="mb-2 gap-2 flex">
-        <span class="badge badge-warning ml-3 mr-1">Github</span>
-        <a href={github} target="_blank" class="link flex items-center gap-2">
-          {github.replace("https://github.com/drewdomi/", "")}
-          <Icon name="bi:box-arrow-up-right" class="w-[14px]" />
-        </a>
-      </p>
+      {github && (
+          <p class="mb-2 gap-2 flex">
+            <span class="badge badge-primary text-white ml-3 mr-1">Github</span>
+            <a
+              href={github}
+              target="_blank"
+              class="link flex items-center gap-2"
+            >
+              {github?.replace("https://github.com/drewdomi/", "")}
+              <Icon name="bi:box-arrow-up-right" class="w-[14px]" />
+            </a>
+          </p>
+       )}
     </div>
-
-    <slot />
+    <div class="text-justify">
+      <slot />
+    </div>
   </section>
 </Layout>

@@ -60,5 +60,10 @@ const { title, desc, cover, altCover, images, releaseDate, site, github, stacks 
     <div class="text-justify">
       <slot />
     </div>
+    <div>
+      {images.map(image => {
+        <img src={image} alt="">
+      })}
+    </div>
   </section>
 </Layout>

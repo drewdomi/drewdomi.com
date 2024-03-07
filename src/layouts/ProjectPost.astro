@@ -1,11 +1,11 @@
 ---
-import { Icon } from "astro-icon"
-import type { CollectionEntry } from "astro:content"
+import { Icon } from "astro-icon";
+import type { CollectionEntry } from "astro:content";
 
-import Layout from "../layouts/Layout.astro"
+import Layout from "../layouts/Layout.astro";
 
 type Props = CollectionEntry<"projects">["data"];
-const { title, desc, cover, altCover, images, releaseDate, site, github, stacks } =
+const { title, desc, cover, altCover, releaseDate, site, github, stacks } =
   Astro.props;
 ---
 
@@ -13,7 +13,7 @@ const { title, desc, cover, altCover, images, releaseDate, site, github, stacks 
   <section>
     <div class="pt-2">
       <img
-        class="rounded-xl shadow-md object-cover"
+        class="rounded-md shadow-md"
         width="100%"
         src={cover}
         alt={altCover}
@@ -29,21 +29,24 @@ const { title, desc, cover, altCover, images, releaseDate, site, github, stacks 
       </ul>
     </div>
     <div class="pb-2">
-      {site && (
-        <p class="mb-2 gap-2 flex">
-          <span class="badge badge-success ml-3 mr-1">Site</span>
+      {
+        site && (
+          <p class="mb-2 gap-2 flex">
+            <span class="badge badge-success ml-3 mr-1">Site</span>
             <a href={site} target="_blank" class="link flex items-center gap-2">
               {site}
               <Icon name="bi:box-arrow-up-right" class="w-[14px]" />
             </a>
-        </p>
-        )}
+          </p>
+        )
+      }
       <p class="mb-2">
         <span class="badge badge-warning ml-3 mr-1">Stack</span>
         {stacks.join(", ")}
       </p>
 
-      {github && (
+      {
+        github && (
           <p class="mb-2 gap-2 flex">
             <span class="badge badge-primary text-white ml-3 mr-1">Github</span>
             <a
@@ -55,15 +58,11 @@ const { title, desc, cover, altCover, images, releaseDate, site, github, stacks 
               <Icon name="bi:box-arrow-up-right" class="w-[14px]" />
             </a>
           </p>
-       )}
+        )
+      }
     </div>
     <div class="text-justify">
       <slot />
-    </div>
-    <div>
-      {images.map(image => {
-        <img src={image} alt="">
-      })}
     </div>
   </section>
 </Layout>

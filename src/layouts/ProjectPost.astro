@@ -5,11 +5,11 @@ import type { CollectionEntry } from "astro:content";
 import Layout from "../layouts/Layout.astro";
 
 type Props = CollectionEntry<"projects">["data"];
-const { title, desc, cover, altCover, releaseDate, site, github, stacks } =
+const { title, desc, cover, altCover, releaseDate, site, siteTitle, github, stacks } =
   Astro.props;
 ---
 
-<Layout title={title} desc={desc}>
+<Layout title={title} desc={desc} maxW={768}>
   <section>
     <div class="pt-2">
       <img
@@ -32,9 +32,9 @@ const { title, desc, cover, altCover, releaseDate, site, github, stacks } =
       {
         site && (
           <p class="mb-2 gap-2 flex">
-            <span class="badge badge-success ml-3 mr-1">Site</span>
+            <span class="badge badge-primary ml-3 mr-1">WEB</span>
             <a href={site} target="_blank" class="link flex items-center gap-2">
-              {site}
+              {!siteTitle ? site : siteTitle}
               <Icon name="bi:box-arrow-up-right" class="w-[14px]" />
             </a>
           </p>
@@ -48,7 +48,7 @@ const { title, desc, cover, altCover, releaseDate, site, github, stacks } =
       {
         github && (
           <p class="mb-2 gap-2 flex">
-            <span class="badge badge-primary text-white ml-3 mr-1">Github</span>
+            <span class="badge badge-error ml-3 mr-1">Github</span>
             <a
               href={github}
               target="_blank"

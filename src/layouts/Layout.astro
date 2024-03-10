@@ -10,9 +10,10 @@ import Footer from "../components/Footer.astro";
 interface Props {
 	title: string;
 	desc: string;
+  maxW?: number
 }
 
-const { title, desc } = Astro.props;
+const { title, desc, maxW = 650 } = Astro.props;
 ---
 
 <!doctype html>
@@ -27,7 +28,7 @@ const { title, desc } = Astro.props;
 	</head>
 	<body>
 		<Header />
-		<main class="max-w-[650px] mx-auto mt-20 px-5">
+		<main class={`max-w-[${maxW}px] mx-auto mt-20 px-5`}>
 			<slot />
 		</main>
 		<Footer />

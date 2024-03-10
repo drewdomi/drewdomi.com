@@ -7,6 +7,7 @@ const projects = defineCollection({
     cover: z.string(),
     altCover: z.string(),
     releaseDate: z.string(),
+    siteTitle: z.optional(z.string()),
     site: z.optional(z.string()),
     github: z.optional(z.string()),
     stacks: z.array(z.string()),

@@ -1,10 +1,19 @@
 ---
-import { Icon } from "astro-icon";
+import { Icon } from "astro-icon/components";
 ---
 
 <footer
     class="mt-[50px] h-[100px] text-white bg-[#272551] flex justify-center items-center gap-2 font-light"
 >
-    <Icon name="logo" className="block w-[26px]" />
+    <Icon name="logo" />
     <p>Andrew Domingues - ©2023</p>
 </footer>
+
+<style>
+
+[data-icon] {
+  @apply
+  block
+  w-[26px];
+}
+</style>

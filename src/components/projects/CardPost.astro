@@ -1,0 +1,26 @@
+---
+interface Props {
+  href: string;
+  cover: string;
+  altCover: string;
+  title: string;
+  desc: string;
+}
+
+const { href, cover, altCover, title, desc } = Astro.props;
+---
+
+<a href={href} class="block">
+  <img
+    class="border-0 rounded shadow-md"
+    src={cover}
+    width="100%"
+    alt={altCover}
+  />
+  <h2 class="font-title text-center mt-4 mb-3 font-medium text-xl">
+    {title}
+  </h2>
+  <p class="text-sm text-center">
+    {desc}
+  </p>
+</a>

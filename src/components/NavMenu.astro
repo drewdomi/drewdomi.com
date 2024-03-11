@@ -1,12 +1,12 @@
 ---
-import { Icon } from "astro-icon";
+import { Icon } from "astro-icon/components";
 
 import { LINKS } from "../consts";
 ---
 
 <div class="dropdown dropdown-end">
   <Icon
-    name="majesticons:menu-line"
+    name="majesticons:menu"
     tabindex="0"
     class="btn btn-sm btn-ghost btn-primary"
   />
@@ -24,13 +24,11 @@ import { LINKS } from "../consts";
   svg {
     height: 38px;
     padding: 8px;
+    font-size: 38px;
     cursor: pointer;
     border: solid 0.2px;
     border-radius: 4px;
   }
-  /* li a:hover {
-    @apply underline;
-  } */
   a {
     border-radius: 0;
     font-size: medium;

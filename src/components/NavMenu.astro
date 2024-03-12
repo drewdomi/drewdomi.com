@@ -1,10 +1,12 @@
 ---
-import { Icon } from "astro-icon";
+import { Icon } from "astro-icon/components";
+
+import { LINKS } from "../consts";
 ---
 
 <div class="dropdown dropdown-end">
   <Icon
-    name="majesticons:menu-line"
+    name="majesticons:menu"
     tabindex="0"
     class="btn btn-sm btn-ghost btn-primary"
   />
@@ -12,10 +14,9 @@ import { Icon } from "astro-icon";
     tabindex="0"
     class="dropdown-content z-[2] menu py-2 px-0 mt-2 shadow-md rounded-md w-44 border bg-base-100"
   >
-    <li><a href="#a">Início</a></li>
-    <li><a href="#b">Projetos</a></li>
-    <li><a href="#c">Blog</a></li>
-    <li><a href="#d">Contato</a></li>
+    <li><a href={LINKS.about}>Início</a></li>
+    <li><a href={LINKS.projects}>Projetos</a></li>
+    <li><a href={LINKS.contato}>Contato</a></li>
   </ul>
 </div>
 
@@ -23,13 +24,11 @@ import { Icon } from "astro-icon";
   svg {
     height: 38px;
     padding: 8px;
+    font-size: 38px;
     cursor: pointer;
     border: solid 0.2px;
     border-radius: 4px;
   }
-  /* li a:hover {
-    @apply underline;
-  } */
   a {
     border-radius: 0;
     font-size: medium;
@@ -39,14 +38,14 @@ import { Icon } from "astro-icon";
 
 <script>
   const closeByClickLink = () => {
-    const elem = document.activeElement as HTMLElement
-    if (elem) elem.blur()
-  }
+    const elem = document.activeElement as HTMLElement;
+    if (elem) elem.blur();
+  };
 
-  const links = document.querySelectorAll("ul li")
+  const links = document.querySelectorAll("ul li");
   links.forEach((item) => {
     item.addEventListener("click", () => {
-      setTimeout(closeByClickLink, 200)
-    })
-  })
+      setTimeout(closeByClickLink, 200);
+    });
+  });
 </script>

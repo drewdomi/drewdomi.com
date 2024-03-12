@@ -10,22 +10,44 @@ import { Icon } from "astro-icon/components";
 
   <div id="icons">
     <div>
-      <Icon name="react" />
-      <Icon name="angular" />
-      <Icon name="nextjs" class="text-stone-950" />
+      <div class="tooltip tooltip-bottom" data-tip="Astro">
+        <Icon name="astro" />
+      </div>
+      <div class="tooltip tooltip-bottom" data-tip="Angular">
+        <Icon name="angular" />
+      </div>
+      <div class="tooltip tooltip-bottom" data-tip="Nextjs">
+        <Icon name="nextjs" class="text-stone-950" />
+      </div>
+    </div>
+
+    <div>
+      <div class="tooltip tooltip-bottom" data-tip="TypeScript">
+          <Icon name="typescript" />
+        </div>
+        <div class="tooltip tooltip-bottom" data-tip="JavaScript">
+          <Icon name="javascript" />
+        </div>
+    </div>
+
+    <div>
+      <div class="tooltip tooltip-bottom" data-tip="Node">
+        <Icon name="node" />
+      </div>
+      <div class="tooltip tooltip-bottom" data-tip="Prisma ORM">
+        <Icon name="prisma" />
+      </div>
+      <div class="tooltip tooltip-bottom" data-tip="MongoDB">
+        <Icon name="mongodb" />
+      </div>
     </div>
     <div>
-      <Icon name="typescript" />
-      <Icon name="javascript" />
-    </div>
-    <div>
-      <Icon name="chakraui" />
-      <Icon name="figma" />
-      <Icon name="tailwindcss" />
-    </div>
-    <div>
+      <div class="tooltip tooltip-bottom" data-tip="Jest">
       <Icon name="jest" />
-      <Icon name="git" />
+        </div>
+      <div class="tooltip tooltip-bottom" data-tip="Figma">
+      <Icon name="figma" />
+        </div>
     </div>
   </div>
 
@@ -40,19 +62,19 @@ import { Icon } from "astro-icon/components";
 </section>
 
 <style>
-  svg {
-    @apply 
-    inline
-    w-[60px]
-    h-[60px]
-    text-8xl
-    cursor-pointer;
-  }
+    svg {
+      @apply 
+      inline
+      w-[60px]
+      h-[60px]
+      text-8xl
+      cursor-pointer;
+    }
 
   #icons div {
     @apply flex
     justify-center
-    gap-[60px]
-    mb-[50px];
+    gap-[64px]
+    mb-[32px];
   }
 </style>

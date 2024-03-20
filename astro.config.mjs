@@ -7,6 +7,21 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [icon(), tailwind(), mdx(), sitemap()],
+  integrations: [icon(
+    {
+      svgoOptions: {
+        plugins: [
+          {
+            name: "preset-default",
+            params: {
+              overrides: {
+                cleanupIds: false,
+              },
+            },
+          },
+        ],
+      },
+    }
+  ), tailwind(), mdx(), sitemap()],
 });
 

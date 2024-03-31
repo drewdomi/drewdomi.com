@@ -9,7 +9,7 @@ const posts = await getCollection("projects");
 
 <Layout title="Projetos" desc='Projetos Drewdomi'>
   <SectionTitle title="Projetos" />
-  <div class="grid grid-cols-1 sm:grid-cols-2 gap-[40px]">
+  <div class="grid mt-2 grid-cols-1 sm:grid-cols-2 gap-[40px]">
     {posts.map(post => (
       <CardPost
         href={`projects/${post.slug}`}

@@ -8,8 +8,8 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 
 interface Props {
-	title: string;
-	desc: string;
+  title: string;
+  desc: string;
 }
 
 const { title, desc } = Astro.props;
@@ -17,41 +17,58 @@ const { title, desc } = Astro.props;
 
 <!doctype html>
 <html data-theme="dark" lang="pt-br">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content={desc} />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<Header />
-		<main class="max-w-[678px] mx-auto mt-20 px-5 min-h-[100vh]">
-			<slot />
-		</main>
-		<Footer />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={desc} />
+    <meta name="author" content="Andrew Domingues" />
+    <meta name="author" content="drewdomi" />
+    <meta name="generator" content={Astro.generator} />
+    <meta http-equiv="content-language" content="pt-br" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="copyright" content="© 2024 Andrew Domingues" />
+    <meta
+      name="keywords"
+      content="drewdomi, Programação, Programação WEB, Coding, Code, Sites, Sistemas Web, Cruz Vermelha Portguesa, Cruz Vermelha de Amares"
+    />
+    <meta name="rating" content="general" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <meta property="og:site_name" content="Andrew Domingues" />
+    <meta name="og:title" content="Andrew Domingues" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://www.drewdomi.com/card.png" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <Header />
+    <main class="max-w-[678px] mx-auto mt-20 px-5 min-h-[100vh]">
+      <slot />
+    </main>
+    <Footer />
+  </body>
 </html>
+
 <style is:global>
-	* {
-		font-family: "Roboto";
-		scroll-behavior: smooth;
-	}
-	@keyframes downtop {
-		0% {
-			opacity: 0;
-			transform: translateY(15px);
-		}
-		100% {
-			opacity: 1;
-			transform: translateY(0);
-		}
-	}
-	main {
-		animation: downtop 0.7s 0.35s backwards;
-	}
-	a {
-		cursor: pointer;
-	}
+  * {
+    font-family: "Roboto";
+    scroll-behavior: smooth;
+  }
+  @keyframes downtop {
+    0% {
+      opacity: 0;
+      transform: translateY(15px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  main {
+    animation: downtop 0.7s 0.35s backwards;
+  }
+  a {
+    cursor: pointer;
+  }
 </style>

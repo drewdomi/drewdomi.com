@@ -3,6 +3,7 @@ import "@fontsource/roboto/latin-300.css";
 import "@fontsource/roboto/latin-400.css";
 import "@fontsource/rubik/latin-400.css";
 import "@fontsource/rubik/latin-500.css";
+import { ViewTransitions } from 'astro:transitions';
 
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
@@ -44,6 +45,7 @@ const { title, desc } = Astro.props;
     <meta name="og:title" content="Andrew Domingues" />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://www.drewdomi.com/card.png" />
+    <ViewTransitions />
     <title>{title}</title>
   </head>
   <body>

@@ -6,73 +6,84 @@ import { Icon } from "astro-icon/components";
 ---
 
 <section>
-  <SectionTitle title="Skills" />
+  <SectionTitle title="Tecnologias" />
 
-  <div id="icons">
-    <div>
-      <div class="tooltip tooltip-bottom" data-tip="Astro" >
-        <Icon name="astro" aria-label="Astro"/>
-      </div>
-      <div class="tooltip tooltip-bottom" data-tip="Angular">
-        <Icon name="angular-old" aria-label="Angular"/>
-      </div>
-      <div class="tooltip tooltip-bottom" data-tip="Nextjs">
-        <Icon name="nextjs" class="text-stone-950" aria-label="Nextjs"/>
-      </div>
-    </div>
-    <div>
-      <div class="tooltip tooltip-bottom" data-tip="TypeScript">
-        <Icon name="typescript" aria-label="TypeScript"/>
-      </div>
-      <div class="tooltip tooltip-bottom" data-tip="JavaScript">
-        <Icon name="javascript" aria-label="JavaScript"/>
-      </div>
-    </div>
-    <div>
-      <div class="tooltip tooltip-bottom" data-tip="Prisma ORM">
-        <Icon name="prisma" aria-label="Prisma ORM"/>
-      </div>
-      <div class="tooltip tooltip-bottom" data-tip="Node">
-        <Icon name="node" aria-label="Node"/>
-      </div>
-      <div class="tooltip tooltip-bottom" data-tip="MongoDB">
-        <Icon name="mongodb" aria-label="MongoDB"/>
-      </div>
-    </div>
-    <div>
-      <div class="tooltip tooltip-bottom" data-tip="Jest">
-        <Icon name="jest" aria-label="Jest"/>
-      </div>
-      <div class="tooltip tooltip-bottom" data-tip="Figma">
-        <Icon name="figma" aria-label="Figma"/>
-      </div>
-    </div>
-  </div>
+  <div id="icons" class="mt-3 lg:flex flex-col flex-wrap">
+    <div class="flex flex-wrap lg:mb-0">
+      <div class="flex justify-center">
+        <div class="tooltip tooltip-bottom" data-tip="Astro">
+          <Icon name="astro" aria-label="Astro" />
+        </div>
 
-  <div class="flex justify-center">
-    <Button
-      notBlank
-      href="/projects"
-      label="Projetos"
-      rightIcon="fluent:arrow-right-12-filled"
-    />
+        <div class="tooltip tooltip-bottom" data-tip="Angular">
+          <Icon name="angular-old" aria-label="Angular" />
+        </div>
+
+        <div class="tooltip tooltip-bottom" data-tip="Nextjs">
+          <Icon name="nextjs" class="text-stone-950" aria-label="Nextjs" />
+        </div>
+      </div>
+
+      <div class="flex justify-center">
+        <div class="tooltip tooltip-bottom" data-tip="TypeScript">
+          <Icon name="typescript" aria-label="TypeScript" />
+        </div>
+
+        <div class="tooltip tooltip-bottom flex-grow" data-tip="JavaScript">
+          <Icon name="javascript" aria-label="JavaScript" />
+        </div>
+      </div>
+
+      <div class="flex justify-center">
+        <div class="tooltip tooltip-bottom" data-tip="Prisma ORM">
+          <Icon name="prisma" aria-label="Prisma ORM" />
+        </div>
+
+        <div class="tooltip tooltip-bottom" data-tip="Node">
+          <Icon name="node" aria-label="Node" />
+        </div>
+
+        <div class="tooltip tooltip-bottom" data-tip="MongoDB">
+          <Icon name="mongodb" aria-label="MongoDB" />
+        </div>
+      </div>
+
+      <div class="flex justify-center">
+        <div class="tooltip tooltip-bottom" data-tip="Jest">
+          <Icon name="jest" aria-label="Jest" />
+        </div>
+
+        <div class="tooltip tooltip-bottom" data-tip="Figma">
+          <Icon name="figma" aria-label="Figma" />
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
+<div class="flex justify-center">
+  <Button
+    notBlank
+    href="/projects"
+    label="Projetos"
+    rightIcon="fluent:arrow-right-12-filled"
+  />
+</div>
+
 <style>
-    svg, img {
-      @apply 
-      inline
+  svg,
+  img {
+    @apply inline
       w-[60px]
       h-[60px]
       text-8xl
       cursor-pointer;
-    }
+  }
 
   #icons div {
     @apply flex
     justify-center
-    gap-[64px]
+    gap-[48px]
     mb-[32px];
   }
 </style>

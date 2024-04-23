@@ -1,0 +1,72 @@
+---
+import { Icon } from "astro-icon/components";
+import { LINKS } from "../consts";
+import Footer from "./Footer.astro";
+---
+
+<div class="drawer">
+  <input id="sidemenu" type="checkbox" class="drawer-toggle" />
+  <div class="drawer-content">
+    <label for="sidemenu">
+      <Icon
+        name="majesticons:menu"
+        tabindex="0"
+        class="btn btn-sm btn-ghost btn-primary"
+      />
+    </label>
+  </div>
+  <div class="drawer-side">
+    <label for="sidemenu" aria-label="Fechar sidemenu" class="drawer-overlay"
+    ></label>
+    <div
+      class="menu p-4 w-80 min-h-full bg-[#0E1337] flex flex-col justify-between gap-4"
+    >
+      <div>
+        <div class="drawer-header flex justify-center my-5">
+          <img src="favicon.svg" alt="Zapred icon" width="64" />
+        </div>
+        <ul class="flex flex-col gap-2">
+          <li>
+            <a href={LINKS.about}>Início</a>
+          </li>
+          <li>
+            <a href={LINKS.projects}>Projetos</a>
+          </li>
+          <li>
+            <a href={LINKS.contato}>Contato</a>
+          </li>
+        </ul>
+      </div>
+
+      <footer
+        class="h-[60px] text-white bg-[#0E1337] flex justify-center items-center font-light"
+      >
+        <p>© 2024 Andrew Domingues</p>
+      </footer>
+    </div>
+  </div>
+</div>
+
+<style>
+  svg {
+    height: 48px;
+    width: 48px;
+    font-size: 48px;
+    cursor: pointer;
+  }
+  a {
+    font-size: large;
+  }
+</style>
+
+<script>
+  const links = document.querySelectorAll("ul li a");
+  links.forEach((item) => {
+    item.addEventListener("click", () => {
+      setTimeout(() => {
+        const elem = document.querySelector("input") as HTMLInputElement;
+        elem.checked = false;
+      }, 200);
+    });
+  });
+</script>

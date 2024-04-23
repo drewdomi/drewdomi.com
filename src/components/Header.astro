@@ -1,7 +1,7 @@
 ---
 import { Icon } from "astro-icon/components";
-import NavMenu from "../components/NavMenu.astro";
 import { LINKS } from "../consts";
+import SideMenu from "./SideMenu.astro";
 ---
 
 <header class="shadow-md fixed w-full top-0 backdrop-blur-sm z-[2]">
@@ -21,7 +21,7 @@ import { LINKS } from "../consts";
     </div>
     <div class="navbar-end gap-4">
       <span class="md:hidden">
-        <NavMenu />
+        <SideMenu />
       </span>
     </div>
   </div>
@@ -43,9 +43,15 @@ import { LINKS } from "../consts";
     font-size: 18px;
     transition: 1s ease;
     font-family: "Rubik";
-    text-shadow: 1px 0 #000000, -2px 0 #000000, 0 2px #000000, 0 -2px #000000,
-               1px 1px #000000, -1px -1px #000000, 1px -1px #000000, -1px 1px #000000;
-
+    text-shadow:
+      1px 0 #000000,
+      -2px 0 #000000,
+      0 2px #000000,
+      0 -2px #000000,
+      1px 1px #000000,
+      -1px -1px #000000,
+      1px -1px #000000,
+      -1px 1px #000000;
   }
 
   #logo:hover svg {
@@ -62,8 +68,15 @@ import { LINKS } from "../consts";
     color: white;
     width: 100%;
     padding: 6px 16px;
-    text-shadow: 1px 0 #000000, -2px 0 #000000, 0 2px #000000, 0 -2px #000000,
-               1px 1px #000000, -1px -1px #000000, 1px -1px #000000, -1px 1px #000000;
+    text-shadow:
+      1px 0 #000000,
+      -2px 0 #000000,
+      0 2px #000000,
+      0 -2px #000000,
+      1px 1px #000000,
+      -1px -1px #000000,
+      1px -1px #000000,
+      -1px 1px #000000;
   }
   li a::after {
     content: "";

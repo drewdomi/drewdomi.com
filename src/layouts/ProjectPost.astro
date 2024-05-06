@@ -1,11 +1,20 @@
 ---
-import { Icon } from "astro-icon/components";
-import type { CollectionEntry } from "astro:content";
-import Layout from "../layouts/Layout.astro";
+import { Icon } from 'astro-icon/components'
+import type { CollectionEntry } from 'astro:content'
+import Layout from '../layouts/Layout.astro'
 
-type Props = CollectionEntry<"projects">["data"];
-const { title, desc, cover, altCover, releaseDate, site, siteTitle, github, stacks } =
-  Astro.props;
+type Props = CollectionEntry<'projects'>['data']
+const {
+  title,
+  desc,
+  cover,
+  altCover,
+  releaseDate,
+  site,
+  siteTitle,
+  github,
+  stacks,
+} = Astro.props
 ---
 
 <Layout title={title} desc={desc}>
@@ -41,7 +50,7 @@ const { title, desc, cover, altCover, releaseDate, site, siteTitle, github, stac
       }
       <p class="mb-2">
         <span class="badge badge-warning ml-3 mr-1">Stack</span>
-        {stacks.join(", ")}
+        {stacks.join(', ')}
       </p>
 
       {
@@ -53,7 +62,7 @@ const { title, desc, cover, altCover, releaseDate, site, siteTitle, github, stac
               target="_blank"
               class="link flex items-center gap-2"
             >
-              {github?.replace("https://github.com/drewdomi/", "")}
+              {github?.replace('https://github.com/drewdomi/', '')}
               <Icon name="bi:box-arrow-up-right" class="w-[14px]" />
             </a>
           </p>

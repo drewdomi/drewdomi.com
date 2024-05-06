@@ -1,19 +1,19 @@
 ---
-import "@fontsource/roboto/latin-300.css";
-import "@fontsource/roboto/latin-400.css";
-import "@fontsource/rubik/latin-400.css";
-import "@fontsource/rubik/latin-500.css";
-import { ViewTransitions } from 'astro:transitions';
+import '@fontsource/roboto/latin-300.css'
+import '@fontsource/roboto/latin-400.css'
+import '@fontsource/rubik/latin-400.css'
+import '@fontsource/rubik/latin-500.css'
+import { ViewTransitions } from 'astro:transitions'
 
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
 
 interface Props {
-  title: string;
-  desc: string;
+  title: string
+  desc: string
 }
 
-const { title, desc } = Astro.props;
+const { title, desc } = Astro.props
 ---
 
 <!doctype html>
@@ -50,32 +50,31 @@ const { title, desc } = Astro.props;
   </head>
   <body>
     <Header />
-    <main class="max-w-[678px] mx-auto mt-20 px-5 min-h-[100vh]">
+    <main class="max-w-[678px] mx-auto mt-20 px-5 min-h-[100vh] mb-10">
       <slot />
     </main>
     <Footer />
   </body>
+  <style is:global>
+    * {
+      font-family: 'Roboto';
+      scroll-behavior: smooth;
+    }
+    @keyframes downtop {
+      0% {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    main {
+      animation: downtop 0.7s 0.35s backwards;
+    }
+    a {
+      cursor: pointer;
+    }
+  </style>
 </html>
-
-<style is:global>
-  * {
-    font-family: "Roboto";
-    scroll-behavior: smooth;
-  }
-  @keyframes downtop {
-    0% {
-      opacity: 0;
-      transform: translateY(15px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  main {
-    animation: downtop 0.7s 0.35s backwards;
-  }
-  a {
-    cursor: pointer;
-  }
-</style>

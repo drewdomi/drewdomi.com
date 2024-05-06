@@ -1,24 +1,24 @@
 ---
-import { Icon } from "astro-icon/components";
+import { Icon } from 'astro-icon/components'
 
 interface Props {
-  label: string;
-  href: string;
-  notBlank?: boolean;
-  leftIcon?: string;
-  rightIcon?: string;
+  label: string
+  href: string
+  notBlank?: boolean
+  leftIcon?: string
+  rightIcon?: string
 }
 
-const { label, href, notBlank, leftIcon, rightIcon } = Astro.props;
+const { label, href, notBlank, leftIcon, rightIcon } = Astro.props
 ---
 
 <a
   href={href}
-  target={notBlank ? "_self" : "_blank"}
+  target={notBlank ? '_self' : '_blank'}
   class="font-title font-medium bg-primary btn btn-primary text-[#EFEFEF] shadow-md text-[18px]"
   role="button"
 >
-  {leftIcon && <Icon name={leftIcon} />} 
+  {leftIcon && <Icon name={leftIcon} />}
   {label}
   {rightIcon && <Icon name={rightIcon} />}
 </a>
@@ -31,8 +31,7 @@ const { label, href, notBlank, leftIcon, rightIcon } = Astro.props;
     padding: 0 18px;
   }
   [data-icon] {
-    @apply
-    block
+    @apply block
     w-[18px];
   }
 </style>

@@ -29,6 +29,8 @@
     "@iconify-json/majesticons": "^1.1.11",
     "@iconify-json/ph": "^1.1.11",
     "@iconify-json/simple-icons": "^1.1.99",
-    "daisyui": "4.7.3"
+    "daisyui": "4.7.3",
+    "prettier": "^3.2.5",
+    "prettier-plugin-astro": "^0.13.0"
   }
 }

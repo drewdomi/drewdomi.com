@@ -54,27 +54,27 @@ const { title, desc } = Astro.props
       <slot />
     </main>
     <Footer />
+    <style is:global>
+      * {
+        font-family: 'Roboto';
+        scroll-behavior: smooth;
+      }
+      @keyframes downtop {
+        0% {
+          opacity: 0;
+          transform: translateY(15px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      main {
+        animation: downtop 0.7s 0.35s backwards;
+      }
+      a {
+        cursor: pointer;
+      }
+    </style>
   </body>
-  <style is:global>
-    * {
-      font-family: 'Roboto';
-      scroll-behavior: smooth;
-    }
-    @keyframes downtop {
-      0% {
-        opacity: 0;
-        transform: translateY(15px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    main {
-      animation: downtop 0.7s 0.35s backwards;
-    }
-    a {
-      cursor: pointer;
-    }
-  </style>
 </html>

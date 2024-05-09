@@ -33,7 +33,7 @@ import Footer from './Footer.astro'
             <a href={LINKS.projects}>Projetos</a>
           </li>
           <li>
-            <a href={LINKS.contato}>Contato</a>
+            <a href={LINKS.contato} id="contact-button">Contato</a>
           </li>
         </ul>
       </div>
@@ -60,13 +60,9 @@ import Footer from './Footer.astro'
 </style>
 
 <script>
-  const links = document.querySelectorAll('ul li a')
-  links.forEach((item) => {
-    item.addEventListener('click', () => {
-      setTimeout(() => {
-        const elem = document.querySelector('input') as HTMLInputElement
-        elem.checked = false
-      }, 200)
-    })
+  const contact = document.querySelector("#contact-button")
+
+  contact.addEventListener("click", () => {
+      document.querySelector(".drawer-overlay").click()
   })
 </script>

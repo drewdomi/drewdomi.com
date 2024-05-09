@@ -11,7 +11,7 @@ const { label, href, leftIcon } = Astro.props
 ---
 
 <div>
-  <a href={href} target="_blank" class="font-medium btn btn-link text-[16px]">
+  <a {href} target="_blank" class="font-medium btn btn-link text-[16px]">
     {leftIcon && <Icon name={leftIcon} />}
     {label}
   </a>

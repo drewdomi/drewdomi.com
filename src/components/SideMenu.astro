@@ -1,7 +1,6 @@
 ---
 import { Icon } from 'astro-icon/components'
 import { LINKS } from '../consts'
-import Footer from './Footer.astro'
 ---
 
 <div class="drawer">
@@ -33,7 +32,7 @@ import Footer from './Footer.astro'
             <a href={LINKS.projects}>Projetos</a>
           </li>
           <li>
-            <a href={LINKS.contato} id="contact-button">Contato</a>
+            <a href={LINKS.contato}>Contato</a>
           </li>
         </ul>
       </div>
@@ -58,11 +57,3 @@ import Footer from './Footer.astro'
     font-size: large;
   }
 </style>
-
-<script>
-  const contact = document.querySelector("#contact-button")
-
-  contact.addEventListener("click", () => {
-      document.querySelector(".drawer-overlay").click()
-  })
-</script>

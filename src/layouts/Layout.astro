@@ -65,13 +65,6 @@ const { title, desc } = Astro.props
 
     <ViewTransitions />
     <title>{title}</title>
-  </head>
-  <body>
-    <Header />
-    <main class="max-w-[678px] mx-auto mt-20 px-5 min-h-[100vh] mb-10">
-      <slot />
-    </main>
-    <Footer />
     <style is:global>
       * {
         font-family: 'Roboto';
@@ -94,5 +87,13 @@ const { title, desc } = Astro.props
         cursor: pointer;
       }
     </style>
+  </head>
+  <body>
+    <Header />
+    <main class="max-w-[678px] mx-auto mt-20 px-5 min-h-[100vh] mb-10">
+      <slot />
+    </main>
+    <Footer />
+    <script async data-id="101458763" src="//static.getclicky.com/js"></script>
   </body>
 </html>

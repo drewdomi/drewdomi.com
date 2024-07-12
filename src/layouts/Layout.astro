@@ -5,8 +5,8 @@ import '@fontsource/rubik/latin-400.css'
 import '@fontsource/rubik/latin-500.css'
 import { ViewTransitions } from 'astro:transitions'
 
-import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
+import Header from '../components/Header.astro'
 
 interface Props {
   title: string
@@ -27,22 +27,17 @@ const { title, desc } = Astro.props
 ╚═════╝ ╚═╝  ╚═╝╚══════╝ ╚══╝╚══╝   ╚═════╝  ╚═════╝ ╚═╝     ╚═╝╚═╝
 
 -->
-
-<html data-theme="dark" lang="pt-br">
+<html lang="pt-br">
   <head>
+    <!-- Primary Meta Tags -->
     <meta charset="UTF-8" />
     <meta name="description" content={desc} />
     <meta name="author" content="Andrew Domingues" />
     <meta name="author" content="drewdomi" />
     <meta name="generator" content={Astro.generator} />
-    <meta name="twitter:title" content="Andrew Domingues" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@drewdomii" />
-    <meta name="twitter:creator" content="@drewdomii" />
-    <meta name="twitter:image" content="https://www.drewdomi.com/card.png" />
+    <meta name="copyright" content="© 2024 Andrew Domingues" />
     <meta http-equiv="content-language" content="pt-br" />
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-    <meta name="copyright" content="© 2024 Andrew Domingues" />
     <meta
       name="keywords"
       content="drewdomi, Programação, Programação WEB, Coding, Code, Sites, Sistemas Web, Cruz Vermelha Portguesa, Cruz Vermelha de Amares"
@@ -52,19 +47,24 @@ const { title, desc } = Astro.props
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+    <!-- Open Graph / Facebook -->
     <meta property="og:site_name" content="Andrew Domingues" />
     <meta name="og:title" content="Andrew Domingues" />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://www.drewdomi.com/card.png" />
+    <meta property="og:url" content="https://www.drewdomi.com" />
+    <meta property="og:description" content={desc} />
+
+    <!-- Twitter -->
+    <meta name="twitter:title" content="Andrew Domingues" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@drewdomii" />
+    <meta name="twitter:creator" content="@drewdomii" />
+    <meta name="twitter:image" content="https://www.drewdomi.com/card.png" />
+
     <ViewTransitions />
     <title>{title}</title>
-  </head>
-  <body>
-    <Header />
-    <main class="max-w-[678px] mx-auto mt-20 px-5 min-h-[100vh] mb-10">
-      <slot />
-    </main>
-    <Footer />
     <style is:global>
       * {
         font-family: 'Roboto';
@@ -87,5 +87,13 @@ const { title, desc } = Astro.props
         cursor: pointer;
       }
     </style>
+  </head>
+  <body>
+    <Header />
+    <main class="max-w-[678px] mx-auto mt-20 px-5 min-h-[100vh] mb-10">
+      <slot />
+    </main>
+    <Footer />
+    <script async data-id="101458763" src="//static.getclicky.com/js"></script>
   </body>
 </html>

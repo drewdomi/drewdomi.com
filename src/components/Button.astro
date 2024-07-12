@@ -13,7 +13,7 @@ const { label, href, notBlank, leftIcon, rightIcon } = Astro.props
 ---
 
 <a
-  href={href}
+  {href}
   target={notBlank ? '_self' : '_blank'}
   class="font-title font-medium bg-primary btn btn-primary text-[#EFEFEF] shadow-md text-[18px]"
   role="button"

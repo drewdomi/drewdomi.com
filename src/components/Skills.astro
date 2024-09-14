@@ -10,7 +10,7 @@ import { Icon } from 'astro-icon/components'
 
   <div id="icons" class="mt-3 lg:flex flex-col flex-wrap">
     <div class="flex flex-wrap lg:mb-0">
-      <div class="flex justify-center">
+      <div class="flex justify-center items-start">
         <div class="tooltip tooltip-bottom" data-tip="Angular">
           <Icon name="angular" aria-label="Angular" />
         </div>
@@ -19,36 +19,66 @@ import { Icon } from 'astro-icon/components'
           <Icon name="astro" aria-label="Astro" />
         </div>
 
-        <div class="tooltip tooltip-bottom" data-tip="Nextjs">
-          <Icon name="nextjs" class="text-stone-950" aria-label="Nextjs" />
-        </div>
+        <span aria-hidden="true">
+          <label for="next-react" class="swap swap-flip">
+            <input id="next-react" type="checkbox" />
+
+            <div class="swap-off tooltip tooltip-bottom" data-tip="Next.js">
+              <Icon name="nextjs" class="text-stone-950" aria-label="Next.js" />
+            </div>
+
+            <div class="swap-on tooltip tooltip-bottom" data-tip="React">
+              <Icon name="react" class="text-stone-950" aria-label="react" />
+            </div>
+          </label>
+        </span>
       </div>
 
-      <div class="flex justify-center">
-        <div class="tooltip tooltip-bottom" data-tip="Javascript">
-          <Icon name="javascript" aria-label="Javascript" />
-        </div>
-
-        <div class="tooltip tooltip-bottom" data-tip="Figma">
-          <Icon name="figma" aria-label="Figma" />
-        </div>
-      </div>
-
-      <div class="flex justify-center">
+      <div class="flex justify-center items-start">
         <div class="tooltip tooltip-bottom" data-tip="Spring">
           <Icon name="spring" aria-label="Spring framework" />
         </div>
 
+        <span aria-hidden="true">
+          <label for="nest-node" class="swap swap-flip">
+            <input id="nest-node" type="checkbox" />
+
+            <div class="swap-off tooltip tooltip-bottom" data-tip="NestJS">
+              <Icon name="nestjs" aria-label="NestJS" />
+            </div>
+
+            <div class="swap-on tooltip tooltip-bottom" data-tip="Node.js">
+              <Icon name="node" aria-label="Node" />
+            </div>
+          </label>
+        </span>
+      </div>
+
+      <div class="flex justify-center items-start">
+        <span aria-hidden="true">
+          <label for="ts-js" class="swap swap-flip">
+            <input id="ts-js" type="checkbox" />
+
+            <div class="swap-off tooltip tooltip-bottom" data-tip="Typescript">
+              <Icon name="typescript" aria-label="Typescript" />
+            </div>
+
+            <div class="swap-on tooltip tooltip-bottom" data-tip="Javascript">
+              <Icon name="javascript" aria-label="Javascript" />
+            </div>
+          </label>
+        </span>
+
         <div class="tooltip tooltip-bottom" data-tip="Java">
           <Icon name="java" aria-label="Java" />
         </div>
+
+        <div class="tooltip tooltip-bottom" data-tip="Go">
+          <Icon name="go" aria-label="Go" />
+        </div>
       </div>
 
-      <div class="flex justify-center">
-        <div class="tooltip tooltip-bottom flex-grow" data-tip="NestJS">
-          <Icon name="nestjs" aria-label="NestJS" />
-        </div>
-
+      <div class="flex justify-center items-start">
         <div class="tooltip tooltip-bottom" data-tip="Protgres SQL">
           <Icon name="postgresql" aria-label="Postgres SQL" />
         </div>

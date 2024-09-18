@@ -1,14 +1,15 @@
-# Andrew Domingues - Portfolio
+# Andrew Domingues - Homepage
 
-[https://drewdomi.vercel.app](https://drewdomi.vercel.app/)
+[https://drewdomi.com](https://drewdomi.com)
 
-![SCREENSHOT](public/screenshot.png)
+![SCREENSHOT](public/banner.jpg)
 
 ## 💻 Stack
 
 - Astro
 - TailwindCSS
 - DaisyUI
+- MDX
 
 ## 🚀 Estrutura do projeto
 

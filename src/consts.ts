@@ -3,10 +3,3 @@
 
 export const SITE_TITLE = 'Andrew Domingues'
 export const SITE_DESCRIPTION = 'Andrew Domingues portfólio'
-
-export const LINKS = {
-  about: '/',
-  projects: '/projects',
-  blog: '/blog',
-  contato: '/#contact',
-}

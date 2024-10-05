@@ -1,0 +1,8 @@
+{
+  "$schema": "https://inlang.com/schema/inlang-message-format",
+  "siteDesc": "Andrew Domingues portfólio",
+  "aboutSubtitle": "Desenvolvedor de software",
+  "linkLabelHome": "Início",
+  "linkLabelProjects": "Projetos",
+  "linkLabelContact": "Contato"
+}

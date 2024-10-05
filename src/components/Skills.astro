@@ -97,16 +97,29 @@ import { Icon } from 'astro-icon/components'
       </div>
 
       <div class="flex justify-center items-start">
-        <div
-          class="tooltip tooltip-bottom tooltip-open"
-          data-tip="Protgres SQL"
-        >
-          <Icon name="postgresql" aria-label="Postgres SQL" />
+        <div class="tooltip tooltip-bottom tooltip-open" data-tip="Ionic">
+          <Icon name="ionic" aria-label="Ionic" />
         </div>
 
-        <div class="tooltip tooltip-bottom tooltip-open" data-tip="MongoDB">
-          <Icon name="mongodb" aria-label="MongoDB" />
-        </div>
+        <span aria-hidden="true">
+          <label for="postgres-mongodb" class="swap swap-flip">
+            <input id="postgres-mongodb" type="checkbox" />
+
+            <div
+              class="swap-off tooltip tooltip-bottom tooltip-open"
+              data-tip="Postgres SQL"
+            >
+              <Icon name="postgresql" aria-label="Postgres SQL" />
+            </div>
+
+            <div
+              class="swap-on tooltip tooltip-bottom tooltip-open"
+              data-tip="MongoDB"
+            >
+              <Icon name="mongodb" aria-label="MongoDB" />
+            </div>
+          </label>
+        </span>
       </div>
     </div>
   </div>

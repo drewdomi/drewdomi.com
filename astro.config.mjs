@@ -5,13 +5,12 @@ import paraglide from '@inlang/paraglide-astro'
 import icon from 'astro-icon'
 import { defineConfig } from 'astro/config'
 
+import vercel from '@astrojs/vercel/serverless'
+
 // https://astro.build/config
 export default defineConfig({
   site: 'https://drewdomi.com',
-  domains: {
-    en: 'https://drewdomi.com',
-    'pt-br': 'https://drewdomi.com',
-  },
+  output: 'server',
   i18n: {
     locales: ['en', 'pt-br'],
     defaultLocale: 'en',
@@ -26,4 +25,5 @@ export default defineConfig({
     mdx(),
     sitemap(),
   ],
+  adapter: vercel(),
 })

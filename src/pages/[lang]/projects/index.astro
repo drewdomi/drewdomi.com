@@ -4,22 +4,26 @@ import CardPost from '../../../components/projects/CardPost.astro'
 import Layout from '../../../layouts/Layout.astro'
 
 import { getCollection } from 'astro:content'
-const posts = await getCollection('projects')
 
-// export const prerender = true
+const defaultLang = 'en'
+const { lang = defaultLang } = Astro.params
+
+const allPosts = await getCollection('projects')
+
+const projects = allPosts.filter((p) => p.data.lang === lang)
 ---
 
 <Layout title="Projetos Drewdomi" desc="Projetos Drewdomi">
   <SectionTitle title="Projetos" />
   <div class="grid mt-2 grid-cols-1 sm:grid-cols-2 gap-[40px]">
     {
-      posts.map((post) => (
+      projects.map((p) => (
         <CardPost
-          href={`projects/${post.slug}`}
-          cover={post.data.cover}
-          altCover={post.data.altCover}
-          title={post.data.title}
-          desc={post.data.desc}
+          href={`projects/${p.slug}`}
+          cover={p.data.cover}
+          altCover={p.data.altCover}
+          title={p.data.title}
+          desc={p.data.desc}
         />
       ))
     }

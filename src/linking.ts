@@ -7,19 +7,15 @@ const pathnames: Record<
   Record<AvailableLanguageTag, AbsolutePathname>
 > = {
   '/': {
-    en: '/',
+    en: '/en',
     'pt-br': '/pt-br',
   },
   '/projects': {
-    en: '/projects',
+    en: '/en/projects',
     'pt-br': '/pt-br/projects',
   },
-  '/blog': {
-    en: '/blog',
-    'pt-br': '/pt-br/blog',
-  },
-  '/contact': {
-    en: '/#contact',
+  '/#contact': {
+    en: '/en#contact',
     'pt-br': '/pt-br#contact',
   },
 }

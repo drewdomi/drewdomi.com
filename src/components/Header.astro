@@ -1,9 +1,10 @@
 ---
+import { Icon } from 'astro-icon/components'
+
 import { localizePathname } from '@/linking'
 import * as m from '@/paraglide/messages'
 import { languageTag } from '@/paraglide/runtime'
-import { Icon } from 'astro-icon/components'
-
+import LangToggle from './LangToggle.astro'
 import SideMenu from './SideMenu.astro'
 ---
 
@@ -26,20 +27,17 @@ import SideMenu from './SideMenu.astro'
           </a>
         </li>
         <li>
-          <a href={localizePathname('/#contact', languageTag())}
-            >{m.linkLabelContact}</a
-          >
+          <a href={localizePathname('/#contact', languageTag())}>
+            {m.linkLabelContact}
+          </a>
         </li>
       </ul>
     </div>
     <div class="navbar-end gap-4">
+      <LangToggle />
       <span class="md:hidden">
         <SideMenu />
       </span>
-
-      <button class="btn btn-ghost px-3 hover:bg-transparent">
-        <Icon name="brazil-flag" />
-      </button>
     </div>
   </div>
 </header>
@@ -70,11 +68,9 @@ import SideMenu from './SideMenu.astro'
       1px -1px #000000,
       -1px 1px #000000;
   }
-
   #logo:hover svg {
     animation: rotateAnim 1.5s 2 linear alternate-reverse;
   }
-
   svg {
     @apply h-4;
   }

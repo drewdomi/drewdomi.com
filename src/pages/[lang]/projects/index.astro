@@ -1,20 +1,20 @@
 ---
+import { getCollection } from 'astro:content'
+
 import SectionTitle from '../../../components/SectionTitle.astro'
 import CardPost from '../../../components/projects/CardPost.astro'
 import Layout from '../../../layouts/Layout.astro'
-
-import { getCollection } from 'astro:content'
+import * as m from '../../../paraglide/messages'
 
 const defaultLang = 'en'
 const { lang = defaultLang } = Astro.params
 
 const allPosts = await getCollection('projects')
-
 const projects = allPosts.filter((p) => p.data.lang === lang)
 ---
 
 <Layout title="Projetos Drewdomi" desc="Projetos Drewdomi">
-  <SectionTitle title="Projetos" />
+  <SectionTitle title={m.linkLabelProjects()} />
   <div class="grid mt-2 grid-cols-1 sm:grid-cols-2 gap-[40px]">
     {
       projects.map((p) => (

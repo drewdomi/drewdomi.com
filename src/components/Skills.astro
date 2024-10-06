@@ -1,12 +1,15 @@
 ---
+import { Icon } from 'astro-icon/components'
+import * as m from '../paraglide/messages'
+
+import { localizePathname } from '../linking'
+import { languageTag } from '../paraglide/runtime'
 import Button from './Button.astro'
 import SectionTitle from './SectionTitle.astro'
-
-import { Icon } from 'astro-icon/components'
 ---
 
 <section>
-  <SectionTitle title="Tecnologias" />
+  <SectionTitle title={m.skillsSectionTitle()} />
 
   <div id="icons" class="mt-3 lg:flex flex-col flex-wrap">
     <div class="flex flex-wrap lg:mb-0">
@@ -128,8 +131,8 @@ import { Icon } from 'astro-icon/components'
 <div class="flex justify-center">
   <Button
     notBlank
-    href="/projects"
-    label="Projetos"
+    href={localizePathname('/projects', languageTag())}
+    label={m.linkLabelProjects()}
     rightIcon="fluent:arrow-right-12-filled"
   />
 </div>

@@ -2,16 +2,13 @@
 import { availableLanguageTags, languageTag } from '@/paraglide/runtime'
 import { Icon } from 'astro-icon/components'
 
-const langs = availableLanguageTags
-
 const currentLang = languageTag()
-
-const newLang = langs.find((lang) => lang !== currentLang)
+const newLang = availableLanguageTags.find((lang) => lang !== currentLang)
 ---
 
 <span
   class="tooltip tooltip-bottom"
-  data-tip={currentLang === 'en' ? 'Portugues BR' : 'English'}
+  data-tip={currentLang === 'en' ? 'Português BR' : 'English'}
 >
   <button
     class="btn btn-ghost btn-circle"

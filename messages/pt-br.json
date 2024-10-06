@@ -7,8 +7,9 @@
   "linkLabelContact": "Contato",
   "aboutSectionTitle": "Sobre",
   "aboutText": "Como Full-Stack, busco constantemente expandir meus conhecimentos e habilidades, tenho experiência tanto em frontend quanto em backend, estou familiarizado com tecnologias como: Angular, Spring Boot, Nextjs, TypeScript, Node e NestJS, utilizando essas ferramentas para criar soluções eficientes e escaláveis. Estou pronto para enfrentar desafios e contribuir positivamente para qualquer equipe ou projeto em que me envolva.",
-  "aboutCvButton": "Ver CV",
+  "aboutCvButton": "Meu CV",
   "aboutCvLink": "https://drive.google.com/file/d/1JfF1MORZJMF9e2nnoK76fYaDuO69oWgJ",
   "contactDiscordCommunity": "Comunidade do Discord",
+  "contactGpg": "Chave GPG",
   "skillsSectionTitle": "Tecnologias"
 }

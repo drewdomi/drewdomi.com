@@ -1,22 +1,23 @@
 ---
+import * as m from '@/paraglide/messages'
 import '@fontsource/roboto/latin-300.css'
 import '@fontsource/roboto/latin-400.css'
 import '@fontsource/rubik/latin-400.css'
 import '@fontsource/rubik/latin-500.css'
 import { ViewTransitions } from 'astro:transitions'
 
-import Footer from '../components/Footer.astro'
-import Header from '../components/Header.astro'
-import { languageTag } from '../paraglide/runtime'
+import Footer from '@/components/Footer.astro'
+import Header from '@/components/Header.astro'
+import { languageTag } from '@/paraglide/runtime'
 
 Astro.response.headers.set('Cache-Control', 'public, max-age=3600')
 
 interface Props {
-  title: string
-  desc: string
+  title?: string
+  desc?: string
 }
 
-const { title, desc } = Astro.props
+const { title = m.siteName(), desc = m.siteDesc() } = Astro.props
 ---
 
 <!doctype html>
@@ -43,7 +44,7 @@ const { title, desc } = Astro.props
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <meta
       name="keywords"
-      content="drewdomi, Programação, Programação WEB, Coding, Code, Sites, Sistemas Web, Cruz Vermelha Portguesa, Cruz Vermelha de Amares"
+      content="drewdomi, Drew Domi, Fullstack, Full-stack, Software Developer, Dev, Developer, Programação, Programação WEB, Coding, Code, Sites, Sistemas Web, Cruz Vermelha Portguesa, Cruz Vermelha de Amares, goLembrar"
     />
     <meta name="rating" content="general" />
     <meta name="viewport" content="width=device-width" />

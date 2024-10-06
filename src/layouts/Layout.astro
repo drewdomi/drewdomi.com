@@ -7,8 +7,9 @@ import { ViewTransitions } from 'astro:transitions'
 
 import Footer from '../components/Footer.astro'
 import Header from '../components/Header.astro'
-
 import { languageTag } from '../paraglide/runtime'
+
+Astro.response.headers.set('Cache-Control', 'public, max-age=3600')
 
 interface Props {
   title: string
@@ -96,6 +97,7 @@ const { title, desc } = Astro.props
       <slot />
     </main>
     <Footer />
-    <script async data-id="101458763" src="//static.getclicky.com/js"></script>
+    <script is:inline async data-id="101458763" src="//static.getclicky.com/js"
+    ></script>
   </body>
 </html>

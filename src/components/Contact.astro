@@ -1,10 +1,12 @@
 ---
+import * as m from '../paraglide/messages'
+
 import ContactLink from './ContactLink.astro'
 import SectionTitle from './SectionTitle.astro'
 ---
 
 <section id="contact">
-  <SectionTitle title="Contato" />
+  <SectionTitle title={m.linkLabelContact()} />
   <div class="pl-4 mb-[50px]">
     <ContactLink
       label="GitHub: /drewdomi"
@@ -29,7 +31,7 @@ import SectionTitle from './SectionTitle.astro'
       />
     </span>
     <ContactLink
-      label="Comunidade Discord"
+      label={m.contactDiscordCommunity()}
       leftIcon="simple-icons:discord"
       href="https://discord.gg/rUZRTrggat"
     />

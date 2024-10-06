@@ -1,13 +1,11 @@
 ---
-import About from '../../components/About.astro'
-import Contact from '../../components/Contact.astro'
-import Skills from '../../components/Skills.astro'
-import Layout from '../../layouts/Layout.astro'
-
-import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts'
+import About from '@/components/About.astro'
+import Contact from '@/components/Contact.astro'
+import Skills from '@/components/Skills.astro'
+import Layout from '@/layouts/Layout.astro'
 ---
 
-<Layout title={SITE_TITLE} desc={SITE_DESCRIPTION}>
+<Layout>
   <About />
   <Skills />
   <Contact />

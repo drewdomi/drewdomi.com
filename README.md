@@ -2,7 +2,7 @@
 
 [https://drewdomi.com](https://drewdomi.com)
 
-![SCREENSHOT](public/banner.jpg)
+![BANNER](public/card.png)
 
 ## 💻 Stack
 
@@ -24,7 +24,7 @@
 │   │   └── projects
 │   │       └── cruz-vermelha.mdx
 │   ├── icons
-│   │   └── angular.svg
+│   │   └── astro.svg
 │   ├── layouts/
 │   │   └── Layout.astro
 │   └── pages/

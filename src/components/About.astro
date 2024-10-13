@@ -7,7 +7,7 @@ import SectionTitle from './SectionTitle.astro'
 
 <section class="text-center sm:text-left grid">
   <div id="title">
-    <h1 class="font-medium text-[28px] font-title mb-1">Andrew Domingues</h1>
+    <h1 class="font-medium text-[28px] font-title mb-1">{m.siteName}</h1>
     <h2 class="text-[18px]">{m.aboutSubtitle}</h2>
   </div>
 
@@ -20,7 +20,7 @@ import SectionTitle from './SectionTitle.astro'
           width="100"
           height="100"
           src="/drew.webp"
-          alt="Andrew Domingues"
+          alt={m.siteName()}
         />
       </div>
       <div class="swap-on tooltip tooltip-bottom" data-tip="Drew Domi ♠">

@@ -1,12 +1,15 @@
 ---
+import * as m from '@/paraglide/messages'
+import { Icon } from 'astro-icon/components'
+
+import { localizePathname } from '@/linking'
+import { languageTag } from '@/paraglide/runtime'
 import Button from './Button.astro'
 import SectionTitle from './SectionTitle.astro'
-
-import { Icon } from 'astro-icon/components'
 ---
 
 <section>
-  <SectionTitle title="Tecnologias" />
+  <SectionTitle title={m.skillsSectionTitle()} />
 
   <div id="icons" class="mt-3 lg:flex flex-col flex-wrap">
     <div class="flex flex-wrap lg:mb-0">
@@ -97,16 +100,29 @@ import { Icon } from 'astro-icon/components'
       </div>
 
       <div class="flex justify-center items-start">
-        <div
-          class="tooltip tooltip-bottom tooltip-open"
-          data-tip="Protgres SQL"
-        >
-          <Icon name="postgresql" aria-label="Postgres SQL" />
+        <div class="tooltip tooltip-bottom tooltip-open" data-tip="Ionic">
+          <Icon name="ionic" aria-label="Ionic" />
         </div>
 
-        <div class="tooltip tooltip-bottom tooltip-open" data-tip="MongoDB">
-          <Icon name="mongodb" aria-label="MongoDB" />
-        </div>
+        <span aria-hidden="true">
+          <label for="postgres-mongodb" class="swap swap-flip">
+            <input id="postgres-mongodb" type="checkbox" />
+
+            <div
+              class="swap-off tooltip tooltip-bottom tooltip-open"
+              data-tip="Postgres SQL"
+            >
+              <Icon name="postgresql" aria-label="Postgres SQL" />
+            </div>
+
+            <div
+              class="swap-on tooltip tooltip-bottom tooltip-open"
+              data-tip="MongoDB"
+            >
+              <Icon name="mongodb" aria-label="MongoDB" />
+            </div>
+          </label>
+        </span>
       </div>
     </div>
   </div>
@@ -115,8 +131,8 @@ import { Icon } from 'astro-icon/components'
 <div class="flex justify-center">
   <Button
     notBlank
-    href="/projects"
-    label="Projetos"
+    href={localizePathname('/projects', languageTag())}
+    label={m.linkLabelProjects()}
     rightIcon="fluent:arrow-right-12-filled"
   />
 </div>

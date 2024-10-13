@@ -1,0 +1,31 @@
+---
+import { getCollection } from 'astro:content';
+
+import SectionTitle from '@/components/SectionTitle.astro';
+import CardPost from '@/components/projects/CardPost.astro';
+import Layout from '@/layouts/Layout.astro';
+import * as m from '@/paraglide/messages';
+
+const defaultLang = 'en'
+const { lang = defaultLang } = Astro.params
+
+const allPosts = await getCollection('projects')
+const projects = allPosts.filter((p) => p.data.lang === lang)
+---
+
+<Layout title={m.projectsPageName() } desc={m.projectsPageDesc()}>
+  <SectionTitle title={m.linkLabelProjects()} />
+  <div class="grid mt-2 grid-cols-1 sm:grid-cols-2 gap-[40px]">
+    {
+      projects.map((p) => (
+        <CardPost
+          href={`projects/${p.slug}`}
+          cover={p.data.cover}
+          altCover={p.data.altCover}
+          title={p.data.title}
+          desc={p.data.desc}
+        />
+      ))
+    }
+  </div>
+</Layout>

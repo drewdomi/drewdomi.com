@@ -1,6 +1,9 @@
 ---
+import * as m from '@/paraglide/messages'
 import { Icon } from 'astro-icon/components'
-import { LINKS } from '../consts'
+
+import { localizePathname } from '@/linking'
+import { languageTag } from '@/paraglide/runtime'
 ---
 
 <div class="drawer">
@@ -22,17 +25,21 @@ import { LINKS } from '../consts'
     >
       <div>
         <div class="drawer-header flex justify-center my-5">
-          <img src="favicon.svg" alt="Zapred icon" width="64" />
+          <img src="/favicon.svg" alt="Zapred icon" width="64" />
         </div>
         <ul class="flex flex-col gap-2">
           <li>
-            <a href={LINKS.about}>Início</a>
+            <a href={localizePathname('/', languageTag())}>{m.linkLabelHome}</a>
           </li>
           <li>
-            <a href={LINKS.projects}>Projetos</a>
+            <a href={localizePathname('/projects', languageTag())}
+              >{m.linkLabelProjects}</a
+            >
           </li>
           <li>
-            <a href={LINKS.contato}>Contato</a>
+            <a href={localizePathname('/#contact', languageTag())}
+              >{m.linkLabelContact}</a
+            >
           </li>
         </ul>
       </div>

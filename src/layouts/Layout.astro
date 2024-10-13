@@ -1,19 +1,22 @@
 ---
+import Footer from '@/components/Footer.astro'
+import Header from '@/components/Header.astro'
+import * as m from '@/paraglide/messages'
+import { languageTag } from '@/paraglide/runtime'
 import '@fontsource/roboto/latin-300.css'
 import '@fontsource/roboto/latin-400.css'
 import '@fontsource/rubik/latin-400.css'
 import '@fontsource/rubik/latin-500.css'
 import { ViewTransitions } from 'astro:transitions'
 
-import Footer from '../components/Footer.astro'
-import Header from '../components/Header.astro'
+Astro.response.headers.set('Cache-Control', 'public, max-age=3600')
 
 interface Props {
-  title: string
-  desc: string
+  title?: string
+  desc?: string
 }
 
-const { title, desc } = Astro.props
+const { title = m.siteName(), desc = m.siteDesc() } = Astro.props
 ---
 
 <!doctype html>
@@ -27,21 +30,18 @@ const { title, desc } = Astro.props
 ╚═════╝ ╚═╝  ╚═╝╚══════╝ ╚══╝╚══╝   ╚═════╝  ╚═════╝ ╚═╝     ╚═╝╚═╝
 
 -->
-<html lang="pt-br">
+<html lang={languageTag()}>
   <head>
     <!-- Primary Meta Tags -->
     <meta charset="UTF-8" />
     <meta name="description" content={desc} />
-    <meta name="author" content="Andrew Domingues" />
+    <meta name="author" content={m.siteName()} />
     <meta name="author" content="drewdomi" />
     <meta name="generator" content={Astro.generator} />
-    <meta name="copyright" content="© 2024 Andrew Domingues" />
-    <meta http-equiv="content-language" content="pt-br" />
+    <meta name="copyright" content={m.siteName()} />
+    <meta http-equiv="content-language" content={languageTag()} />
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-    <meta
-      name="keywords"
-      content="drewdomi, Programação, Programação WEB, Coding, Code, Sites, Sistemas Web, Cruz Vermelha Portguesa, Cruz Vermelha de Amares"
-    />
+    <meta name="keywords" content={m.siteKeywords()} />
     <meta name="rating" content="general" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -49,15 +49,15 @@ const { title, desc } = Astro.props
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 
     <!-- Open Graph / Facebook -->
-    <meta property="og:site_name" content="Andrew Domingues" />
-    <meta name="og:title" content="Andrew Domingues" />
+    <meta property="og:site_name" content={m.siteName()} />
+    <meta name="og:title" content={m.siteName()} />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://www.drewdomi.com/card.png" />
     <meta property="og:url" content="https://www.drewdomi.com" />
     <meta property="og:description" content={desc} />
 
     <!-- Twitter -->
-    <meta name="twitter:title" content="Andrew Domingues" />
+    <meta name="twitter:title" content={m.siteName()} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@drewdomii" />
     <meta name="twitter:creator" content="@drewdomii" />
@@ -94,6 +94,7 @@ const { title, desc } = Astro.props
       <slot />
     </main>
     <Footer />
-    <script async data-id="101458763" src="//static.getclicky.com/js"></script>
+    <script is:inline async data-id="101458763" src="//static.getclicky.com/js"
+    ></script>
   </body>
 </html>

@@ -1,7 +1,7 @@
 ---
+import Layout from '@/layouts/Layout.astro'
 import { Icon } from 'astro-icon/components'
 import type { CollectionEntry } from 'astro:content'
-import Layout from '../layouts/Layout.astro'
 
 type Props = CollectionEntry<'projects'>['data']
 const {
@@ -48,7 +48,7 @@ const {
           </p>
         )
       }
-      <p class="mb-2">
+      <p class="mb-2 overflow-x-auto whitespace-nowrap">
         <span class="badge badge-warning ml-3 mr-1">Stack</span>
         {stacks.join(', ')}
       </p>

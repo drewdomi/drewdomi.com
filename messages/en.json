@@ -1,0 +1,18 @@
+{
+  "siteName": "Andrew Domingues",
+  "siteDesc": "Andrew Domingues homepage",
+  "siteKeywords": "drewdomi, Drew Domi, Fullstack WEB, Full-Stack WEB, Software Developer, Developer, Dev, Coding, Programming, Code, Portuguese Red Cross Amares, goLembrar",
+  "aboutSubtitle": "Web Software developer",
+  "linkLabelHome": "Home",
+  "linkLabelProjects": "Projects",
+  "linkLabelContact": "Contact",
+  "aboutSectionTitle": "About",
+  "aboutText": "As a Web developer, I constantly seek to expand my knowledge and skills. With experience in both frontend and backend development, I'm proficient in technologies like Angular, Spring Boot, Next.js, TypeScript, Node, and NestJS. I leverage these tools to build efficient and scalable solutions and am always ready to take on new challenges and contribute positively to any team or project I join.",
+  "aboutCvButton": "My CV",
+  "aboutCvLink": "https://drive.google.com/file/d/1VIA0A1rlnjFci_hVlklr0v4irAgEbobN",
+  "contactGpg": "GPG Key",
+  "contactDiscordCommunity": "Discord Community PT-BR ONLY",
+  "skillsSectionTitle": "Skills",
+  "projectsPageName": "Andrew Domingues Projects",
+  "projectsPageDesc": "Andrew Domingues Projects"
+}

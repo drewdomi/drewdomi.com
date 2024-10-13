@@ -1,0 +1,32 @@
+---
+import { availableLanguageTags, languageTag } from '@/paraglide/runtime'
+import { Icon } from 'astro-icon/components'
+
+const currentLang = languageTag()
+const newLang = availableLanguageTags.find((lang) => lang !== currentLang)
+---
+
+<span
+  class="tooltip tooltip-bottom"
+  data-tip={currentLang === 'en' ? 'Português BR' : 'English'}
+>
+  <button
+    class="btn btn-ghost btn-circle"
+    onclick="changeLang()"
+    data-current-lang={currentLang}
+    data-new-lang={newLang}
+  >
+    <Icon name={currentLang === 'en' ? 'br-flag' : 'us-flag'} />
+  </button>
+</span>
+
+<script is:inline>
+  function changeLang() {
+    const { currentLang, newLang } = document.querySelector('button').dataset
+
+    const url = new URL(window.location.href)
+    const newUrl = url.pathname.replace(new RegExp(currentLang, 'g'), newLang)
+
+    window.location.href = `${url.origin}${newUrl}`
+  }
+</script>

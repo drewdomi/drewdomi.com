@@ -1,0 +1,17 @@
+---
+import ProjectPost from '@/layouts/ProjectPost.astro'
+import { getEntry } from 'astro:content'
+
+const { slug } = Astro.params
+const projects = await getEntry('projects', `${slug}`)
+
+if (!projects) {
+  return Astro.redirect('/404')
+}
+
+const { Content } = await projects.render()
+---
+
+<ProjectPost {...projects.data}>
+  <Content />
+</ProjectPost>

@@ -25,9 +25,12 @@ const { label, href, leftIcon } = Astro.props
     text-decoration: none;
     font-weight: 400;
   }
+  .btn-link {
+    @apply text-info;
+  }
 
   [data-icon] {
-    @apply block 
+    @apply block
     w-[16px];
   }
 </style>

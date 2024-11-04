@@ -1,6 +1,7 @@
 ---
 import { availableLanguageTags, languageTag } from '@/paraglide/runtime'
 import { Icon } from 'astro-icon/components'
+import * as m from '@/paraglide/messages'
 
 const currentLang = languageTag()
 const newLang = availableLanguageTags.find((lang) => lang !== currentLang)
@@ -15,6 +16,7 @@ const newLang = availableLanguageTags.find((lang) => lang !== currentLang)
     onclick="changeLang()"
     data-current-lang={currentLang}
     data-new-lang={newLang}
+    aria-label={m.langToggleDesc()}
   >
     <Icon name={currentLang === 'en' ? 'br-flag' : 'us-flag'} />
   </button>

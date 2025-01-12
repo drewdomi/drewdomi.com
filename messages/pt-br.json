@@ -15,5 +15,9 @@
   "skillsSectionTitle": "Tecnologias",
   "projectsPageName": "Andrew Domingues Projetos",
   "projectsPageDesc": "Andrew Domingues Projetos",
-  "langToggleDesc": "Mudar idioma para inglês"
+  "langToggleDesc": "Mudar idioma para inglês",
+  "statusOnline": "Disponível",
+  "statusOffline": "Offline",
+  "statusIdle": "Ausente",
+  "statusDnd": "Ocupado"
 }

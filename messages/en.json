@@ -15,5 +15,9 @@
   "skillsSectionTitle": "Skills",
   "projectsPageName": "Andrew Domingues Projects",
   "projectsPageDesc": "Andrew Domingues Projects",
-  "langToggleDesc": "Change language to portuguese"
+  "langToggleDesc": "Change language to portuguese",
+  "statusOnline": "Online",
+  "statusOffline": "Offline",
+  "statusIdle": "Idle",
+  "statusDnd": "Busy"
 }

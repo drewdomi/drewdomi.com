@@ -36,7 +36,6 @@
     "@iconify-json/ph": "^1.1.11",
     "@iconify-json/simple-icons": "^1.1.99",
     "@inlang/paraglide-js": "1.11.2",
-    "daisyui": "4.7.3",
-    "prettier": "^3.2.5"
+    "daisyui": "4.7.3"
   }
 }

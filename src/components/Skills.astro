@@ -1,11 +1,11 @@
 ---
-import * as m from '@/paraglide/messages'
-import { Icon } from 'astro-icon/components'
+import * as m from "@/paraglide/messages";
+import { Icon } from "astro-icon/components";
 
-import { localizePathname } from '@/linking'
-import { languageTag } from '@/paraglide/runtime'
-import Button from './Button.astro'
-import SectionTitle from './SectionTitle.astro'
+import { localizePathname } from "@/linking";
+import { languageTag } from "@/paraglide/runtime";
+import Button from "./Button.astro";
+import SectionTitle from "./SectionTitle.astro";
 ---
 
 <section>
@@ -37,7 +37,7 @@ import SectionTitle from './SectionTitle.astro'
               class="swap-on tooltip tooltip-bottom tooltip-open"
               data-tip="React"
             >
-              <Icon name="react" class="text-stone-950" aria-label="react" />
+              <Icon name="react" aria-label="react" />
             </div>
           </label>
         </span>
@@ -100,9 +100,25 @@ import SectionTitle from './SectionTitle.astro'
       </div>
 
       <div class="flex justify-center items-start">
-        <div class="tooltip tooltip-bottom tooltip-open" data-tip="Docker">
-          <Icon name="docker" aria-label="Docker" />
-        </div>
+        <span aria-hidden="true">
+          <label for="docker-k8s" class="swap swap-flip">
+            <input id="docker-k8s" type="checkbox" />
+
+            <div
+              class="swap-off tooltip tooltip-bottom tooltip-open"
+              data-tip="Docker"
+            >
+              <Icon name="docker" aria-label="Docker" />
+            </div>
+
+            <div
+              class="swap-on tooltip tooltip-bottom tooltip-open"
+              data-tip="Kubernetes"
+            >
+              <Icon name="kubernetes" aria-label="Kubernetes" />
+            </div>
+          </label>
+        </span>
 
         <span aria-hidden="true">
           <label for="postgres-mongodb" class="swap swap-flip">
@@ -131,7 +147,7 @@ import SectionTitle from './SectionTitle.astro'
 <div class="flex justify-center">
   <Button
     notBlank
-    href={localizePathname('/projects', languageTag())}
+    href={localizePathname("/projects", languageTag())}
     label={m.linkLabelProjects()}
     rightIcon="fluent:arrow-right-12-filled"
   />

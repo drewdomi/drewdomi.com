@@ -11,7 +11,7 @@
 - DaisyUI
 - MDX
 
-## 🚀 Estrutura do projeto
+## 🚀 Project folder structure
 
 ```text
 │

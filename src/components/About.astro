@@ -96,7 +96,7 @@ const statusMessages = {
 </style>
 
 <script is:inline define:vars={{ statusMessages }}>
-  document.addEventListener("DOMContentLoaded", () => {
+  document.addEventListener("astro:page-load", () => {
     const DISCORD_ID = "544323689328541727";
     const UPDATE_INTERVAL_MS = 15000;
 

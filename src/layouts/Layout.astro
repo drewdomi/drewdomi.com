@@ -1,22 +1,22 @@
 ---
-import Footer from '@/components/Footer.astro'
-import Header from '@/components/Header.astro'
-import * as m from '@/paraglide/messages'
-import { languageTag } from '@/paraglide/runtime'
-import '@fontsource/roboto/latin-300.css'
-import '@fontsource/roboto/latin-400.css'
-import '@fontsource/rubik/latin-400.css'
-import '@fontsource/rubik/latin-500.css'
-import { ViewTransitions } from 'astro:transitions'
+import Footer from "@/components/Footer.astro";
+import Header from "@/components/Header.astro";
+import * as m from "@/paraglide/messages";
+import { languageTag } from "@/paraglide/runtime";
+import "@fontsource/roboto/latin-300.css";
+import "@fontsource/roboto/latin-400.css";
+import "@fontsource/rubik/latin-400.css";
+import "@fontsource/rubik/latin-500.css";
+import { ViewTransitions } from "astro:transitions";
 
-Astro.response.headers.set('Cache-Control', 'public, max-age=3600')
+Astro.response.headers.set("Cache-Control", "public, max-age=3600");
 
 interface Props {
-  title?: string
-  desc?: string
+  title?: string;
+  desc?: string;
 }
 
-const { title = m.siteName(), desc = m.siteDesc() } = Astro.props
+const { title = m.siteName(), desc = m.siteDesc() } = Astro.props;
 ---
 
 <!doctype html>
@@ -67,7 +67,7 @@ const { title = m.siteName(), desc = m.siteDesc() } = Astro.props
     <title>{title}</title>
     <style is:global>
       * {
-        font-family: 'Roboto', sans-serif;
+        font-family: "Roboto", sans-serif;
         scroll-behavior: smooth;
       }
       body {

@@ -1,13 +1,11 @@
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
-import tailwind from "@astrojs/tailwind";
+import vercel from "@astrojs/vercel";
 import paraglide from "@inlang/paraglide-astro";
+import tailwindcss from "@tailwindcss/vite";
 import icon from "astro-icon";
 import { defineConfig } from "astro/config";
 
-import vercel from "@astrojs/vercel/serverless";
-
-// https://astro.build/config
 export default defineConfig({
   site: "https://drewdomi.com",
   output: "server",
@@ -23,15 +21,20 @@ export default defineConfig({
       prefixDefaultLocale: true,
     },
   },
+
   integrations: [
     paraglide({
       project: "./project.inlang",
       outdir: "./src/paraglide",
     }),
     icon(),
-    tailwind(),
     mdx(),
     sitemap(),
   ],
+
   adapter: vercel(),
+
+  vite: {
+    plugins: [tailwindcss()],
+  },
 });

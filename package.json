@@ -24,9 +24,10 @@
     "@fontsource/roboto": "5.0.8",
     "@fontsource/rubik": "5.0.17",
     "@inlang/paraglide-astro": "^0.2.2",
+    "@tailwindcss/vite": "^4.0.12",
     "astro": "5.4.2",
-    "astro-icon": "1.1.0",
-    "tailwindcss": "3.4.1",
+    "astro-icon": "1.1.5",
+    "tailwindcss": "4.0.12",
     "typescript": "5.4.2"
   },
   "devDependencies": {
@@ -36,6 +37,6 @@
     "@iconify-json/ph": "^1.1.11",
     "@iconify-json/simple-icons": "^1.1.99",
     "@inlang/paraglide-js": "1.11.2",
-    "daisyui": "4.7.3"
+    "daisyui": "5.0.0"
   }
 }

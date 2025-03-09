@@ -8,6 +8,7 @@ import "@fontsource/roboto/latin-400.css";
 import "@fontsource/rubik/latin-400.css";
 import "@fontsource/rubik/latin-500.css";
 import { ViewTransitions } from "astro:transitions";
+import "../styles/global.css";
 
 Astro.response.headers.set("Cache-Control", "public, max-age=3600");
 
@@ -30,7 +31,7 @@ const { title = m.siteName(), desc = m.siteDesc() } = Astro.props;
 ╚═════╝ ╚═╝  ╚═╝╚══════╝ ╚══╝╚══╝   ╚═════╝  ╚═════╝ ╚═╝     ╚═╝╚═╝
 
 -->
-<html lang={languageTag()}>
+<html lang={languageTag()} data-theme="dark">
   <head>
     <!-- Primary Meta Tags -->
     <meta charset="UTF-8" />
@@ -90,6 +91,11 @@ const { title = m.siteName(), desc = m.siteDesc() } = Astro.props;
       }
       a {
         cursor: pointer;
+      }
+
+      .btn {
+        border-radius: 8px;
+        font-weight: bolder;
       }
     </style>
   </head>

@@ -1,21 +1,21 @@
 ---
 interface Props {
-  title: string
+  title: string;
 }
 
-const { title } = Astro.props
+const { title } = Astro.props;
 ---
 
 <h3 class="mt-8 mb-2 font-title inline-block text-xl font-medium">{title}</h3>
 
 <style>
   h3::after {
-    content: '';
+    content: "";
     display: block;
     height: 4px;
     width: 100%;
     opacity: 0.3;
     border-radius: 1px;
-    @apply bg-base-content;
+    background-color: var(--color-base-content);
   }
 </style>

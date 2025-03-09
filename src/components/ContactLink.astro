@@ -1,13 +1,13 @@
 ---
-import { Icon } from 'astro-icon/components'
+import { Icon } from "astro-icon/components";
 
 interface Props {
-  label: string
-  href: string
-  leftIcon?: string
+  label: string;
+  href: string;
+  leftIcon?: string;
 }
 
-const { label, href, leftIcon } = Astro.props
+const { label, href, leftIcon } = Astro.props;
 ---
 
 <div>
@@ -19,14 +19,14 @@ const { label, href, leftIcon } = Astro.props
 
 <style>
   a {
-    @apply text-base-300;
+    color: var(--color-base-300);
     min-height: 2.2rem;
     height: 2.2rem;
     text-decoration: none;
     font-weight: 400;
   }
   .btn-link {
-    @apply text-info;
+    color: var(--color-info);
   }
 
   [data-icon] {

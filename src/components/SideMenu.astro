@@ -1,19 +1,19 @@
 ---
-import * as m from '@/paraglide/messages'
-import { Icon } from 'astro-icon/components'
+import * as m from "@/paraglide/messages";
+import { Icon } from "astro-icon/components";
 
-import { localizePathname } from '@/linking'
-import { languageTag } from '@/paraglide/runtime'
+import { localizePathname } from "@/linking";
+import { languageTag } from "@/paraglide/runtime";
 ---
 
 <div class="drawer">
   <input id="sidemenu" type="checkbox" class="drawer-toggle" />
   <div class="drawer-content">
-    <label for="sidemenu" class="">
+    <label for="sidemenu" class="w-2">
       <Icon
         name="majesticons:menu"
         tabindex="0"
-        class="btn btn-sm btn-ghost btn-primary border-[.5px] border-neutral-200"
+        class="btn btn-sm btn-link border-[.5px] text-white border-neutral-200"
       />
     </label>
   </div>
@@ -29,15 +29,15 @@ import { languageTag } from '@/paraglide/runtime'
         </div>
         <ul class="flex flex-col gap-2">
           <li>
-            <a href={localizePathname('/', languageTag())}>{m.linkLabelHome}</a>
+            <a href={localizePathname("/", languageTag())}>{m.linkLabelHome}</a>
           </li>
           <li>
-            <a href={localizePathname('/projects', languageTag())}
+            <a href={localizePathname("/projects", languageTag())}
               >{m.linkLabelProjects}</a
             >
           </li>
           <li>
-            <a href={localizePathname('/#contact', languageTag())}
+            <a href={localizePathname("/#contact", languageTag())}
               >{m.linkLabelContact}</a
             >
           </li>
@@ -57,10 +57,6 @@ import { languageTag } from '@/paraglide/runtime'
   svg {
     height: 48px;
     width: 48px;
-    font-size: 48px;
-    cursor: pointer;
-  }
-  a {
-    font-size: large;
+    border: 1px solid #fff;
   }
 </style>

@@ -7,7 +7,7 @@ import "@fontsource/roboto/latin-300.css";
 import "@fontsource/roboto/latin-400.css";
 import "@fontsource/rubik/latin-400.css";
 import "@fontsource/rubik/latin-500.css";
-import { ViewTransitions } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
 import "../styles/global.css";
 
 Astro.response.headers.set("Cache-Control", "public, max-age=3600");
@@ -64,11 +64,10 @@ const { title = m.siteName(), desc = m.siteDesc() } = Astro.props;
     <meta name="twitter:creator" content="@drewdomii" />
     <meta name="twitter:image" content="https://www.drewdomi.com/card.png" />
 
-    <ViewTransitions />
+    <ClientRouter />
     <title>{title}</title>
     <style is:global>
       * {
-        font-family: "Roboto", sans-serif;
         scroll-behavior: smooth;
       }
       body {
@@ -92,16 +91,11 @@ const { title = m.siteName(), desc = m.siteDesc() } = Astro.props;
       a {
         cursor: pointer;
       }
-
-      .btn {
-        border-radius: 8px;
-        font-weight: bolder;
-      }
     </style>
   </head>
   <body>
     <Header />
-    <main class="max-w-[678px] mx-auto mt-20 px-5 min-h-[100vh] mb-10">
+    <main class="max-w-[678px] mx-auto mt-24 px-5 min-h-[100vh] mb-10">
       <slot />
     </main>
     <Footer />

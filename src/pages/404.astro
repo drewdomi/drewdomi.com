@@ -1,7 +1,20 @@
 ---
-import Layout from '@/layouts/Layout.astro'
+import Layout from "@/layouts/Layout.astro";
+import * as m from "@/paraglide/messages";
+import { languageTag } from "@/paraglide/runtime";
+const currentLang = languageTag();
 ---
 
 <Layout>
-  <h2>NOT FOUND</h2>
+  <div class="pt-8">
+    <h2 class="text-center">404 - {m.site404Message()}</h2>
+  </div>
 </Layout>
+
+<script is:inline define:vars={{ currentLang }}>
+  setTimeout(
+    () =>
+      (window.location.href = currentLang === "en" ? "/" : `/${currentLang}`),
+    3000
+  );
+</script>

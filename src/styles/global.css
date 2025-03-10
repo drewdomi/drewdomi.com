@@ -7,14 +7,6 @@
   --font-body: Roboto;
 }
 
-/*
-  The default border color has changed to `currentColor` in Tailwind CSS v4,
-  so we've added these compatibility styles to make sure everything still
-  looks the same as it did with Tailwind CSS v3.
-
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
-*/
 @layer base {
   *,
   ::after,
@@ -41,9 +33,19 @@
   --color-info: #59c8ff;
   --color-warning: #ffb35a;
   --color-footer: #005aad;
+  --color-neutral: #2a323c;
   --color-neutral-content: #efefef;
   --color-base-100: #2b2b2b;
   --color-base-200: #efefef;
   --color-base-300: #59c8ff;
   --color-base-content: #efefef;
+}
+
+.btn {
+  border-radius: 8px;
+}
+
+.btn-link {
+  background: none;
+  border: none;
 }

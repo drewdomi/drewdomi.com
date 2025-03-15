@@ -46,8 +46,8 @@ const { title = m.siteName(), desc = m.siteDesc() } = Astro.props
     <meta name="rating" content="general" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:site_name" content={m.siteName()} />
@@ -90,6 +90,18 @@ const { title = m.siteName(), desc = m.siteDesc() } = Astro.props
       }
       a {
         cursor: pointer;
+      }
+
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border-width: 0;
       }
     </style>
   </head>

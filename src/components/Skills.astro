@@ -47,6 +47,10 @@ import SectionTitle from './SectionTitle.astro'
               type="checkbox"
             />
 
+            <span class="sr-only">
+              {m.siteSrOnly({ item1: 'Next.js', item2: 'React' })}
+            </span>
+
             <div
               class="swap-off tooltip tooltip-bottom tooltip-open"
               data-tip="Next.js"
@@ -82,6 +86,10 @@ import SectionTitle from './SectionTitle.astro'
               type="checkbox"
             />
 
+            <span class="sr-only">
+              {m.siteSrOnly({ item1: 'Javascript', item2: 'Typescript' })}
+            </span>
+
             <div
               class="swap-off tooltip tooltip-bottom tooltip-open"
               data-tip="Javascript"
@@ -113,6 +121,10 @@ import SectionTitle from './SectionTitle.astro'
               id="nest-node"
               type="checkbox"
             />
+
+            <span class="sr-only">
+              {m.siteSrOnly({ item1: 'NestJS', item2: 'Node.js' })}
+            </span>
 
             <div
               class="swap-off tooltip tooltip-bottom tooltip-open"
@@ -151,11 +163,11 @@ import SectionTitle from './SectionTitle.astro'
 
         <div
           class="tooltip tooltip-bottom tooltip-open"
-          data-tip="Java"
+          data-tip="Azure"
         >
           <Icon
-            name="java"
-            aria-label="Java"
+            name="azure"
+            aria-label="Azure"
           />
         </div>
 
@@ -180,6 +192,10 @@ import SectionTitle from './SectionTitle.astro'
               id="docker-k8s"
               type="checkbox"
             />
+
+            <span class="sr-only">
+              {m.siteSrOnly({ item1: 'Docker', item2: 'Kubernetes' })}
+            </span>
 
             <div
               class="swap-off tooltip tooltip-bottom tooltip-open"
@@ -212,6 +228,10 @@ import SectionTitle from './SectionTitle.astro'
               id="postgres-mongodb"
               type="checkbox"
             />
+
+            <span class="sr-only">
+              {m.siteSrOnly({ item1: 'Postgres', item2: 'MongoDB' })}
+            </span>
 
             <div
               class="swap-off tooltip tooltip-bottom tooltip-open"
@@ -266,22 +286,4 @@ import SectionTitle from './SectionTitle.astro'
   }
 </style>
 
-<script>
-  import { fromEvent, throttleTime } from 'rxjs'
-
-  const icon = document.querySelector('#linux-icon')
-  const audio = new Audio('/pop_sound.mp3')
-
-  if (icon) {
-    const clicks$ = fromEvent(icon, 'click')
-
-    clicks$.pipe(throttleTime(500)).subscribe(event => {
-      event.stopPropagation()
-
-      audio.currentTime = 0
-      audio.play().catch(error => {
-        console.error('Error playing sound:', error)
-      })
-    })
-  }
-</script>
+<script src="@/utils/pop-sound"></script>

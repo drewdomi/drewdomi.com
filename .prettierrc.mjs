@@ -1,5 +1,5 @@
-// .prettierrc.mjs
 /** @type {import("prettier").Config} */
+
 export default {
   plugins: ['prettier-plugin-astro'],
   overrides: [
@@ -10,10 +10,10 @@ export default {
       },
     },
     {
-      files: 'src/layouts/Layout.astro', // Target only this specific file
+      files: 'src/layouts/Layout.astro',
       options: {
         parser: 'astro',
-        singleAttributePerLine: false, // Override for this file only
+        singleAttributePerLine: false,
       },
     },
     {

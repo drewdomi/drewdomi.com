@@ -1,8 +1,6 @@
 ---
 import Layout from '@/layouts/Layout.astro'
 import * as m from '@/paraglide/messages'
-import { languageTag } from '@/paraglide/runtime'
-const currentLang = languageTag()
 ---
 
 <Layout>
@@ -11,10 +9,12 @@ const currentLang = languageTag()
   </div>
 </Layout>
 
-<script is:inline define:vars={{ currentLang }}>
-  setTimeout(
-    () =>
-      (window.location.href = currentLang === 'en' ? '/' : `/${currentLang}`),
-    3000,
-  )
+<script>
+  import { timer } from 'rxjs'
+
+  const currentLang = window.location.pathname.split('/')[1] || 'en'
+
+  timer(3000).subscribe(() => {
+    window.location.href = currentLang === 'en' ? '/' : `/${currentLang}`
+  })
 </script>

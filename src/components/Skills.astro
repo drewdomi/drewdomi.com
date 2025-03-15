@@ -1,43 +1,71 @@
 ---
-import * as m from "@/paraglide/messages";
-import { Icon } from "astro-icon/components";
+import * as m from '@/paraglide/messages'
+import { Icon } from 'astro-icon/components'
 
-import { localizePathname } from "@/linking";
-import { languageTag } from "@/paraglide/runtime";
-import Button from "./Button.astro";
-import SectionTitle from "./SectionTitle.astro";
+import { localizePathname } from '@/linking'
+import { languageTag } from '@/paraglide/runtime'
+import Button from './Button.astro'
+import SectionTitle from './SectionTitle.astro'
 ---
 
 <section>
   <SectionTitle title={m.skillsSectionTitle()} />
 
-  <div id="icons" class="mt-3 lg:flex flex-col flex-wrap">
+  <div
+    id="icons"
+    class="mt-3 lg:flex flex-col flex-wrap"
+  >
     <div class="flex flex-wrap lg:mb-0">
       <div class="flex justify-center items-start">
-        <div class="tooltip tooltip-bottom tooltip-open" data-tip="Angular">
-          <Icon name="angular" aria-label="Angular" />
+        <div
+          class="tooltip tooltip-bottom tooltip-open"
+          data-tip="Angular"
+        >
+          <Icon
+            name="angular"
+            aria-label="Angular"
+          />
         </div>
 
-        <div class="tooltip tooltip-bottom tooltip-open" data-tip="Ionic">
-          <Icon name="ionic" aria-label="Ionic" />
+        <div
+          class="tooltip tooltip-bottom tooltip-open"
+          data-tip="Ionic"
+        >
+          <Icon
+            name="ionic"
+            aria-label="Ionic"
+          />
         </div>
 
         <span aria-hidden="true">
-          <label for="next-react" class="swap swap-flip">
-            <input id="next-react" type="checkbox" />
+          <label
+            for="next-react"
+            class="swap swap-flip"
+          >
+            <input
+              id="next-react"
+              type="checkbox"
+            />
 
             <div
               class="swap-off tooltip tooltip-bottom tooltip-open"
               data-tip="Next.js"
             >
-              <Icon name="nextjs" class="text-stone-950" aria-label="Next.js" />
+              <Icon
+                name="nextjs"
+                class="text-stone-950"
+                aria-label="Next.js"
+              />
             </div>
 
             <div
               class="swap-on tooltip tooltip-bottom tooltip-open"
               data-tip="React"
             >
-              <Icon name="react" aria-label="react" />
+              <Icon
+                name="react"
+                aria-label="react"
+              />
             </div>
           </label>
         </span>
@@ -45,41 +73,65 @@ import SectionTitle from "./SectionTitle.astro";
 
       <div class="flex justify-center items-start">
         <span aria-hidden="true">
-          <label for="ts-js" class="swap swap-flip">
-            <input id="ts-js" type="checkbox" />
+          <label
+            for="ts-js"
+            class="swap swap-flip"
+          >
+            <input
+              id="ts-js"
+              type="checkbox"
+            />
 
             <div
               class="swap-off tooltip tooltip-bottom tooltip-open"
               data-tip="Javascript"
             >
-              <Icon name="javascript" aria-label="Javascript" />
+              <Icon
+                name="javascript"
+                aria-label="Javascript"
+              />
             </div>
 
             <div
               class="swap-on tooltip tooltip-bottom tooltip-open"
               data-tip="Typescript"
             >
-              <Icon name="typescript" aria-label="Typescript" />
+              <Icon
+                name="typescript"
+                aria-label="Typescript"
+              />
             </div>
           </label>
         </span>
 
         <span aria-hidden="true">
-          <label for="nest-node" class="swap swap-flip">
-            <input id="nest-node" type="checkbox" />
+          <label
+            for="nest-node"
+            class="swap swap-flip"
+          >
+            <input
+              id="nest-node"
+              type="checkbox"
+            />
 
             <div
               class="swap-off tooltip tooltip-bottom tooltip-open"
               data-tip="NestJS"
             >
-              <Icon name="nestjs" aria-label="NestJS" />
+              <Icon
+                name="nestjs"
+                aria-label="NestJS"
+              />
             </div>
 
             <div
               class="swap-on tooltip tooltip-bottom tooltip-open"
               data-tip="Node.js"
             >
-              <Icon name="node" aria-label="Node" />
+              <Icon
+                name="node"
+                aria-label="Node"
+              />
             </div>
           </label>
         </span>
@@ -90,55 +142,94 @@ import SectionTitle from "./SectionTitle.astro";
           class="swap-off tooltip tooltip-bottom tooltip-open"
           data-tip="Linux"
         >
-          <Icon name="linux" aria-label="Linux" />
+          <Icon
+            name="linux"
+            aria-label="Linux"
+          />
         </div>
 
-        <div class="tooltip tooltip-bottom tooltip-open" data-tip="Java">
-          <Icon name="java" aria-label="Java" />
+        <div
+          class="tooltip tooltip-bottom tooltip-open"
+          data-tip="Java"
+        >
+          <Icon
+            name="java"
+            aria-label="Java"
+          />
         </div>
 
-        <div class="tooltip tooltip-bottom tooltip-open" data-tip="Go">
-          <Icon name="go" aria-label="Go" />
+        <div
+          class="tooltip tooltip-bottom tooltip-open"
+          data-tip="Go"
+        >
+          <Icon
+            name="go"
+            aria-label="Go"
+          />
         </div>
       </div>
 
       <div class="flex justify-center items-start">
         <span aria-hidden="true">
-          <label for="docker-k8s" class="swap swap-flip">
-            <input id="docker-k8s" type="checkbox" />
+          <label
+            for="docker-k8s"
+            class="swap swap-flip"
+          >
+            <input
+              id="docker-k8s"
+              type="checkbox"
+            />
 
             <div
               class="swap-off tooltip tooltip-bottom tooltip-open"
               data-tip="Docker"
             >
-              <Icon name="docker" aria-label="Docker" />
+              <Icon
+                name="docker"
+                aria-label="Docker"
+              />
             </div>
 
             <div
               class="swap-on tooltip tooltip-bottom tooltip-open"
               data-tip="Kubernetes"
             >
-              <Icon name="kubernetes" aria-label="Kubernetes" />
+              <Icon
+                name="kubernetes"
+                aria-label="Kubernetes"
+              />
             </div>
           </label>
         </span>
 
         <span aria-hidden="true">
-          <label for="postgres-mongodb" class="swap swap-flip">
-            <input id="postgres-mongodb" type="checkbox" />
+          <label
+            for="postgres-mongodb"
+            class="swap swap-flip"
+          >
+            <input
+              id="postgres-mongodb"
+              type="checkbox"
+            />
 
             <div
               class="swap-off tooltip tooltip-bottom tooltip-open"
               data-tip="Postgres"
             >
-              <Icon name="postgresql" aria-label="Postgres" />
+              <Icon
+                name="postgresql"
+                aria-label="Postgres"
+              />
             </div>
 
             <div
               class="swap-on tooltip tooltip-bottom tooltip-open"
               data-tip="MongoDB"
             >
-              <Icon name="mongodb" aria-label="MongoDB" />
+              <Icon
+                name="mongodb"
+                aria-label="MongoDB"
+              />
             </div>
           </label>
         </span>
@@ -150,7 +241,7 @@ import SectionTitle from "./SectionTitle.astro";
 <div class="flex justify-center">
   <Button
     notBlank
-    href={localizePathname("/projects", languageTag())}
+    href={localizePathname('/projects', languageTag())}
     label={m.linkLabelProjects()}
     rightIcon="fluent:arrow-right-12-filled"
   />

@@ -1,17 +1,21 @@
 ---
-import { Icon } from "astro-icon/components";
+import { Icon } from 'astro-icon/components'
 
 interface Props {
-  label: string;
-  href: string;
-  leftIcon?: string;
+  label: string
+  href: string
+  leftIcon?: string
 }
 
-const { label, href, leftIcon } = Astro.props;
+const { label, href, leftIcon } = Astro.props
 ---
 
 <div>
-  <a {href} target="_blank" class="font-medium btn btn-link text-[16px]">
+  <a
+    {href}
+    target="_blank"
+    class="font-medium btn btn-link text-[16px]"
+  >
     {leftIcon && <Icon name={leftIcon} />}
     {label}
   </a>

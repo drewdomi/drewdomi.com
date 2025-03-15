@@ -1,16 +1,19 @@
 ---
-import { localizePathname } from "@/linking";
-import * as m from "@/paraglide/messages";
-import { languageTag } from "@/paraglide/runtime";
-import { Icon } from "astro-icon/components";
-import LangToggle from "./LangToggle.astro";
-import SideMenu from "./SideMenu.astro";
+import { localizePathname } from '@/linking'
+import * as m from '@/paraglide/messages'
+import { languageTag } from '@/paraglide/runtime'
+import { Icon } from 'astro-icon/components'
+import LangToggle from './LangToggle.astro'
+import SideMenu from './SideMenu.astro'
 ---
 
 <header class="shadow-md fixed w-full top-0 backdrop-blur-xs z-2">
   <div class="navbar p-[10px] px-5 max-w-3xl mx-auto">
     <div class="navbar-start">
-      <a href={localizePathname("/", languageTag())} id="logo">
+      <a
+        href={localizePathname('/', languageTag())}
+        id="logo"
+      >
         <Icon name="logo" />
         <span class="py-[4px] px-2 font-title">DrewDomi</span>
       </a>
@@ -18,15 +21,15 @@ import SideMenu from "./SideMenu.astro";
     <div class="navbar-center hidden md:block">
       <ul class="flex flex-row">
         <li>
-          <a href={localizePathname("/", languageTag())}>{m.linkLabelHome}</a>
+          <a href={localizePathname('/', languageTag())}>{m.linkLabelHome}</a>
         </li>
         <li>
-          <a href={localizePathname("/projects", languageTag())}>
+          <a href={localizePathname('/projects', languageTag())}>
             {m.linkLabelProjects}
           </a>
         </li>
         <li>
-          <a href={localizePathname("/#contact", languageTag())}>
+          <a href={localizePathname('/#contact', languageTag())}>
             {m.linkLabelContact}
           </a>
         </li>
@@ -56,7 +59,7 @@ import SideMenu from "./SideMenu.astro";
     justify-start;
     font-size: 18px;
     transition: 1s ease;
-    font-family: "Rubik";
+    font-family: 'Rubik';
     text-shadow:
       1px 0 #000000,
       -2px 0 #000000,
@@ -91,7 +94,7 @@ import SideMenu from "./SideMenu.astro";
       -1px 1px #000000;
   }
   li a::after {
-    content: "";
+    content: '';
     height: 2px;
     width: 0;
     display: block;

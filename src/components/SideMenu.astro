@@ -1,15 +1,22 @@
 ---
-import * as m from "@/paraglide/messages";
-import { Icon } from "astro-icon/components";
+import * as m from '@/paraglide/messages'
+import { Icon } from 'astro-icon/components'
 
-import { localizePathname } from "@/linking";
-import { languageTag } from "@/paraglide/runtime";
+import { localizePathname } from '@/linking'
+import { languageTag } from '@/paraglide/runtime'
 ---
 
 <div class="drawer">
-  <input id="sidemenu" type="checkbox" class="drawer-toggle" />
+  <input
+    id="sidemenu"
+    type="checkbox"
+    class="drawer-toggle"
+  />
   <div class="drawer-content">
-    <label for="sidemenu" class="w-2">
+    <label
+      for="sidemenu"
+      class="w-2"
+    >
       <Icon
         name="majesticons:menu"
         tabindex="0"
@@ -18,26 +25,33 @@ import { languageTag } from "@/paraglide/runtime";
     </label>
   </div>
   <div class="drawer-side">
-    <label for="sidemenu" aria-label="Fechar sidemenu" class="drawer-overlay"
+    <label
+      for="sidemenu"
+      aria-label="Fechar sidemenu"
+      class="drawer-overlay"
     ></label>
     <div
       class="menu p-4 w-80 min-h-full bg-[var(--color-base-400)] flex flex-col justify-between gap-4"
     >
       <div>
         <div class="drawer-header flex justify-center my-5">
-          <img src="/favicon.svg" alt="Site logo" width="64" />
+          <img
+            src="/favicon.svg"
+            alt="Site logo"
+            width="64"
+          />
         </div>
         <ul class="flex flex-col gap-2">
           <li>
-            <a href={localizePathname("/", languageTag())}>{m.linkLabelHome}</a>
+            <a href={localizePathname('/', languageTag())}>{m.linkLabelHome}</a>
           </li>
           <li>
-            <a href={localizePathname("/projects", languageTag())}
+            <a href={localizePathname('/projects', languageTag())}
               >{m.linkLabelProjects}</a
             >
           </li>
           <li>
-            <a href={localizePathname("/#contact", languageTag())}
+            <a href={localizePathname('/#contact', languageTag())}
               >{m.linkLabelContact}</a
             >
           </li>

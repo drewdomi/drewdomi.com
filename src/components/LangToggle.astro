@@ -1,15 +1,15 @@
 ---
-import { availableLanguageTags, languageTag } from "@/paraglide/runtime";
-import { Icon } from "astro-icon/components";
-import * as m from "@/paraglide/messages";
+import { availableLanguageTags, languageTag } from '@/paraglide/runtime'
+import { Icon } from 'astro-icon/components'
+import * as m from '@/paraglide/messages'
 
-const currentLang = languageTag();
-const newLang = availableLanguageTags.find((lang) => lang !== currentLang);
+const currentLang = languageTag()
+const newLang = availableLanguageTags.find(lang => lang !== currentLang)
 ---
 
 <div
   class="tooltip tooltip-bottom"
-  data-tip={currentLang === "en" ? "Português BR" : "English"}
+  data-tip={currentLang === 'en' ? 'Português BR' : 'English'}
 >
   <button
     class="btn btn-link btn-circle"
@@ -18,7 +18,7 @@ const newLang = availableLanguageTags.find((lang) => lang !== currentLang);
     data-new-lang={newLang}
     aria-label={m.langToggleDesc()}
   >
-    <Icon name={currentLang === "en" ? "br-flag" : "us-flag"} />
+    <Icon name={currentLang === 'en' ? 'br-flag' : 'us-flag'} />
   </button>
 </div>
 
@@ -30,11 +30,11 @@ const newLang = availableLanguageTags.find((lang) => lang !== currentLang);
 
 <script is:inline>
   function changeLang() {
-    const { currentLang, newLang } = document.querySelector("button").dataset;
+    const { currentLang, newLang } = document.querySelector('button').dataset
 
-    const url = new URL(window.location.href);
-    const newUrl = url.pathname.replace(new RegExp(currentLang, "g"), newLang);
+    const url = new URL(window.location.href)
+    const newUrl = url.pathname.replace(new RegExp(currentLang, 'g'), newLang)
 
-    window.location.href = `${url.origin}${newUrl}`;
+    window.location.href = `${url.origin}${newUrl}`
   }
 </script>

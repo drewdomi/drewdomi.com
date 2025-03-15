@@ -8,5 +8,5 @@
       "@/*": ["./src/*"]
     }
   },
-  "exclude": ["node_modules", ".vercel", "dist"]
+  "exclude": ["node_modules", ".vercel", "dist", ".astro", "public"]
 }

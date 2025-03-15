@@ -1,6 +1,7 @@
 {
   "name": "drewdomi-homepage",
   "type": "module",
+  "license": "MIT",
   "version": "1.0.0",
   "author": "Andrew Domingues <contact@drewdomi.com>",
   "homepage": "https://drewdomi.com",

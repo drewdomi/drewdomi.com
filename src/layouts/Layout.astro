@@ -1,23 +1,23 @@
 ---
-import Footer from "@/components/Footer.astro";
-import Header from "@/components/Header.astro";
-import * as m from "@/paraglide/messages";
-import { languageTag } from "@/paraglide/runtime";
-import "@fontsource/roboto/latin-300.css";
-import "@fontsource/roboto/latin-400.css";
-import "@fontsource/rubik/latin-400.css";
-import "@fontsource/rubik/latin-500.css";
-import { ClientRouter } from "astro:transitions";
-import "../styles/global.css";
+import Footer from '@/components/Footer.astro'
+import Header from '@/components/Header.astro'
+import * as m from '@/paraglide/messages'
+import { languageTag } from '@/paraglide/runtime'
+import '@fontsource/roboto/latin-300.css'
+import '@fontsource/roboto/latin-400.css'
+import '@fontsource/rubik/latin-400.css'
+import '@fontsource/rubik/latin-500.css'
+import { ClientRouter } from 'astro:transitions'
+import '../styles/global.css'
 
-Astro.response.headers.set("Cache-Control", "public, max-age=3600");
+Astro.response.headers.set('Cache-Control', 'public, max-age=3600')
 
 interface Props {
-  title?: string;
-  desc?: string;
+  title?: string
+  desc?: string
 }
 
-const { title = m.siteName(), desc = m.siteDesc() } = Astro.props;
+const { title = m.siteName(), desc = m.siteDesc() } = Astro.props
 ---
 
 <!doctype html>
@@ -99,20 +99,24 @@ const { title = m.siteName(), desc = m.siteDesc() } = Astro.props;
       <slot />
     </main>
     <Footer />
-    <script is:inline async data-id="101458763" src="//static.getclicky.com/js"
+    <script
+      is:inline
+      async
+      data-id="101458763"
+      src="//static.getclicky.com/js"
     ></script>
     <script>
-      import party from "party-js";
+      import party from 'party-js';
 
-      const footerLogo = document.querySelector("#footer-logo");
+      const footerLogo = document.querySelector('#footer-logo')
 
       if (footerLogo)
-        footerLogo.addEventListener("click", function (e: Event) {
-          const target = e.currentTarget as HTMLElement;
+        footerLogo.addEventListener('click', function (e: Event) {
+          const target = e.currentTarget as HTMLElement
           party.confetti(target, {
             count: party.variation.range(20, 40),
-          });
-        });
+          })
+        })
     </script>
   </body>
 </html>

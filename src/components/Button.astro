@@ -1,20 +1,20 @@
 ---
-import { Icon } from "astro-icon/components";
+import { Icon } from 'astro-icon/components'
 
 interface Props {
-  label: string;
-  href: string;
-  notBlank?: boolean;
-  leftIcon?: string;
-  rightIcon?: string;
+  label: string
+  href: string
+  notBlank?: boolean
+  leftIcon?: string
+  rightIcon?: string
 }
 
-const { label, href, notBlank, leftIcon, rightIcon } = Astro.props;
+const { label, href, notBlank, leftIcon, rightIcon } = Astro.props
 ---
 
 <a
   {href}
-  target={notBlank ? "_self" : "_blank"}
+  target={notBlank ? '_self' : '_blank'}
   class="font-title font-medium no-animation btn btn-primary text-[#EFEFEF] shadow-md text-[18px]"
   role="button"
 >

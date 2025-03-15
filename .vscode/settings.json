@@ -3,7 +3,17 @@
   "[mdx]": {
     "editor.defaultFormatter": "unifiedjs.vscode-mdx"
   },
+  "prettier.documentSelectors": [
+    "**/*.astro"
+  ],
   "[astro]": {
-    "editor.defaultFormatter": "astro-build.astro-vscode"
-  }
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "astro", // Enable .astro
+    "typescript", // Enable .ts
+    "typescriptreact" // Enable .tsx
+  ]
 }

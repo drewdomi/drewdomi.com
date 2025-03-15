@@ -38,6 +38,7 @@
   --color-base-100: #2b2b2b;
   --color-base-200: #efefef;
   --color-base-300: #59c8ff;
+  --color-base-400: #02000B;
   --color-base-content: #efefef;
 }
 
@@ -48,4 +49,13 @@
 .btn-link {
   background: none;
   border: none;
+}
+
+.badge {
+  border-radius: 99px;
+  cursor: pointer;
+}
+
+.badge.badge-info:hover {
+  text-decoration: none;
 }

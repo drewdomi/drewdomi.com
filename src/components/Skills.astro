@@ -44,9 +44,25 @@ import SectionTitle from "./SectionTitle.astro";
       </div>
 
       <div class="flex justify-center items-start">
-        <div class="tooltip tooltip-bottom tooltip-open" data-tip="Spring">
-          <Icon name="spring" aria-label="Spring framework" />
-        </div>
+        <span aria-hidden="true">
+          <label for="ts-js" class="swap swap-flip">
+            <input id="ts-js" type="checkbox" />
+
+            <div
+              class="swap-off tooltip tooltip-bottom tooltip-open"
+              data-tip="Javascript"
+            >
+              <Icon name="javascript" aria-label="Javascript" />
+            </div>
+
+            <div
+              class="swap-on tooltip tooltip-bottom tooltip-open"
+              data-tip="Typescript"
+            >
+              <Icon name="typescript" aria-label="Typescript" />
+            </div>
+          </label>
+        </span>
 
         <span aria-hidden="true">
           <label for="nest-node" class="swap swap-flip">
@@ -70,25 +86,12 @@ import SectionTitle from "./SectionTitle.astro";
       </div>
 
       <div class="flex justify-center items-start">
-        <span aria-hidden="true">
-          <label for="ts-js" class="swap swap-flip">
-            <input id="ts-js" type="checkbox" />
-
-            <div
-              class="swap-off tooltip tooltip-bottom tooltip-open"
-              data-tip="Typescript"
-            >
-              <Icon name="typescript" aria-label="Typescript" />
-            </div>
-
-            <div
-              class="swap-on tooltip tooltip-bottom tooltip-open"
-              data-tip="Javascript"
-            >
-              <Icon name="javascript" aria-label="Javascript" />
-            </div>
-          </label>
-        </span>
+        <div
+          class="swap-off tooltip tooltip-bottom tooltip-open"
+          data-tip="Linux"
+        >
+          <Icon name="linux" aria-label="Linux" />
+        </div>
 
         <div class="tooltip tooltip-bottom tooltip-open" data-tip="Java">
           <Icon name="java" aria-label="Java" />
@@ -126,9 +129,9 @@ import SectionTitle from "./SectionTitle.astro";
 
             <div
               class="swap-off tooltip tooltip-bottom tooltip-open"
-              data-tip="Postgres SQL"
+              data-tip="Postgres"
             >
-              <Icon name="postgresql" aria-label="Postgres SQL" />
+              <Icon name="postgresql" aria-label="Postgres" />
             </div>
 
             <div

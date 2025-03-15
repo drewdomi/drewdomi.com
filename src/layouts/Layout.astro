@@ -101,18 +101,5 @@ const { title = m.siteName(), desc = m.siteDesc() } = Astro.props
     <Footer />
     <script is:inline async data-id="101458763" src="//static.getclicky.com/js"
     ></script>
-    <script>
-      import party from 'party-js'
-
-      const footerLogo = document.querySelector('#footer-logo')
-
-      if (footerLogo)
-        footerLogo.addEventListener('click', function (e: Event) {
-          const target = e.currentTarget as HTMLElement
-          party.confetti(target, {
-            count: party.variation.range(20, 40),
-          })
-        })
-    </script>
   </body>
 </html>

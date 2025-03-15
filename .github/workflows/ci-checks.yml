@@ -39,5 +39,11 @@ jobs:
       - name: Setup hosts file
         run: echo "127.0.0.1 localhost" | sudo tee -a /etc/hosts
 
+      - name: Check Code Style and Standards
+        run: |
+          pnpm lint
+          pnpm format
+          pnpm check
+
       - name: Check build
         run: pnpm build

@@ -143,6 +143,7 @@ import SectionTitle from './SectionTitle.astro'
           data-tip="Linux"
         >
           <Icon
+            id="linux-icon"
             name="linux"
             aria-label="Linux"
           />
@@ -264,3 +265,23 @@ import SectionTitle from './SectionTitle.astro'
     mb-[32px];
   }
 </style>
+
+<script>
+  import { fromEvent, throttleTime } from 'rxjs'
+
+  const icon = document.querySelector('#linux-icon')
+  const audio = new Audio('/pop_sound.mp3')
+
+  if (icon) {
+    const clicks$ = fromEvent(icon, 'click')
+
+    clicks$.pipe(throttleTime(500)).subscribe(event => {
+      event.stopPropagation()
+
+      audio.currentTime = 0
+      audio.play().catch(error => {
+        console.error('Error playing sound:', error)
+      })
+    })
+  }
+</script>

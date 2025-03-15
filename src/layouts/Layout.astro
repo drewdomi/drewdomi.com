@@ -30,7 +30,7 @@ const { title = m.siteName(), desc = m.siteDesc() } = Astro.props
 ██████╔╝██║  ██║███████╗╚███╔███╔╝  ██████╔╝╚██████╔╝██║ ╚═╝ ██║██║
 ╚═════╝ ╚═╝  ╚═╝╚══════╝ ╚══╝╚══╝   ╚═════╝  ╚═════╝ ╚═╝     ╚═╝╚═╝
 
--->
+--><!-- You found me thanks!! -->
 <html lang={languageTag()} data-theme="dark">
   <head>
     <!-- Primary Meta Tags -->
@@ -99,14 +99,10 @@ const { title = m.siteName(), desc = m.siteDesc() } = Astro.props
       <slot />
     </main>
     <Footer />
-    <script
-      is:inline
-      async
-      data-id="101458763"
-      src="//static.getclicky.com/js"
+    <script is:inline async data-id="101458763" src="//static.getclicky.com/js"
     ></script>
     <script>
-      import party from 'party-js';
+      import party from 'party-js'
 
       const footerLogo = document.querySelector('#footer-logo')
 

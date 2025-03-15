@@ -15,6 +15,8 @@ import * as m from '@/paraglide/messages'
   const currentLang = window.location.pathname.split('/')[1] || 'en'
 
   timer(3000).subscribe(() => {
+    if (currentLang === '404') return (window.location.href = '/')
+
     window.location.href = currentLang === 'en' ? '/' : `/${currentLang}`
   })
 </script>

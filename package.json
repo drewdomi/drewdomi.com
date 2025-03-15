@@ -9,13 +9,13 @@
   "scripts": {
     "dev": "astro dev",
     "dev:host": "astro dev --host",
-    "start": "astro dev",
+    "start": "npm run dev",
     "build": "paraglide-js compile --project ./project.inlang --outdir ./src/paraglide && astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
     "check": "astro check",
-    "lint": "eslint \"src/**/*.{ts,tsx,astro}\" --fix",
-    "format": "prettier --write \"src/**/*.{ts,tsx,astro}\"",
+    "lint": "eslint \"src/**/*.{js,jsx,ts,tsx,astro}\" --fix",
+    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,astro,html,css,scss,md,mdx,json,yml,yaml}\"",
     "postinstall": "paraglide-js compile --project ./project.inlang --outdir ./src/paraglide",
     "lint-staged": "lint-staged",
     "prepare": "husky"

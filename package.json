@@ -1,11 +1,11 @@
 {
-  "name": "drewdomi-homepage",
+  "name": "drewdomi.com",
   "type": "module",
   "license": "MIT",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "author": "Andrew Domingues <contact@drewdomi.com>",
   "homepage": "https://drewdomi.com",
-  "description": "Personal website/portfolio of Andrew Domingues. That's a showcase of my work as a WEB developer, featuring projects that highlight my expertise as a Developer.",
+  "description": "Personal homepage/portfolio of Andrew Domingues (Drew Domi). That's a showcase of his work as a WEB Developer, featuring projects that highlight his expertise as a Developer.",
   "scripts": {
     "dev": "astro dev",
     "dev:host": "astro dev --host",
@@ -13,6 +13,7 @@
     "build": "paraglide-js compile --project ./project.inlang --outdir ./src/paraglide && astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
+    "check": "astro check",
     "lint": "eslint \"src/**/*.{ts,tsx,astro}\" --fix",
     "format": "prettier --write \"src/**/*.{ts,tsx,astro}\"",
     "postinstall": "paraglide-js compile --project ./project.inlang --outdir ./src/paraglide",

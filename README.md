@@ -1,4 +1,4 @@
-# Andrew Domingues - Personal Homepage
+# Andrew Domingues - Homepage 🇺🇸 - 🇧🇷
 
 [https://drewdomi.com](https://drewdomi.com)
 
@@ -9,6 +9,7 @@
 - Astro v5
 - TailwindCSS v4
 - DaisyUI v5
+- Paraglide
 - MDX
 
 Feel free to explore the code, suggest improvements, or reach out if you're interested in collaborating on a project.

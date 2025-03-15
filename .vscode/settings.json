@@ -1,8 +1,9 @@
 {
   "editor.formatOnSave": true,
   "editor.formatOnPaste": true,
+  "editor.foldingImportsByDefault": true,
   "[mdx]": {
-    "editor.defaultFormatter": "unifiedjs.vscode-mdx"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "prettier.documentSelectors": ["**/*.astro"],
   "[astro]": {
@@ -11,9 +12,9 @@
   "eslint.validate": [
     "javascript",
     "javascriptreact",
-    "astro", // Enable .astro
-    "typescript", // Enable .ts
-    "typescriptreact" // Enable .tsx
+    "astro",
+    "typescript",
+    "typescriptreact"
   ],
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSaveMode": "modificationsIfAvailable"

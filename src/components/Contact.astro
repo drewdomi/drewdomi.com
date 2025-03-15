@@ -1,28 +1,33 @@
 ---
 import * as m from '@/paraglide/messages'
-
 import ContactLink from './ContactLink.astro'
 import SectionTitle from './SectionTitle.astro'
+
+const email = m.contactEmail()
 ---
 
 <section id="contact">
   <SectionTitle title={m.linkLabelContact()} />
+
   <div class="pl-4 mb-[50px]">
     <ContactLink
       label="GitHub: /drewdomi"
       leftIcon="bi:github"
       href="https://github.com/drewdomi"
     />
+
     <ContactLink
       label="LinkedIn: /in/drewdomi"
       leftIcon="bi:linkedin"
       href="https://linkedin.com/in/drewdomi"
     />
+
     <ContactLink
-      label=`Email: ${m.contactEmail()}`
+      label=`Email: ${email}`
       leftIcon="bi:envelope-fill"
-      href=`mailto:${m.contactEmail()}`
+      href=`mailto:${email}`
     />
+
     <ContactLink
       label={m.contactGpg()}
       leftIcon="bi:key-fill"

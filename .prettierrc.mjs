@@ -18,6 +18,7 @@ export default {
   ],
   tabWidth: 2,
   bracketSpacing: true,
+  endOfLine: "lf",
   singleQuote: true,
   semi: false,
   singleAttributePerLine: true,

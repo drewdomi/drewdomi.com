@@ -18,4 +18,6 @@ function setupFooterConfetti() {
   }
 }
 
-setupFooterConfetti()
+document.addEventListener('DOMContentLoaded', setupFooterConfetti)
+
+document.addEventListener('astro:page-load', setupFooterConfetti)

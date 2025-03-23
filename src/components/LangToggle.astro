@@ -7,10 +7,7 @@ const currentLang = languageTag()
 const newLang = availableLanguageTags.find(lang => lang !== currentLang)
 ---
 
-<div
-  class="tooltip tooltip-bottom"
-  data-tip={currentLang === 'en' ? 'Português BR' : 'English'}
->
+<div>
   <button
     class="btn btn-link btn-circle"
     onclick="changeLang()"

@@ -11,11 +11,14 @@ import SideMenu from './SideMenu.astro'
   <div class="navbar p-[10px] px-5 max-w-3xl mx-auto">
     <div class="navbar-start">
       <a
+        class="px-1"
+        aria-label="Home"
+        role="button"
         href={localizePathname('/', languageTag())}
         id="logo"
       >
         <Icon name="logo_old" />
-        <span class="py-[4px] px-2 font-title">DrewDomi</span>
+        <span class="py-1 px-2 font-title">Drew Domi</span>
       </a>
     </div>
     <div class="navbar-center hidden md:block">

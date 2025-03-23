@@ -8,30 +8,34 @@ const email = m.contactEmail()
 
 <section id="contact">
   <SectionTitle title={m.linkLabelContact()} />
-
-  <div class="pl-4 mb-[50px]">
-    <ContactLink
-      label="GitHub: /drewdomi"
-      leftIcon="bi:github"
-      href="https://github.com/drewdomi"
-    />
-
-    <ContactLink
-      label="LinkedIn: /in/drewdomi"
-      leftIcon="bi:linkedin"
-      href="https://linkedin.com/in/drewdomi"
-    />
-
-    <ContactLink
-      label=`Email: ${email}`
-      leftIcon="bi:envelope-fill"
-      href=`mailto:${email}`
-    />
-
-    <ContactLink
-      label={m.contactGpg()}
-      leftIcon="bi:key-fill"
-      href="/public_gpg.txt"
-    />
-  </div>
+  <ul class="pl-4 mb-[50px] flex flex-col items-start gap-1">
+    <li>
+      <ContactLink
+        label="GitHub: /drewdomi"
+        leftIcon="bi:github"
+        href="https://github.com/drewdomi"
+      />
+    </li>
+    <li>
+      <ContactLink
+        label="LinkedIn: /in/drewdomi"
+        leftIcon="bi:linkedin"
+        href="https://linkedin.com/in/drewdomi"
+      />
+    </li>
+    <li>
+      <ContactLink
+        label=`Email: ${email}`
+        leftIcon="bi:envelope-fill"
+        href=`mailto:${email}`
+      />
+    </li>
+    <li>
+      <ContactLink
+        label={m.contactGpg()}
+        leftIcon="bi:key-fill"
+        href="/public_gpg.txt"
+      />
+    </li>
+  </ul>
 </section>

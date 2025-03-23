@@ -12,7 +12,7 @@ function setupFooterConfetti() {
 
       const target = event.currentTarget as HTMLElement
       party.confetti(target, {
-        count: party.variation.range(30, 40),
+        count: party.variation.range(10, 20),
       })
     })
   }

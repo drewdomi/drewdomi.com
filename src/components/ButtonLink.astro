@@ -7,20 +7,42 @@ interface Props {
   notBlank?: boolean
   leftIcon?: string
   rightIcon?: string
+  role?: astroHTML.JSX.AriaRole
 }
 
-const { label, href, notBlank, leftIcon, rightIcon } = Astro.props
+const {
+  label,
+  href,
+  notBlank = false,
+  leftIcon,
+  rightIcon,
+  role = 'link',
+} = Astro.props
 ---
 
 <a
   {href}
   target={notBlank ? '_self' : '_blank'}
   class="font-title font-medium no-animation btn btn-primary text-[#EFEFEF] shadow-md text-[18px]"
-  role="button"
+  {role}
 >
-  {leftIcon && <Icon name={leftIcon} />}
+  {
+    leftIcon && (
+      <Icon
+        aria-hidden="true"
+        name={leftIcon}
+      />
+    )
+  }
   {label}
-  {rightIcon && <Icon name={rightIcon} />}
+  {
+    rightIcon && (
+      <Icon
+        aria-hidden="true"
+        name={rightIcon}
+      />
+    )
+  }
 </a>
 
 <style>

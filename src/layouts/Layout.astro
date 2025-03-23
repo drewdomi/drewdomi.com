@@ -17,7 +17,7 @@ interface Props {
   desc?: string
 }
 
-const { title = m.siteName(), desc = m.siteDesc() } = Astro.props
+const { title = m.siteTitle(), desc = m.siteDesc() } = Astro.props
 ---
 
 <!doctype html>
@@ -30,16 +30,16 @@ const { title = m.siteName(), desc = m.siteDesc() } = Astro.props
 ██████╔╝██║  ██║███████╗╚███╔███╔╝  ██████╔╝╚██████╔╝██║ ╚═╝ ██║██║
 ╚═════╝ ╚═╝  ╚═╝╚══════╝ ╚══╝╚══╝   ╚═════╝  ╚═════╝ ╚═╝     ╚═╝╚═╝
 
---><!-- You found me thanks!! -->
+--><!-- You found me, thanks! -->
 <html lang={languageTag()} data-theme="dark">
   <head>
     <!-- Primary Meta Tags -->
     <meta charset="UTF-8" />
     <meta name="description" content={desc} />
-    <meta name="author" content={m.siteName()} />
+    <meta name="author" content={m.aboutName()} />
     <meta name="author" content="drewdomi" />
     <meta name="generator" content={Astro.generator} />
-    <meta name="copyright" content={m.siteName()} />
+    <meta name="copyright" content={m.aboutName()} />
     <meta http-equiv="content-language" content={languageTag()} />
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <meta name="keywords" content={m.siteKeywords()} />
@@ -50,15 +50,15 @@ const { title = m.siteName(), desc = m.siteDesc() } = Astro.props
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
     <!-- Open Graph / Facebook -->
-    <meta property="og:site_name" content={m.siteName()} />
-    <meta name="og:title" content={m.siteName()} />
+    <meta property="og:site_name" content={m.aboutName()} />
+    <meta name="og:title" content={m.aboutName()} />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://www.drewdomi.com/card.png" />
     <meta property="og:url" content="https://www.drewdomi.com" />
     <meta property="og:description" content={desc} />
 
     <!-- Twitter -->
-    <meta name="twitter:title" content={m.siteName()} />
+    <meta name="twitter:title" content={m.aboutName()} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@drewdomii" />
     <meta name="twitter:creator" content="@drewdomii" />
@@ -70,11 +70,13 @@ const { title = m.siteName(), desc = m.siteDesc() } = Astro.props
       * {
         scroll-behavior: smooth;
       }
+
       body {
         -webkit-appearance: none;
         -moz-appearance: none;
         appearance: none;
       }
+
       @keyframes downtop {
         0% {
           opacity: 0;
@@ -85,9 +87,11 @@ const { title = m.siteName(), desc = m.siteDesc() } = Astro.props
           transform: translateY(0);
         }
       }
+
       main {
         animation: downtop 0.7s 0.35s backwards;
       }
+
       a {
         cursor: pointer;
       }

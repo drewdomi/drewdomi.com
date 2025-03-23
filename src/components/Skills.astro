@@ -1,266 +1,117 @@
 ---
 import * as m from '@/paraglide/messages'
-import { Icon } from 'astro-icon/components'
+import { Image } from 'astro:assets'
 
 import { localizePathname } from '@/linking'
 import { languageTag } from '@/paraglide/runtime'
-import Button from './Button.astro'
+import ButtonLink from './ButtonLink.astro'
 import SectionTitle from './SectionTitle.astro'
 ---
 
 <section>
   <SectionTitle title={m.skillsSectionTitle()} />
 
-  <div
-    id="icons"
-    class="mt-3 lg:flex flex-col flex-wrap"
-  >
-    <div class="flex flex-wrap lg:mb-0">
-      <div class="flex justify-center items-start">
-        <div
-          class="tooltip tooltip-bottom tooltip-open"
-          data-tip="Angular"
-        >
-          <Icon
-            name="angular"
-            aria-label="Angular"
-          />
-        </div>
-
-        <div
-          class="tooltip tooltip-bottom tooltip-open"
-          data-tip="Ionic"
-        >
-          <Icon
-            name="ionic"
-            aria-label="Ionic"
-          />
-        </div>
-
-        <span aria-hidden="true">
-          <label
-            for="next-react"
-            class="swap swap-flip"
-          >
-            <input
-              id="next-react"
-              type="checkbox"
-            />
-
-            <span class="sr-only">
-              {m.siteSrOnly({ item1: 'Next.js', item2: 'React' })}
-            </span>
-
-            <div
-              class="swap-off tooltip tooltip-bottom tooltip-open"
-              data-tip="Next.js"
-            >
-              <Icon
-                name="nextjs"
-                class="text-stone-950"
-                aria-label="Next.js"
-              />
-            </div>
-
-            <div
-              class="swap-on tooltip tooltip-bottom tooltip-open"
-              data-tip="React"
-            >
-              <Icon
-                name="react"
-                aria-label="react"
-              />
-            </div>
-          </label>
-        </span>
+  <ul class="flex justify-center gap-9 md:gap-16 py-6">
+    <li>
+      <div id="angular-icon">
+        <Image
+          aria-hidden="true"
+          src="/icons/angular.svg"
+          width="60"
+          height="60"
+          alt=""
+        />
+        <span>Angular</span>
       </div>
 
-      <div class="flex justify-center items-start">
-        <span aria-hidden="true">
-          <label
-            for="ts-js"
-            class="swap swap-flip"
-          >
-            <input
-              id="ts-js"
-              type="checkbox"
-            />
+      <div id="ionic-icon">
+        <Image
+          aria-hidden="true"
+          src="/icons/ionic.svg"
+          width="60"
+          height="60"
+          alt="skills"
+        />
+        <span>Ionic</span>
+      </div>
+    </li>
 
-            <span class="sr-only">
-              {m.siteSrOnly({ item1: 'Javascript', item2: 'Typescript' })}
-            </span>
-
-            <div
-              class="swap-off tooltip tooltip-bottom tooltip-open"
-              data-tip="Javascript"
-            >
-              <Icon
-                name="javascript"
-                aria-label="Javascript"
-              />
-            </div>
-
-            <div
-              class="swap-on tooltip tooltip-bottom tooltip-open"
-              data-tip="Typescript"
-            >
-              <Icon
-                name="typescript"
-                aria-label="Typescript"
-              />
-            </div>
-          </label>
-        </span>
-
-        <span aria-hidden="true">
-          <label
-            for="nest-node"
-            class="swap swap-flip"
-          >
-            <input
-              id="nest-node"
-              type="checkbox"
-            />
-
-            <span class="sr-only">
-              {m.siteSrOnly({ item1: 'NestJS', item2: 'Node.js' })}
-            </span>
-
-            <div
-              class="swap-off tooltip tooltip-bottom tooltip-open"
-              data-tip="NestJS"
-            >
-              <Icon
-                name="nestjs"
-                aria-label="NestJS"
-              />
-            </div>
-
-            <div
-              class="swap-on tooltip tooltip-bottom tooltip-open"
-              data-tip="Node.js"
-            >
-              <Icon
-                name="node"
-                aria-label="Node"
-              />
-            </div>
-          </label>
-        </span>
+    <li>
+      <div id="csharp-icon">
+        <Image
+          aria-hidden="true"
+          src="/icons/csharp.svg"
+          width="60"
+          height="60"
+          alt=""
+        />
+        <span aria-label="C Sharp">C#</span>
       </div>
 
-      <div class="flex justify-center items-start">
-        <div
-          class="swap-off tooltip tooltip-bottom tooltip-open"
-          data-tip="Linux"
-        >
-          <Icon
-            id="linux-icon"
-            name="linux"
-            aria-label="Linux"
-          />
-        </div>
+      <div id="dotnet-icon">
+        <Image
+          aria-hidden="true"
+          src="/icons/dotnet.svg"
+          width="60"
+          height="60"
+          alt=""
+        />
+        <span aria-label="dot net">.Net</span>
+      </div>
+    </li>
 
-        <div
-          class="tooltip tooltip-bottom tooltip-open"
-          data-tip="Azure"
-        >
-          <Icon
-            name="azure"
-            aria-label="Azure"
-          />
-        </div>
-
-        <div
-          class="tooltip tooltip-bottom tooltip-open"
-          data-tip="Go"
-        >
-          <Icon
-            name="go"
-            aria-label="Go"
-          />
-        </div>
+    <li>
+      <div id="go-icon">
+        <Image
+          aria-hidden="true"
+          src="/icons/go.svg"
+          width="60"
+          height="60"
+          alt=""
+        />
+        <span>Go</span>
       </div>
 
-      <div class="flex justify-center items-start">
-        <span aria-hidden="true">
-          <label
-            for="docker-k8s"
-            class="swap swap-flip"
-          >
-            <input
-              id="docker-k8s"
-              type="checkbox"
-            />
-
-            <span class="sr-only">
-              {m.siteSrOnly({ item1: 'Docker', item2: 'Kubernetes' })}
-            </span>
-
-            <div
-              class="swap-off tooltip tooltip-bottom tooltip-open"
-              data-tip="Docker"
-            >
-              <Icon
-                name="docker"
-                aria-label="Docker"
-              />
-            </div>
-
-            <div
-              class="swap-on tooltip tooltip-bottom tooltip-open"
-              data-tip="Kubernetes"
-            >
-              <Icon
-                name="kubernetes"
-                aria-label="Kubernetes"
-              />
-            </div>
-          </label>
-        </span>
-
-        <span aria-hidden="true">
-          <label
-            for="postgres-mongodb"
-            class="swap swap-flip"
-          >
-            <input
-              id="postgres-mongodb"
-              type="checkbox"
-            />
-
-            <span class="sr-only">
-              {m.siteSrOnly({ item1: 'Postgres', item2: 'MongoDB' })}
-            </span>
-
-            <div
-              class="swap-off tooltip tooltip-bottom tooltip-open"
-              data-tip="Postgres"
-            >
-              <Icon
-                name="postgresql"
-                aria-label="Postgres"
-              />
-            </div>
-
-            <div
-              class="swap-on tooltip tooltip-bottom tooltip-open"
-              data-tip="MongoDB"
-            >
-              <Icon
-                name="mongodb"
-                aria-label="MongoDB"
-              />
-            </div>
-          </label>
-        </span>
+      <div id="linux-icon">
+        <Image
+          aria-hidden="true"
+          src="/icons/linux.svg"
+          width="60"
+          height="60"
+          alt=""
+        />
+        <span>Linux</span>
       </div>
-    </div>
-  </div>
+    </li>
+
+    <li>
+      <div id="docker-icon">
+        <Image
+          aria-hidden="true"
+          src="/icons/docker.svg"
+          width="60"
+          height="60"
+          alt=""
+        />
+        <span>Docker</span>
+      </div>
+
+      <div id="kubernetes-icon">
+        <Image
+          aria-hidden="true"
+          src="/icons/kubernetes.svg"
+          width="60"
+          height="60"
+          alt=""
+        />
+        <p>Kubernetes</p>
+      </div>
+    </li>
+  </ul>
 </section>
 
 <div class="flex justify-center">
-  <Button
+  <ButtonLink
     notBlank
     href={localizePathname('/projects', languageTag())}
     label={m.linkLabelProjects()}
@@ -269,20 +120,30 @@ import SectionTitle from './SectionTitle.astro'
 </div>
 
 <style>
-  svg,
-  img {
-    @apply inline
-      w-[60px]
-      h-[60px]
-      cursor-pointer;
-    font-size: 6rem;
+  div {
+    @apply flex
+    flex-col
+    items-center
+    justify-center
+    gap-[4px];
   }
 
-  #icons div {
-    @apply flex
-    justify-center
-    gap-[48px]
-    mb-[32px];
+  li {
+    @apply flex flex-col gap-[12px];
+  }
+
+  img {
+    cursor: pointer;
+    object-fit: cover;
+    width: 44px;
+    height: 44px;
+  }
+
+  @media (min-width: 480px) {
+    img {
+      width: 60px;
+      height: 60px;
+    }
   }
 </style>
 

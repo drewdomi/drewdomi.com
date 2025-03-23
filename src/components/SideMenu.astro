@@ -1,44 +1,63 @@
 ---
 import * as m from '@/paraglide/messages'
 import { Icon } from 'astro-icon/components'
-
 import { localizePathname } from '@/linking'
 import { languageTag } from '@/paraglide/runtime'
+import { Image } from 'astro:assets'
 ---
 
 <div class="drawer">
   <input
-    id="sidemenu"
+    role="button"
     type="checkbox"
+    id="open-menu"
+    aria-label={m.sideMenuOpen()}
     class="drawer-toggle"
+    aria-expanded="false"
   />
   <div class="drawer-content">
     <label
-      for="sidemenu"
+      aria-hidden="true"
+      for="open-menu"
       class="w-2"
     >
       <Icon
         name="majesticons:menu"
-        tabindex="0"
-        class="btn btn-sm btn-link border-[.5px] text-white border-neutral-200"
+        class="btn btn-sm btn-link border-[.5px] border-neutral-200"
       />
     </label>
   </div>
   <div class="drawer-side">
     <label
-      for="sidemenu"
-      aria-label="Fechar sidemenu"
+      for="open-menu"
       class="drawer-overlay"
     ></label>
     <div
       class="menu p-4 w-80 min-h-full bg-[var(--color-base-400)] flex flex-col justify-between gap-4"
     >
       <div>
-        <div class="drawer-header flex justify-center my-5">
-          <img
+        <div
+          class="drawer-header flex flex-col items-center justify-center mb-5"
+        >
+          <div class="self-end">
+            <button
+              class="btn btn-link btn-sm btn-circle"
+              id="close-menu"
+              aria-label={m.sideMenuClose()}
+            >
+              <Icon
+                size="24"
+                class="border-0!"
+                name="bi:x"
+              />
+            </button>
+          </div>
+          <Image
+            aria-hidden="true"
             src="/favicon.svg"
-            alt="Site logo"
+            alt=""
             width="64"
+            height="64"
           />
         </div>
         <ul class="flex flex-col gap-2">
@@ -61,7 +80,7 @@ import { languageTag } from '@/paraglide/runtime'
       <footer
         class="h-[60px] text-white flex justify-center items-center font-light"
       >
-        <p>© 2024 Andrew Domingues</p>
+        <p>{m.siteCopy}</p>
       </footer>
     </div>
   </div>
@@ -72,5 +91,27 @@ import { languageTag } from '@/paraglide/runtime'
     height: 48px;
     width: 48px;
     border: 1px solid #fff;
+    color: white;
   }
 </style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const closeMenu = document.querySelector('#close-menu') as HTMLButtonElement
+    const openMenu = document.querySelector('#open-menu') as HTMLInputElement
+
+    openMenu.addEventListener('change', () => {
+      openMenu.setAttribute(
+        'aria-expanded',
+        openMenu.checked ? 'true' : 'false',
+      )
+    })
+
+    if (closeMenu) {
+      closeMenu.addEventListener('click', () => {
+        openMenu.checked = false
+        openMenu.setAttribute('aria-expanded', 'false')
+      })
+    }
+  })
+</script>

@@ -11,7 +11,7 @@ export default defineConfig({
   output: 'server',
   server: {
     headers: {
-      'Last-Modified': 'Fri, 11 Oct 2024 18:08:35 GMT',
+      'Last-Modified': new Date().toUTCString(),
     },
   },
   i18n: {
@@ -36,5 +36,5 @@ export default defineConfig({
 
   vite: {
     plugins: [tailwindcss()],
-  }
+  },
 })

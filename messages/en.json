@@ -1,7 +1,7 @@
 {
   "$schema": "https://inlang.com/schema/inlang-message-format",
-  "siteTitle": "Andrew Domingues",
-  "siteDesc": "homepage and portfolio of Andrew Domingues Software Developer",
+  "siteTitle": "Andrew Domingues | Homepage",
+  "siteDesc": "Homepage and portfolio of Andrew Domingues Software Developer",
   "site404Message": "Page not found, returing to home...",
   "siteKeywords": "drewdomi, Drew Domi, Fullstack WEB, Full-Stack WEB, Software Developer, Developer, Dev, Coding, Programming, Code, Portuguese Red Cross Amares, goLembrar",
   "siteSrOnly": "Toggle between {item1} and {item2}",
@@ -15,7 +15,7 @@
   "linkLabelProjects": "Projects",
   "linkLabelContact": "Contact",
   "aboutSectionTitle": "About",
-  "aboutText": "A Web Developer that transform complex requirements into elegant solutions. My experience creating applications ensure that technical features and business needs being allied. Combining creative ideas with good development methods to deliver an notable result. Let's build something epic together!",
+  "aboutText": "I am a web developer who transforms complex requirements into elegant solutions. My experience creating applications ensures that technical capabilities align with business objectives. I combine creative ideas with good development methods to deliver a notable result. Let's build something epic together!",
   "aboutCvButton": "Get CV",
   "aboutCvLink": "https://drive.google.com/file/d/1VIA0A1rlnjFci_hVlklr0v4irAgEbobN",
   "contactGpg": "GPG Key",

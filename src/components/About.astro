@@ -11,7 +11,7 @@ const statusMessages = {
   dnd: m.statusDnd(),
 }
 
-const discordId = import.meta.env.DISCORD_ID || ''
+const discordId = import.meta.env.DISCORD_ID || ('' as string)
 ---
 
 <section class="text-center sm:text-left grid">
@@ -26,7 +26,7 @@ const discordId = import.meta.env.DISCORD_ID || ''
   >
     <label
       for="avatar-flip"
-      class="swap swap-flip"
+      class="swap swap-flip animate-bump hover:animate-bump-paused"
       class="swap-off"
     >
       <input
@@ -73,17 +73,17 @@ const discordId = import.meta.env.DISCORD_ID || ''
     </label>
     <div class="flex justify-center items-center gap-1.5 mt-2">
       <span
+        id="status-dot"
+        class="w-3 h-3 rounded-full border-2 border-white bg-none mt-[2.5px] md:mb-[3.2px] animate-pulse"
+        aria-hidden="true"
+      ></span>
+      <span
         id="status-text"
         class="text-sm leading-none cursor-default"
         aria-hidden="false"
       >
         ----
       </span>
-      <span
-        id="status-dot"
-        class="w-3 h-3 rounded-full border-2 border-white bg-none mt-[2.5px] md:mb-[2.9px] animate-pulse hover:animate-none"
-        aria-hidden="true"
-      ></span>
     </div>
   </div>
 
@@ -179,23 +179,16 @@ const discordId = import.meta.env.DISCORD_ID || ''
           `https://api.lanyard.rest/v1/users/${discordId}`,
           { cache: 'no-cache' },
         )
-
-        if (!response.ok) throw new Error('Network response was not ok')
-
         const { data } = await response.json()
-        if (data?.discord_status) {
-          updateStatus(data.discord_status)
-        }
+
+        if (data.discord_status) updateStatus(data.discord_status)
       } catch (error) {
-        console.error('Failed to fetch status:', error)
         updateStatus('offline')
       }
     }
 
     fetchStatus()
-
     const interval = setInterval(fetchStatus, UPDATE_INTERVAL_MS)
-
     window.addEventListener('unload', () => clearInterval(interval))
   })
 </script>

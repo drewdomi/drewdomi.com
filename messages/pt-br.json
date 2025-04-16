@@ -1,9 +1,9 @@
 {
   "$schema": "https://inlang.com/schema/inlang-message-format",
-  "siteTitle": "Andrew Domingues",
-  "siteDesc": "site pessoal e portfolio de Andrew Domingues Desenvolvedor de Software",
+  "siteTitle": "Andrew Domingues | Portfolio",
+  "siteDesc": "Site pessoal e portfolio de Andrew Domingues Desenvolvedor de Software",
   "site404Message": "Página não encontrada, retornando para o inicio...",
-  "siteKeywords": "drewdomi, Drew Domi, Fullstack WEB, Full-Stack WEB, Desenvolvedor de software, Programador, Desenvolvimento WEB, Programação WEB, Portuguese Amares Red Cross, goLembrar",
+  "siteKeywords": "drewdomi, Drew Domi, Fullstack WEB, Full-Stack WEB, Desenvolvedor de software, Programador, Desenvolvimento WEB, Programação WEB, Cruz Vermelha Portuguesa, Amares, goLembrar",
   "siteSrOnly": "Troque entre {item1} e {item2}",
   "siteCopy": "© 2025 Andrew Domingues",
   "sideMenuOpen": "Abrir menu",

@@ -66,52 +66,12 @@ const { title = m.siteTitle(), desc = m.siteDesc() } = Astro.props
 
     <ClientRouter />
     <title>{title}</title>
-    <style is:global>
-      * {
-        scroll-behavior: smooth;
-      }
-
-      body {
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-      }
-
-      @keyframes downtop {
-        0% {
-          opacity: 0;
-          transform: translateY(15px);
-        }
-        100% {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      main {
-        animation: downtop 0.7s 0.35s backwards;
-      }
-
-      a {
-        cursor: pointer;
-      }
-
-      .sr-only {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        padding: 0;
-        margin: -1px;
-        overflow: hidden;
-        clip: rect(0, 0, 0, 0);
-        white-space: nowrap;
-        border-width: 0;
-      }
-    </style>
   </head>
   <body>
     <Header />
-    <main class="max-w-[678px] mx-auto mt-24 px-5 min-h-[100vh] mb-10">
+    <main
+      class="max-w-[678px] mx-auto mt-24 px-5 min-h-[100vh] mb-10 animate-downtop"
+    >
       <slot />
     </main>
     <Footer />

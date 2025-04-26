@@ -1,0 +1,49 @@
+name: CI - Quality and Build Checks
+
+permissions:
+  actions: read
+  contents: read
+
+on:
+  push:
+    tags-ignore:
+      - "*"
+    branches:
+      - "**"
+  pull_request:
+
+jobs:
+  check:
+    name: Basic Quality Checks
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup PNPM
+        uses: pnpm/action-setup@v2
+        with:
+          version: 9.0
+
+      - name: Setup Node.js Environment
+        uses: actions/setup-node@v3
+        with:
+          node-version: 22
+          cache: "pnpm"
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Setup hosts file
+        run: echo "127.0.0.1 localhost" | sudo tee -a /etc/hosts
+
+      - name: Check Code Style and Standards
+        run: |
+          pnpm lint
+          pnpm format
+          pnpm check
+
+      - name: Check build
+        run: pnpm build

@@ -1,7 +1,22 @@
 ---
 import Layout from '@/layouts/Layout.astro'
+import * as m from '@/paraglide/messages'
 ---
 
 <Layout>
-  <h2>NOT FOUND</h2>
+  <div class="pt-8">
+    <h2 class="text-center">404 - {m.site404Message()}</h2>
+  </div>
 </Layout>
+
+<script>
+  import { timer } from 'rxjs'
+
+  const currentLang = window.location.pathname.split('/')[1] || 'en'
+
+  timer(3000).subscribe(() => {
+    if (currentLang === '404') return (window.location.href = '/')
+
+    window.location.href = currentLang === 'en' ? '/' : `/${currentLang}`
+  })
+</script>

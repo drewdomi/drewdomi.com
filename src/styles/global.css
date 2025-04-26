@@ -1,0 +1,117 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-*: initial;
+  --font-sans: Roboto;
+  --font-title: Rubik;
+  --font-body: Roboto;
+  --animate-bump: bump 3s linear infinite;
+  --animate-bump-paused: bump 3s linear infinite paused;
+  --animate-downtop: downtop 0.7s 0.35s backwards;
+
+  @keyframes bump {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-4px);
+    }
+  }
+
+  @keyframes downtop {
+    0% {
+      opacity: 0;
+      transform: translateY(15px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
+
+@plugin "daisyui" {
+  themes: dark --default;
+  logs: false;
+}
+
+@plugin "daisyui/theme" {
+  name: 'dark';
+  default: true;
+
+  --color-primary: #005aad;
+  --color-accent: #0e1337;
+  --color-error: #ca1d1d;
+  --color-success: #00aa46;
+  --color-info: #59c8ff;
+  --color-warning: #ffb35a;
+  --color-footer: #005aad;
+  --color-neutral: #2a323c;
+  --color-neutral-content: #efefef;
+  --color-base-100: #2b2b2b;
+  --color-base-200: #efefef;
+  --color-base-300: #59c8ff;
+  --color-base-400: #02000b;
+  --color-base-content: #efefef;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+a {
+  cursor: pointer;
+}
+
+.btn {
+  border-radius: 8px;
+}
+
+.btn-link {
+  background: none;
+  border: none;
+}
+
+.badge {
+  border-radius: 99px;
+  cursor: pointer;
+}
+
+.badge.badge-info:hover {
+  text-decoration: none;
+}
+
+svg {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}

@@ -1,16 +1,35 @@
 ---
-import { Icon } from "astro-icon/components";
+import * as m from '@/paraglide/messages'
+import { Image } from 'astro:assets'
 ---
 
 <footer
-  class="h-[100px] text-white bg-[#0E1337] flex justify-center items-center gap-2 font-light"
+  class="h-[100px] text-white bg-[var(--color-base-400)] flex justify-center items-center gap-2 font-light"
 >
-  <Icon name="logo" />
-  <p>© 2025 Andrew Domingues, All rights reserved</p>
+  <button
+    aria-hidden="true"
+    id="footer-logo"
+    class="cursor-pointer"
+  >
+    <Image
+      src="/red_ace_pride.svg"
+      alt="Logo Alternative"
+      width="16"
+      height="16"
+      decoding="async"
+      loading="lazy"
+    />
+  </button>
+
+  <p class="text-xs sm:text-sm">{m.siteCopy}</p>
 </footer>
 
 <style>
-  [data-icon] {
-    @apply block w-[26px];
+  p {
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
   }
 </style>
+
+<script src="@/utils/confetti"></script>

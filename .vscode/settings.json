@@ -1,9 +1,20 @@
 {
-  "editor.formatOnSave": true,
-  "[mdx]": {
-    "editor.defaultFormatter": "unifiedjs.vscode-mdx"
+  "editor.formatOnPaste": true,
+  "editor.foldingImportsByDefault": true,
+  "[mdx, md]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "prettier.documentSelectors": ["**/*.astro"],
   "[astro]": {
-    "editor.defaultFormatter": "astro-build.astro-vscode"
-  }
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "astro",
+    "typescript",
+    "typescriptreact"
+  ],
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSaveMode": "modificationsIfAvailable"
 }

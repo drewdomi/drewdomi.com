@@ -7,12 +7,18 @@ import LangToggle from './LangToggle.astro'
 import SideMenu from './SideMenu.astro'
 ---
 
-<header class="shadow-md fixed w-full top-0 backdrop-blur-sm z-[2]">
+<header class="shadow-md fixed w-full top-0 backdrop-blur-xs z-2">
   <div class="navbar p-[10px] px-5 max-w-3xl mx-auto">
     <div class="navbar-start">
-      <a href={localizePathname('/', languageTag())} id="logo">
-        <Icon name="logo" />
-        <span class="py-[4px] px-2 font-title">DrewDomi</span>
+      <a
+        class="px-1"
+        aria-label="Home"
+        role="button"
+        href={localizePathname('/', languageTag())}
+        id="logo"
+      >
+        <Icon name="logo_old" />
+        <span class="py-1 px-2 font-title">Drew Domi</span>
       </a>
     </div>
     <div class="navbar-center hidden md:block">
@@ -71,7 +77,7 @@ import SideMenu from './SideMenu.astro'
     animation: rotateAnim 1.5s 2 linear alternate-reverse;
   }
   svg {
-    @apply h-4;
+    height: 16px;
   }
   li {
     display: flex;
@@ -98,7 +104,7 @@ import SideMenu from './SideMenu.astro'
     position: relative;
     top: 0;
     transition: width 0.3s ease-in-out;
-    @apply bg-neutral-content;
+    background-color: var(--color-neutral-content);
   }
   li a:hover::after {
     width: 100%;

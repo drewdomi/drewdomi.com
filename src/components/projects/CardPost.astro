@@ -10,9 +10,12 @@ interface Props {
 const { href, cover, altCover, title, desc } = Astro.props
 ---
 
-<a {href} class="block">
+<a
+  {href}
+  class="block"
+>
   <img
-    class="border-0 rounded shadow-md"
+    class="border-0 rounded-md shadow-md"
     src={cover}
     width="100%"
     alt={altCover}

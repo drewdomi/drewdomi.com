@@ -10,23 +10,26 @@ interface Props {
 const { label, href, leftIcon } = Astro.props
 ---
 
-<div>
-  <a {href} target="_blank" class="font-medium btn btn-link text-[16px]">
-    {leftIcon && <Icon name={leftIcon} />}
-    {label}
-  </a>
-</div>
+<a
+  role="link"
+  {href}
+  target="_blank"
+  class="font-medium btn btn-link text-[16px]"
+>
+  {leftIcon && <Icon name={leftIcon} />}
+  {label}
+</a>
 
 <style>
   a {
-    @apply text-base-300;
+    color: var(--color-base-300);
     min-height: 2.2rem;
     height: 2.2rem;
     text-decoration: none;
     font-weight: 400;
   }
   .btn-link {
-    @apply text-info;
+    color: var(--color-info);
   }
 
   [data-icon] {

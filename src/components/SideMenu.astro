@@ -1,42 +1,79 @@
 ---
 import * as m from '@/paraglide/messages'
 import { Icon } from 'astro-icon/components'
-
 import { localizePathname } from '@/linking'
 import { languageTag } from '@/paraglide/runtime'
+import { Image } from 'astro:assets'
 ---
 
 <div class="drawer">
-  <input id="sidemenu" type="checkbox" class="drawer-toggle" />
+  <input
+    type="checkbox"
+    id="open-menu"
+    class="drawer-toggle"
+  />
   <div class="drawer-content">
-    <label for="sidemenu" class="">
+    <label
+      role="button"
+      aria-expanded="false"
+      aria-label={m.sideMenuOpen()}
+      for="open-menu"
+    >
       <Icon
         name="majesticons:menu"
-        tabindex="0"
-        class="btn btn-sm btn-ghost btn-primary border-[.5px] border-neutral-200"
+        aria-hidden="true"
+        class="btn btn-sm btn-link p-2 border-[.5px] border-neutral-200"
       />
     </label>
   </div>
   <div class="drawer-side">
-    <label for="sidemenu" aria-label="Fechar sidemenu" class="drawer-overlay"
+    <label
+      for="open-menu"
+      aria-hidden="true"
+      class="drawer-overlay"
     ></label>
     <div
-      class="menu p-4 w-80 min-h-full bg-[#0E1337] flex flex-col justify-between gap-4"
+      class="menu p-4 w-80 min-h-full bg-[var(--color-base-400)] flex flex-col justify-between gap-4"
     >
       <div>
-        <div class="drawer-header flex justify-center my-5">
-          <img src="/favicon.svg" alt="Zapred icon" width="64" />
-        </div>
+        <span
+          class="drawer-header flex flex-col items-center justify-center mb-5"
+        >
+          <div class="self-end">
+            <button
+              class="btn btn-link btn-sm btn-circle"
+              id="close-menu"
+              aria-label={m.sideMenuClose()}
+            >
+              <Icon
+                class="border-0!"
+                aria-hidden="true"
+                name="bi:x"
+              />
+            </button>
+          </div>
+          <Image
+            aria-hidden="true"
+            src="/favicon.svg"
+            alt=""
+            width="64"
+            height="64"
+          />
+        </span>
         <ul class="flex flex-col gap-2">
           <li>
-            <a href={localizePathname('/', languageTag())}>{m.linkLabelHome}</a>
+            <a
+              id="focus-when-menu-opened"
+              href={localizePathname('/', languageTag())}
+              >{m.linkLabelHome}</a
+            >
           </li>
           <li>
             <a href={localizePathname('/projects', languageTag())}
               >{m.linkLabelProjects}</a
             >
           </li>
-          <li>
+          <li onclick="document.querySelector('.drawer-overlay').click()">
             <a href={localizePathname('/#contact', languageTag())}
               >{m.linkLabelContact}</a
             >
@@ -45,9 +82,9 @@ import { languageTag } from '@/paraglide/runtime'
       </div>
 
       <footer
-        class="h-[60px] text-white flex justify-center items-center font-light"
+        class="h-[60px] text-white flex justify-center items-center font-light text-xs"
       >
-        <p>© 2024 Andrew Domingues</p>
+        <p>{m.siteCopy}</p>
       </footer>
     </div>
   </div>
@@ -55,12 +92,32 @@ import { languageTag } from '@/paraglide/runtime'
 
 <style>
   svg {
-    height: 48px;
-    width: 48px;
-    font-size: 48px;
-    cursor: pointer;
-  }
-  a {
-    font-size: large;
+    height: 40px;
+    width: 40px;
+    border: 1px solid #fff;
+    color: white;
   }
 </style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const closeMenu = document.querySelector('#close-menu') as HTMLButtonElement
+    const openMenu = document.querySelector('#open-menu') as HTMLInputElement
+
+    openMenu.checked = false
+
+    openMenu.addEventListener('change', () => {
+      openMenu.setAttribute(
+        'aria-expanded',
+        openMenu.checked ? 'true' : 'false',
+      )
+    })
+
+    if (closeMenu) {
+      closeMenu.addEventListener('click', () => {
+        openMenu.checked = false
+        openMenu.setAttribute('aria-expanded', 'false')
+      })
+    }
+  })
+</script>

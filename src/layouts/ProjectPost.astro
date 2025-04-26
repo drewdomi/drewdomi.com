@@ -21,7 +21,10 @@ const {
 } = Astro.props
 ---
 
-<Layout {title} {desc}>
+<Layout
+  {title}
+  {desc}
+>
   <section>
     <div class="pt-2">
       <img
@@ -43,7 +46,7 @@ const {
         </li>
         <li class="text-xl font-title font-medium items-center">
           {title}
-          <span class="badge badge-info ml-3">{releaseDate}</span>
+          <span class="badge badge-info no-underline ml-3">{releaseDate}</span>
         </li>
       </ul>
     </div>
@@ -52,9 +55,16 @@ const {
         site && (
           <p class="mb-2 gap-2 flex">
             <span class="badge badge-primary ml-3 mr-1">WEB</span>
-            <a href={site} target="_blank" class="link flex items-center gap-2">
+            <a
+              href={site}
+              target="_blank"
+              class="link flex items-center gap-2"
+            >
               {!siteTitle ? site : siteTitle}
-              <Icon name="bi:box-arrow-up-right" class="w-[14px]" />
+              <Icon
+                name="bi:box-arrow-up-right"
+                class="w-[14px]"
+              />
             </a>
           </p>
         )
@@ -74,7 +84,10 @@ const {
               class="link flex items-center gap-2"
             >
               {github?.replace('https://github.com/drewdomi/', '')}
-              <Icon name="bi:box-arrow-up-right" class="w-[14px]" />
+              <Icon
+                name="bi:box-arrow-up-right"
+                class="w-[14px]"
+              />
             </a>
           </p>
         )

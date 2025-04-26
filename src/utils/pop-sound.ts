@@ -1,25 +1,41 @@
 import { fromEvent, throttleTime } from 'rxjs'
 
-function popSound() {
-  const audio = new Audio('/pop_sound.mp3')
+let initialized = false
 
+function popSound() {
+  if (initialized) return
+
+  const audio = new Audio('/pop_sound.mp3')
   const icon = document.querySelector('#linux-icon')
 
   if (icon) {
-    const clicks$ = fromEvent(icon, 'click')
+    icon.replaceWith(icon.cloneNode(true))
 
-    clicks$.pipe(throttleTime(140)).subscribe(event => {
-      event.stopPropagation()
+    const refreshedIcon = document.querySelector('#linux-icon')
 
-      audio.currentTime = 0
-      audio.volume = 0.2
-      audio.play().catch(error => {
-        console.error('Error playing sound:', error)
+    if (refreshedIcon) {
+      const clicks$ = fromEvent(refreshedIcon, 'pointerdown')
+
+      clicks$.pipe(throttleTime(200)).subscribe(event => {
+        event.stopPropagation()
+        event.preventDefault()
+
+        audio.volume = 0.2
+
+        audio.play().catch(error => {
+          console.error('Error playing sound:', error)
+        })
       })
-    })
+
+      initialized = true
+    }
   }
 }
 
-document.addEventListener('DOMContentLoaded', popSound)
+function cleanupAndReinitialize() {
+  initialized = false
+  popSound()
+}
 
-document.addEventListener('astro:page-load', popSound)
+document.addEventListener('DOMContentLoaded', popSound)
+document.addEventListener('astro:page-load', cleanupAndReinitialize)

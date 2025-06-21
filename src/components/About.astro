@@ -36,7 +36,7 @@ const discordId = import.meta.env.DISCORD_ID || ('' as string)
       />
       <div class="swap-off">
         <Picture
-          class="rounded-full border-2 justify-self-center shadow-md w-[120px] h-[120px] md:w-[100px] md:h-[100px]"
+          class="rounded-full border-2 justify-self-center shadow-md w-[120px] h-[120px] md:w-[100px] md:h-[100px] imgGlitch"
           width={100}
           height={100}
           loading="eager"
@@ -176,8 +176,12 @@ const discordId = import.meta.env.DISCORD_ID || ('' as string)
       }
     }
 
-    fetchStatus()
-    const interval = setInterval(fetchStatus, UPDATE_INTERVAL_MS)
-    window.addEventListener('unload', () => clearInterval(interval))
+    if (discordId) {
+      fetchStatus()
+      const interval = setInterval(fetchStatus, UPDATE_INTERVAL_MS)
+      window.addEventListener('unload', () => clearInterval(interval))
+    }
   })
 </script>
+
+<script src="@/utils/glitch"></script>

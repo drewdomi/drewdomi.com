@@ -1,0 +1,11 @@
+{
+  "name": "drewdomi.com",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:1-22-bookworm",
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {},
+    "ghcr.io/nils-geistmann/devcontainers-features/zsh:0": {},
+    "ghcr.io/devcontainers-extra/features/pnpm:2": {},
+    "ghcr.io/devcontainers-extra/features/zsh-plugins:0": {}
+  },
+  "postCreateCommand": "pnpm install"
+}

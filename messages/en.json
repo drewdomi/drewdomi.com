@@ -28,5 +28,6 @@
   "statusOnline": "Online",
   "statusOffline": "Offline",
   "statusIdle": "Idle",
-  "statusDnd": "Busy"
+  "statusDnd": "Busy",
+  "siteUrl": "https://drewdomi.com"
 }

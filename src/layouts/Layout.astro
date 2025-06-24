@@ -30,40 +30,53 @@ const { title = m.siteTitle(), desc = m.siteDesc() } = Astro.props
 ██████╔╝██║  ██║███████╗╚███╔███╔╝  ██████╔╝╚██████╔╝██║ ╚═╝ ██║██║
 ╚═════╝ ╚═╝  ╚═╝╚══════╝ ╚══╝╚══╝   ╚═════╝  ╚═════╝ ╚═╝     ╚═╝╚═╝
 
---><!-- You found me, thanks! -->
+You found me, thanks! -->
 <html lang={languageTag()} data-theme="dark">
   <head>
-    <!-- Primary Meta Tags -->
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={desc} />
     <meta name="author" content={m.aboutName()} />
-    <meta name="author" content="drewdomi" />
     <meta name="generator" content={Astro.generator} />
     <meta name="copyright" content={m.aboutName()} />
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
     <meta http-equiv="content-language" content={languageTag()} />
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <meta name="keywords" content={m.siteKeywords()} />
     <meta name="rating" content="general" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="theme-color" content="#005aad" />
+    <meta name="color-scheme" content="dark" />
+    <!-- Favicon and Icons -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-
+    <link rel="apple-touch-icon" sizes="128x128" href="/apple-touch-icon.png" />
     <!-- Open Graph / Facebook -->
     <meta property="og:site_name" content={m.aboutName()} />
-    <meta name="og:title" content={m.aboutName()} />
+    <meta property="og:title" content={title} />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://www.drewdomi.com/card.png" />
-    <meta property="og:url" content="https://www.drewdomi.com" />
+    <meta property="og:image" content={m.siteUrl() + '/card.png'} />
+    <meta property="og:image:alt" content="Drew Domi - Homepage" />
+    <meta property="og:image:width" content="837" />
+    <meta property="og:image:height" content="470" />
+    <meta property="og:url" content={m.siteUrl()} />
     <meta property="og:description" content={desc} />
-
-    <!-- Twitter -->
-    <meta name="twitter:title" content={m.aboutName()} />
+    <meta property="og:locale" content={languageTag().replace('-', '_')} />
+    <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@drewdomii" />
-    <meta name="twitter:creator" content="@drewdomii" />
-    <meta name="twitter:image" content="https://www.drewdomi.com/card.png" />
-
+    <meta name="twitter:site" content="@drewdomi_" />
+    <meta name="twitter:creator" content="@drewdomi_" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={desc} />
+    <meta name="twitter:image" content={m.siteUrl() + '/card.png'} />
+    <meta name="twitter:image:alt" content="Drew Domi - Homepage" />
+    <!-- LinkedIn -->
+    <meta
+      property="article:author"
+      content="https://linkedin.com/in/drewdomi"
+    />
+    <!-- Canonical URL (important for SEO) -->
+    <link rel="canonical" href={m.siteUrl()} />
     <ClientRouter />
     <title>{title}</title>
   </head>

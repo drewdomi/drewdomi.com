@@ -29,5 +29,6 @@
   "statusOnline": "Online",
   "statusOffline": "Offline",
   "statusIdle": "Ausente",
-  "statusDnd": "Ocupado"
+  "statusDnd": "Ocupado",
+  "btnScrollTop": "Ir para o topo"
 }

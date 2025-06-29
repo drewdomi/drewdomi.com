@@ -11,7 +11,7 @@ import SectionTitle from './SectionTitle.astro'
 <section>
   <SectionTitle title={m.skillsSectionTitle()} />
 
-  <ul class="flex justify-center gap-9 md:gap-16 py-6">
+  <ul class="flex justify-center gap-9 py-6 md:gap-16">
     <li>
       <div id="angular-icon">
         <Image
@@ -121,11 +121,7 @@ import SectionTitle from './SectionTitle.astro'
 
 <style>
   div {
-    @apply flex
-    flex-col
-    items-center
-    justify-center
-    gap-[4px];
+    @apply flex flex-col items-center justify-center gap-[4px];
   }
 
   li {

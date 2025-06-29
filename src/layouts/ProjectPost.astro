@@ -1,11 +1,11 @@
 ---
+import ScrollToTopBtn from '@/components/ScrollTopBtn.astro'
+import Layout from '@/layouts/Layout.astro'
 import { localizePathname } from '@/linking'
 import * as m from '@/paraglide/messages'
 import { languageTag } from '@/paraglide/runtime'
 import { Icon } from 'astro-icon/components'
 import type { CollectionEntry } from 'astro:content'
-
-import Layout from '@/layouts/Layout.astro'
 
 type Props = CollectionEntry<'projects'>['data']
 const {
@@ -18,6 +18,7 @@ const {
   siteTitle,
   github,
   stacks,
+  customLinks,
 } = Astro.props
 ---
 
@@ -34,7 +35,7 @@ const {
         alt={altCover}
       />
     </div>
-    <div class="text-sm breadcrumbs mt-3 mb-2">
+    <div class="breadcrumbs mt-3 mb-2 text-sm">
       <ul>
         <li>
           <a
@@ -44,17 +45,17 @@ const {
             {m.linkLabelProjects}
           </a>
         </li>
-        <li class="text-xl font-title font-medium items-center">
+        <li class="font-title items-center text-xl font-medium">
           {title}
-          <span class="badge badge-info no-underline ml-3">{releaseDate}</span>
+          <span class="badge badge-info ml-3 no-underline">{releaseDate}</span>
         </li>
       </ul>
     </div>
     <div class="pb-2">
       {
         site && (
-          <p class="mb-2 gap-2 flex">
-            <span class="badge badge-primary ml-3 mr-1">WEB</span>
+          <p class="mb-2 flex gap-2">
+            <span class="badge badge-primary mr-1 ml-3">WEB</span>
             <a
               href={site}
               target="_blank"
@@ -70,14 +71,14 @@ const {
         )
       }
       <p class="mb-2 overflow-x-auto whitespace-nowrap">
-        <span class="badge badge-warning ml-3 mr-1">Stack</span>
+        <span class="badge badge-warning mr-1 ml-3">Stack</span>
         {stacks.join(', ')}
       </p>
 
       {
         github && (
-          <p class="mb-2 gap-2 flex">
-            <span class="badge badge-error ml-3 mr-1">Github</span>
+          <p class="mb-2 flex gap-2">
+            <span class="badge badge-error mr-1 ml-3">Github</span>
             <a
               href={github}
               target="_blank"
@@ -92,9 +93,32 @@ const {
           </p>
         )
       }
+      {
+        customLinks &&
+          customLinks.map(i => (
+            <p class="mb-2 flex gap-2">
+              <span class={'badge mr-1 ml-3 ' + i.customClass}>
+                {i.badgeLabel}
+              </span>
+              <a
+                href={i.url}
+                target="_blank"
+                class="link flex items-center gap-2"
+              >
+                {i.urlLabel || i.url}
+                <Icon
+                  name={i.icon}
+                  class="w-[14px]"
+                />
+              </a>
+            </p>
+          ))
+      }
     </div>
-    <div class="text-justify mb-16">
+    <div class="mb-16 text-justify">
       <slot />
     </div>
   </section>
+
+  <ScrollToTopBtn />
 </Layout>

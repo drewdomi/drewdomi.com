@@ -23,7 +23,7 @@ const {
 <a
   {href}
   target={notBlank ? '_self' : '_blank'}
-  class="font-title font-medium no-animation btn btn-primary text-[#EFEFEF] shadow-md text-[18px]"
+  class="font-title no-animation btn btn-primary text-[18px] font-medium text-[#EFEFEF] shadow-md"
   {role}
 >
   {
@@ -53,7 +53,6 @@ const {
     padding: 0 18px;
   }
   [data-icon] {
-    @apply block
-    w-[18px];
+    @apply block w-[18px];
   }
 </style>

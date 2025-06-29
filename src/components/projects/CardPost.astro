@@ -15,15 +15,15 @@ const { href, cover, altCover, title, desc } = Astro.props
   class="block"
 >
   <img
-    class="border-0 rounded-md shadow-md"
+    class="rounded-md border-0 shadow-md"
     src={cover}
     width="100%"
     alt={altCover}
   />
-  <h2 class="font-title text-center mt-4 mb-3 font-medium text-xl">
+  <h2 class="font-title mt-4 mb-3 text-center text-xl font-medium">
     {title}
   </h2>
-  <p class="text-sm text-center">
+  <p class="text-center text-sm">
     {desc}
   </p>
 </a>

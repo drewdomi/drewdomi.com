@@ -12,6 +12,17 @@ const projects = defineCollection({
     site: z.optional(z.string()),
     github: z.optional(z.string()),
     stacks: z.array(z.string()),
+    customLinks: z
+      .array(
+        z.object({
+          badgeLabel: z.string(),
+          url: z.string(),
+          urlLabel: z.string(),
+          customClass: z.string(),
+          icon: z.string(),
+        }),
+      )
+      .optional(),
   }),
 })
 

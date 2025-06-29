@@ -7,5 +7,10 @@
     "ghcr.io/devcontainers-extra/features/pnpm:2": {},
     "ghcr.io/devcontainers-extra/features/zsh-plugins:0": {}
   },
+  "forwardPorts": [4321],
+  "mounts": [
+    "type=bind,source=${localEnv:HOME}${localEnv:USERPROFILE}/.ssh,target=/home/node/.ssh,readonly",
+    "type=bind,source=${localEnv:HOME}${localEnv:USERPROFILE}/.gnupg,target=/home/node/.gnupg"
+  ],
   "postCreateCommand": "pnpm install"
 }

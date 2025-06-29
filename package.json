@@ -5,7 +5,7 @@
   "version": "2.0.0",
   "author": "Andrew Domingues <contact@drewdomi.com>",
   "homepage": "https://drewdomi.com",
-  "description": "Personal homepage/portfolio of Andrew Domingues (Drew Domi). That's a showcase of his work as a WEB Developer, featuring projects that highlight his expertise as a Developer.",
+  "description": "Personal homepage/portfolio of Drew Domi (Andrew Domingues). That's a showcase of his work as a WEB Developer, featuring projects that highlight his expertise as a Developer.",
   "scripts": {
     "dev": "astro dev",
     "dev:host": "astro dev --host",
@@ -53,7 +53,8 @@
     "husky": "^9.1.7",
     "lint-staged": "^15.5.0",
     "prettier": "^3.5.3",
-    "prettier-plugin-astro": "^0.14.1"
+    "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-tailwindcss": "^0.6.13"
   },
   "engines": {
     "node": ">=22.0.0",

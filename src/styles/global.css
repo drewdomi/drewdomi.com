@@ -89,6 +89,10 @@ a {
   border: none;
 }
 
+.btn-circle {
+  border-radius: 100% !important;
+}
+
 .badge {
   border-radius: 99px;
   cursor: pointer;

@@ -1,6 +1,7 @@
 {
   "$schema": "https://inlang.com/schema/inlang-message-format",
   "siteTitle": "Andrew Domingues | Homepage",
+  "siteUrl": "https://drewdomi.com",
   "siteDesc": "Homepage and portfolio of Andrew Domingues Software Developer",
   "site404Message": "Page not found, returing to home...",
   "siteKeywords": "drewdomi, Drew Domi, Fullstack WEB, Full-Stack WEB, Software Developer, Developer, Dev, Coding, Programming, Code, Portuguese Red Cross Amares, goLembrar",
@@ -29,5 +30,5 @@
   "statusOffline": "Offline",
   "statusIdle": "Idle",
   "statusDnd": "Busy",
-  "siteUrl": "https://drewdomi.com"
+  "btnScrollTop": "Scroll to top"
 }

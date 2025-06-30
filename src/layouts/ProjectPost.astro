@@ -5,21 +5,11 @@ import { localizePathname } from '@/linking'
 import * as m from '@/paraglide/messages'
 import { languageTag } from '@/paraglide/runtime'
 import { Icon } from 'astro-icon/components'
+import { Image } from 'astro:assets'
 import type { CollectionEntry } from 'astro:content'
 
 type Props = CollectionEntry<'projects'>['data']
-const {
-  title,
-  desc,
-  cover,
-  altCover,
-  releaseDate,
-  site,
-  siteTitle,
-  github,
-  stacks,
-  customLinks,
-} = Astro.props
+const { title, desc, cover, altCover, date, stacks, links } = Astro.props
 ---
 
 <Layout
@@ -28,11 +18,14 @@ const {
 >
   <section>
     <div class="pt-2">
-      <img
+      <Image
         class="rounded-md shadow-md"
-        width="100%"
+        width="638"
+        height="360"
         src={cover}
         alt={altCover}
+        decoding="async"
+        loading="lazy"
       />
     </div>
     <div class="breadcrumbs mt-3 mb-2 text-sm">
@@ -47,67 +40,34 @@ const {
         </li>
         <li class="font-title items-center text-xl font-medium">
           {title}
-          <span class="badge badge-info ml-3 no-underline">{releaseDate}</span>
+          <span class="badge badge-info ml-3 no-underline">{date}</span>
         </li>
       </ul>
     </div>
     <div class="pb-2">
       {
-        site && (
-          <p class="mb-2 flex gap-2">
-            <span class="badge badge-primary mr-1 ml-3">WEB</span>
-            <a
-              href={site}
-              target="_blank"
-              class="link flex items-center gap-2"
-            >
-              {!siteTitle ? site : siteTitle}
-              <Icon
-                name="bi:box-arrow-up-right"
-                class="w-[14px]"
-              />
-            </a>
-          </p>
-        )
-      }
-      <p class="mb-2 overflow-x-auto whitespace-nowrap">
-        <span class="badge badge-warning mr-1 ml-3">Stack</span>
-        {stacks.join(', ')}
-      </p>
-
-      {
-        github && (
-          <p class="mb-2 flex gap-2">
-            <span class="badge badge-error mr-1 ml-3">Github</span>
-            <a
-              href={github}
-              target="_blank"
-              class="link flex items-center gap-2"
-            >
-              {github?.replace('https://github.com/drewdomi/', '')}
-              <Icon
-                name="bi:box-arrow-up-right"
-                class="w-[14px]"
-              />
-            </a>
+        stacks && (
+          <p class="mb-2 overflow-x-auto whitespace-nowrap">
+            <span class="badge badge-warning mr-1 ml-3">Stack</span>
+            {stacks?.join(', ')}
           </p>
         )
       }
       {
-        customLinks &&
-          customLinks.map(i => (
+        links &&
+          links.map(l => (
             <p class="mb-2 flex gap-2">
-              <span class={'badge mr-1 ml-3 ' + i.customClass}>
-                {i.badgeLabel}
+              <span class={'badge mr-1 ml-3 ' + l.badgeClass}>
+                {l.badgeLabel}
               </span>
               <a
-                href={i.url}
+                href={l.url}
                 target="_blank"
-                class="link flex items-center gap-2"
+                class="link flex items-center gap-2 no-underline hover:underline"
               >
-                {i.urlLabel || i.url}
+                {l.urlLabel || l.url}
                 <Icon
-                  name={i.icon}
+                  name={l.icon || 'bi:box-arrow-up-right'}
                   class="w-[14px]"
                 />
               </a>

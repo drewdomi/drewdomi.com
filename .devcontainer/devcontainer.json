@@ -1,16 +1,30 @@
 {
-  "name": "drewdomi.com",
-  "image": "mcr.microsoft.com/devcontainers/typescript-node:1-22-bookworm",
+  "name": "drewdomi",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:1-22-bookworm",
   "features": {
+    "ghcr.io/devcontainers-community/npm-features/typescript:1": {},
+    "ghcr.io/devcontainers-extra/features/pnpm:2": {},
     "ghcr.io/devcontainers/features/common-utils:2": {},
     "ghcr.io/nils-geistmann/devcontainers-features/zsh:0": {},
-    "ghcr.io/devcontainers-extra/features/pnpm:2": {},
     "ghcr.io/devcontainers-extra/features/zsh-plugins:0": {}
   },
   "forwardPorts": [4321],
   "mounts": [
-    "type=bind,source=${localEnv:HOME}${localEnv:USERPROFILE}/.ssh,target=/home/node/.ssh,readonly",
-    "type=bind,source=${localEnv:HOME}${localEnv:USERPROFILE}/.gnupg,target=/home/node/.gnupg"
+    "type=bind,source=${localEnv:HOME}${localEnv:USERPROFILE}/.ssh,target=/home/node/.ssh,readonly"
   ],
-  "postCreateCommand": "pnpm install"
+  "postCreateCommand": "pnpm install",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "inlang.vs-code-extension",
+        "redhat.vscode-yaml",
+        "esbenp.prettier-vscode",
+        "unifiedjs.vscode-mdx",
+        "github.vscode-github-actions",
+        "socheatsok78-lab.dotenv-vscode-stripped",
+        "matthewpi.caddyfile-support",
+        "astro-build.astro-vscode"
+      ]
+    }
+  }
 }

@@ -1,32 +1,42 @@
 ---
-title: 'Red Cross - Amares PT'
+title: 'Red Cross - Amares'
 lang: 'en'
 desc: 'Amares Red Cross ambulance registration system'
 cover: '/projects/cvalog/cvp_banner_en.webp'
 altCover: 'Project banner'
-releaseDate: '2024'
-siteTitle: 'Linkedin post'
-site: 'https://www.linkedin.com/posts/drewdomi_ol%C3%A1-pessoal-tudo-bem-com-voc%C3%AAs-queria-compartilhar-activity-7168575680455032832-QPFp?utm_source=share&utm_medium=member_desktop'
+date: '2024'
 stacks:
   - Angular
-  - PrimeNG
   - NestJS
-  - Prisma
   - MongoDB
-
-customLinks:
-  - badgeLabel: 'Linkedin cvp'
-    url: 'https://linkedin.com/posts/blabal'
-    urlLabel: 'Linkedin Post'
-    customClass: 'badge-error'
-    icon: 'bi:box-arrow-up-right'
-
-  - badgeLabel: 'Project Demo'
-    url: 'https://demo.example.com'
-    urlLabel: 'Demo'
-    customClass: 'bg-blue-500 border-blue-500 text-white'
-    icon: 'bi:play-circle'
+links:
+  - badgeLabel: 'Linkedin post'
+    url: 'https://linkedin.com/posts/drewdomi_ol%C3%A1-pessoal-tudo-bem-com-voc%C3%AAs-queria-compartilhar-activity-7168575680455032832-QPFp?utm_source=share&utm_medium=member_desktop'
+    urlLabel: 'https://linkedin.com/pos...'
+    badgeClass: 'bg-[#0077b5] text-white border border-[#0077b5]'
 ---
+
+import { Icon } from 'astro-icon/components'
+export const prerender = true
+
+<div class="rounded-lg border border-gray-400 bg-neutral-700 shadow p-6 text-sm font-serif">
+  <div>
+      <Icon
+        name="bi:heart"
+        class="w-6 h-6 text-red-400 text-center mx-auto mb-4"
+      />
+
+    <p class="mb-4 text-lg">
+      "I would like to thank Andrew Domingues and <a
+      class="text-blue-400 hover:text-blue-300 transition-colors duration-200 underline"
+      target="_blank"
+      href="https://solium.tec.br">Lucas Nathan H. Silva</a> for the excellent work on the <em>Vehicle Departure Log</em> project for the Red Cross. You were professional, responded to all requests with care, and the result was even better than we expected. Throughout the process, I suggested some adjustments, which were always handled quickly and with dedication. On behalf of the Red Cross team in Amares, and myself, Helder Azevedo, I sincerely thank you both for your commitment"
+    </p>
+    <p class="text-md font-semibold tracking-wide text-gray-200 uppercase text-center pt-1">Thank you!!</p>
+
+  </div>
+</div>
+<br />
 
 I contribute with development of a tool for the management process of ambulance departures from the headquarters of the Portuguese Red Cross located in the city of Amares. It provides an intuitive and efficient interface for rescuers to record occurrences, avoiding possible mistakes at the time of registration, thus speeding up and standardizing the same. It has features for managing the tribulation, available ambulances, and user levels in the system. Saving all occurrences in a digital medium makes it easier to retrieve departure data, thus generating a complete history of all departures and who recorded them.
 

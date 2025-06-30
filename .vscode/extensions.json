@@ -2,7 +2,8 @@
   "recommendations": [
     "astro-build.astro-vscode",
     "inlang.vs-code-extension",
-    "unifiedjs.vscode-mdx"
+    "unifiedjs.vscode-mdx",
+    "ms-vscode.vscode-websearchforcopilot"
   ],
   "unwantedRecommendations": []
 }

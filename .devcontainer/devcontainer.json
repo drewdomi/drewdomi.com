@@ -7,5 +7,18 @@
     "ghcr.io/devcontainers-extra/features/pnpm:2": {},
     "ghcr.io/devcontainers-extra/features/zsh-plugins:0": {}
   },
-  "postCreateCommand": "pnpm install"
+  "mounts": [
+    "source=${localEnv:HOME}/.gnupg,target=/home/node/.gnupg,type=bind,consistency=cached"
+  ],
+  "postCreateCommand": "pnpm install && ./.devcontainer/setup-gpg.sh",
+  "containerEnv": {
+    "GPG_TTY": "/dev/console"
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "git.enableCommitSigning": true
+      }
+    }
+  }
 }

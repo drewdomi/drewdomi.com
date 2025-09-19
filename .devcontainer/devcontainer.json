@@ -19,7 +19,23 @@
         "unifiedjs.vscode-mdx",
         "shd101wyy.markdown-preview-enhanced",
         "jock.svg"
-      ]
+      ],
+      "settings": {
+        "editor.formatOnPaste": true,
+        "editor.foldingImportsByDefault": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSaveMode": "file",
+        "editor.formatOnSave": true,
+        "dotenv.enableAutocloaking": true,
+        "prettier.documentSelectors": ["**/*.astro"],
+        "eslint.validate": [
+          "javascript",
+          "javascriptreact",
+          "astro",
+          "typescript",
+          "typescriptreact"
+        ]
+      }
     }
   },
   "forwardPorts": [4321],

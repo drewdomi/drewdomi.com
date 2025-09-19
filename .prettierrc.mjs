@@ -16,12 +16,6 @@ export default {
         singleAttributePerLine: false,
       },
     },
-    {
-      files: '*.html',
-      options: {
-        parser: 'angular',
-      },
-    },
   ],
   tabWidth: 2,
   bracketSpacing: true,

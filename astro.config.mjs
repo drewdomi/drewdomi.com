@@ -1,6 +1,6 @@
 import mdx from '@astrojs/mdx';
+import node from '@astrojs/node';
 import sitemap from '@astrojs/sitemap';
-import vercel from '@astrojs/vercel';
 import paraglide from '@inlang/paraglide-astro';
 import tailwindcss from '@tailwindcss/vite';
 import icon from 'astro-icon';
@@ -33,7 +33,9 @@ export default defineConfig({
     sitemap(),
   ],
 
-  adapter: vercel(),
+  adapter: node({
+    mode: 'standalone',
+  }),
 
   vite: {
     plugins: [tailwindcss()],

@@ -18,7 +18,8 @@
         "alefragnani.Bookmarks",
         "unifiedjs.vscode-mdx",
         "shd101wyy.markdown-preview-enhanced",
-        "jock.svg"
+        "jock.svg",
+        "matthewpi.caddyfile-support"
       ],
       "settings": {
         "editor.formatOnPaste": true,

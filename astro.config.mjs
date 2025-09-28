@@ -14,6 +14,7 @@ export default defineConfig({
       'Last-Modified': new Date().toUTCString(),
     },
   },
+
   i18n: {
     locales: ['en', 'pt-br'],
     defaultLocale: 'en',

@@ -1,0 +1,93 @@
+# Dependencies
+node_modules
+.pnp
+.pnp.js
+pnpm-debug.log*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build outputs
+dist
+build
+out
+.next
+.astro
+.nuxt
+.output
+.vercel
+.caches
+
+# Environment and config
+.env
+.env.*
+
+# Version control
+.git
+.gitignore
+.gitattributes
+.github
+.gitlab
+.svn
+CVS
+
+# IDE and editor files
+.idea
+.vscode
+*.swp
+*.swo
+*.swn
+*.bak
+*.sublime*
+.DS_Store
+Thumbs.db
+.devcontainer
+
+# Testing and coverage
+coverage
+.nyc_output
+__tests__
+test
+tests
+*.test.js
+*.spec.js
+*.test.ts
+*.spec.ts
+jest.config.*
+vitest.config.*
+
+# Documentation
+docs
+*.md
+LICENSE
+AUTHORS
+CHANGELOG
+README
+*.txt
+
+# Temporary files
+*.log
+logs
+tmp
+temp
+.cache
+.temp
+
+# Docker
+Dockerfile*
+Containerfile*
+docker-compose*
+compose*
+.docker
+
+# Misc
+*.csv
+*.dat
+*.gz
+*.tar
+*.zip
+*.rar
+*.7z
+.sourcemaps
+.awcache
+.nvmrc

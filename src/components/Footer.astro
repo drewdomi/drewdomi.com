@@ -7,12 +7,10 @@ import { Image } from 'astro:assets'
   id="site-footer"
   class="flex h-[100px] items-center justify-center gap-2 bg-[var(--color-base-400)] font-light text-white"
 >
-  <p class="text-xs sm:text-sm">{m.siteCopy}</p>
-
   <button
     aria-hidden="true"
     id="footer-logo"
-    class="cursor-pointer"
+    class="mb-1 cursor-pointer"
   >
     <Image
       src="/red_ace_pride.svg"
@@ -23,6 +21,8 @@ import { Image } from 'astro:assets'
       loading="lazy"
     />
   </button>
+
+  <p class="text-xs sm:text-sm">{m.siteCopy}</p>
 </footer>
 
 <style>

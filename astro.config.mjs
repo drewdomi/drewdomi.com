@@ -1,5 +1,5 @@
 import mdx from '@astrojs/mdx';
-import node from '@astrojs/node';
+import vercel from '@astrojs/vercel';
 import sitemap from '@astrojs/sitemap';
 import paraglide from '@inlang/paraglide-astro';
 import tailwindcss from '@tailwindcss/vite';
@@ -11,7 +11,7 @@ export default defineConfig({
   output: 'server',
   server: {
     headers: {
-      'Last-Modified': new Date().toUTCString(),
+      'Last-Modified': (new Date()).toUTCString(),
     },
   },
 
@@ -33,9 +33,7 @@ export default defineConfig({
     sitemap(),
   ],
 
-  adapter: node({
-    mode: 'standalone',
-  }),
+  adapter: vercel(),
 
   vite: {
     plugins: [tailwindcss()],

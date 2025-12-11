@@ -1,25 +1,19 @@
 {
   "name": "drewdomi.com",
-  "image": "mcr.microsoft.com/devcontainers/typescript-node:1-22-bookworm",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:22-bookworm",
   "customizations": {
     "vscode": {
       "extensions": [
         "dbaeumer.vscode-eslint",
-        "franklinteixeira205.primeflex",
         "redhat.vscode-yaml",
         "esbenp.prettier-vscode",
-        "github.vscode-github-actions",
         "socheatsok78-lab.dotenv-vscode-stripped",
-        "jeff-hykin.better-dockerfile-syntax",
         "astro-build.astro-vscode",
         "oderwat.indent-rainbow",
         "bradlc.vscode-tailwindcss",
-        "ms-vscode.vscode-websearchforcopilot",
-        "alefragnani.Bookmarks",
         "unifiedjs.vscode-mdx",
         "shd101wyy.markdown-preview-enhanced",
-        "jock.svg",
-        "matthewpi.caddyfile-support"
+        "jock.svg"
       ],
       "settings": {
         "editor.formatOnPaste": true,
@@ -43,5 +37,5 @@
   "mounts": [
     "type=bind,source=${localEnv:HOME}${localEnv:USERPROFILE}/.ssh,target=/home/node/.ssh,readonly"
   ],
-  "postCreateCommand": "pnpm install"
+  "postCreateCommand": "pnpm i"
 }

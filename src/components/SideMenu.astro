@@ -22,7 +22,7 @@ import { Image } from 'astro:assets'
       <Icon
         name="majesticons:menu"
         aria-hidden="true"
-        class="btn btn-sm btn-link p-2 border-[.5px] border-neutral-200"
+        class="btn btn-sm btn-link border-[.5px] border-neutral-200 p-2"
       />
     </label>
   </div>
@@ -33,11 +33,11 @@ import { Image } from 'astro:assets'
       class="drawer-overlay"
     ></label>
     <div
-      class="menu p-4 w-80 min-h-full bg-[var(--color-base-400)] flex flex-col justify-between gap-4"
+      class="menu flex min-h-full w-80 flex-col justify-between gap-4 bg-[var(--color-base-400)] p-4"
     >
       <div>
         <span
-          class="drawer-header flex flex-col items-center justify-center mb-5"
+          class="drawer-header mb-5 flex flex-col items-center justify-center"
         >
           <div class="self-end">
             <button
@@ -82,7 +82,7 @@ import { Image } from 'astro:assets'
       </div>
 
       <footer
-        class="h-[60px] text-white flex justify-center items-center font-light text-xs"
+        class="flex h-[60px] items-center justify-center text-xs font-light text-white"
       >
         <p>{m.siteCopy}</p>
       </footer>

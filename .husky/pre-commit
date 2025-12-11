@@ -1,1 +1,2 @@
-npm run lint-staged
+pnpm run check
+pnpm run lint-staged

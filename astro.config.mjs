@@ -1,6 +1,6 @@
 import mdx from '@astrojs/mdx';
-import sitemap from '@astrojs/sitemap';
 import vercel from '@astrojs/vercel';
+import sitemap from '@astrojs/sitemap';
 import paraglide from '@inlang/paraglide-astro';
 import tailwindcss from '@tailwindcss/vite';
 import icon from 'astro-icon';
@@ -11,9 +11,10 @@ export default defineConfig({
   output: 'server',
   server: {
     headers: {
-      'Last-Modified': new Date().toUTCString(),
+      'Last-Modified': (new Date()).toUTCString(),
     },
   },
+
   i18n: {
     locales: ['en', 'pt-br'],
     defaultLocale: 'en',

@@ -1,11 +1,41 @@
 {
   "name": "drewdomi.com",
-  "image": "mcr.microsoft.com/devcontainers/typescript-node:1-22-bookworm",
-  "features": {
-    "ghcr.io/devcontainers/features/common-utils:2": {},
-    "ghcr.io/nils-geistmann/devcontainers-features/zsh:0": {},
-    "ghcr.io/devcontainers-extra/features/pnpm:2": {},
-    "ghcr.io/devcontainers-extra/features/zsh-plugins:0": {}
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:22-bookworm",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "redhat.vscode-yaml",
+        "esbenp.prettier-vscode",
+        "socheatsok78-lab.dotenv-vscode-stripped",
+        "astro-build.astro-vscode",
+        "oderwat.indent-rainbow",
+        "bradlc.vscode-tailwindcss",
+        "unifiedjs.vscode-mdx",
+        "shd101wyy.markdown-preview-enhanced",
+        "jock.svg"
+      ],
+      "settings": {
+        "editor.formatOnPaste": true,
+        "editor.foldingImportsByDefault": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSaveMode": "file",
+        "editor.formatOnSave": true,
+        "dotenv.enableAutocloaking": true,
+        "prettier.documentSelectors": ["**/*.astro"],
+        "eslint.validate": [
+          "javascript",
+          "javascriptreact",
+          "astro",
+          "typescript",
+          "typescriptreact"
+        ]
+      }
+    }
   },
-  "postCreateCommand": "pnpm install"
+  "forwardPorts": [4321],
+  "mounts": [
+    "type=bind,source=${localEnv:HOME}${localEnv:USERPROFILE}/.ssh,target=/home/node/.ssh,readonly"
+  ],
+  "postCreateCommand": "pnpm i"
 }

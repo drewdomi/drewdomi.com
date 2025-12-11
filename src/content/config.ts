@@ -7,11 +7,19 @@ const projects = defineCollection({
     desc: z.string(),
     cover: z.string(),
     altCover: z.string(),
-    releaseDate: z.string(),
-    siteTitle: z.optional(z.string()),
-    site: z.optional(z.string()),
-    github: z.optional(z.string()),
-    stacks: z.array(z.string()),
+    date: z.string(),
+    stacks: z.array(z.string()).optional(),
+    links: z
+      .array(
+        z.object({
+          badgeLabel: z.string(),
+          url: z.string(),
+          urlLabel: z.string().optional(),
+          badgeClass: z.string().optional(),
+          icon: z.string().optional(),
+        }),
+      )
+      .optional(),
   }),
 })
 

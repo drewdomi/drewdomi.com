@@ -6,7 +6,7 @@
   "site404Message": "Página não encontrada, retornando para o inicio...",
   "siteKeywords": "drewdomi, Drew Domi, Fullstack WEB, Full-Stack WEB, Desenvolvedor de software, Programador, Desenvolvimento WEB, Programação WEB, Cruz Vermelha Portuguesa, Amares, goLembrar",
   "siteSrOnly": "Troque entre {item1} e {item2}",
-  "siteCopy": "© 2025 Andrew Domingues | MIT Licença",
+  "siteCopy": "© 2025 Andrew Domingues",
   "sideMenuOpen": "Abrir menu",
   "sideMenuClose": "Fechar menu",
   "aboutName": "Andrew Domingues",
@@ -21,6 +21,7 @@
   "aboutCvLink": "https://drive.google.com/file/d/1fEwT6BUk3r6_QoHGTaqNSi6K9D5gSB_x",
   "contactDiscordCommunity": "Comunidade do Discord",
   "contactGpg": "Chave GPG",
+  "otherLinks": "Meus Links",
   "contactEmail": "contato@drewdomi.com",
   "skillsSectionTitle": "Tecnologias",
   "projectsPageName": "Andrew Domingues Projetos",
@@ -29,5 +30,6 @@
   "statusOnline": "Online",
   "statusOffline": "Offline",
   "statusIdle": "Ausente",
-  "statusDnd": "Ocupado"
+  "statusDnd": "Ocupado",
+  "btnScrollTop": "Ir para o topo"
 }

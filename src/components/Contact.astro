@@ -8,7 +8,7 @@ const email = m.contactEmail()
 
 <section id="contact">
   <SectionTitle title={m.linkLabelContact()} />
-  <ul class="pl-4 mb-[50px] flex flex-col items-start gap-1">
+  <ul class="flex flex-col items-start gap-1 pl-4">
     <li>
       <ContactLink
         label="GitHub: /drewdomi"
@@ -28,6 +28,13 @@ const email = m.contactEmail()
         label=`Email: ${email}`
         leftIcon="bi:envelope-fill"
         href=`mailto:${email}`
+      />
+    </li>
+    <li>
+      <ContactLink
+        label={m.otherLinks()}
+        leftIcon="simple-icons:linktree"
+        href="https://linktr.ee/drewdomi"
       />
     </li>
     <li>

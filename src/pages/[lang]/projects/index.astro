@@ -18,7 +18,7 @@ const projects = allPosts.filter(p => p.data.lang === lang)
   desc={m.projectsPageDesc()}
 >
   <SectionTitle title={m.linkLabelProjects()} />
-  <div class="grid mt-2 grid-cols-1 sm:grid-cols-2 gap-[40px]">
+  <div class="mt-2 grid grid-cols-1 gap-[40px] sm:grid-cols-2">
     {
       projects.map(p => (
         <CardPost

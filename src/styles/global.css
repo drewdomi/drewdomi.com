@@ -5,6 +5,7 @@
   --font-sans: Roboto;
   --font-title: Rubik;
   --font-body: Roboto;
+  --font-serif: 'Roboto Serif', serif;
   --animate-bump: bump 3s linear infinite;
   --animate-bump-paused: bump 3s linear infinite paused;
   --animate-downtop: downtop 0.7s 0.35s backwards;
@@ -89,6 +90,10 @@ a {
   border: none;
 }
 
+.btn-circle {
+  border-radius: 100% !important;
+}
+
 .badge {
   border-radius: 99px;
   cursor: pointer;
@@ -114,4 +119,15 @@ svg {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border-width: 0;
+}
+
+.confetti-enabled {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.interactive-element {
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }

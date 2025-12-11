@@ -1,24 +1,15 @@
 ---
+import ScrollToTopBtn from '@/components/ScrollTopBtn.astro'
+import Layout from '@/layouts/Layout.astro'
 import { localizePathname } from '@/linking'
 import * as m from '@/paraglide/messages'
 import { languageTag } from '@/paraglide/runtime'
 import { Icon } from 'astro-icon/components'
+import { Image } from 'astro:assets'
 import type { CollectionEntry } from 'astro:content'
 
-import Layout from '@/layouts/Layout.astro'
-
 type Props = CollectionEntry<'projects'>['data']
-const {
-  title,
-  desc,
-  cover,
-  altCover,
-  releaseDate,
-  site,
-  siteTitle,
-  github,
-  stacks,
-} = Astro.props
+const { title, desc, cover, altCover, date, stacks, links } = Astro.props
 ---
 
 <Layout
@@ -27,14 +18,17 @@ const {
 >
   <section>
     <div class="pt-2">
-      <img
+      <Image
         class="rounded-md shadow-md"
-        width="100%"
+        width="638"
+        height="360"
         src={cover}
         alt={altCover}
+        decoding="async"
+        loading="lazy"
       />
     </div>
-    <div class="text-sm breadcrumbs mt-3 mb-2">
+    <div class="breadcrumbs mt-3 mb-2 text-sm">
       <ul>
         <li>
           <a
@@ -44,57 +38,47 @@ const {
             {m.linkLabelProjects}
           </a>
         </li>
-        <li class="text-xl font-title font-medium items-center">
+        <li class="font-title items-center text-xl font-medium">
           {title}
-          <span class="badge badge-info no-underline ml-3">{releaseDate}</span>
+          <span class="badge badge-info ml-3 no-underline">{date}</span>
         </li>
       </ul>
     </div>
     <div class="pb-2">
       {
-        site && (
-          <p class="mb-2 gap-2 flex">
-            <span class="badge badge-primary ml-3 mr-1">WEB</span>
-            <a
-              href={site}
-              target="_blank"
-              class="link flex items-center gap-2"
-            >
-              {!siteTitle ? site : siteTitle}
-              <Icon
-                name="bi:box-arrow-up-right"
-                class="w-[14px]"
-              />
-            </a>
+        stacks && (
+          <p class="mb-2 overflow-x-auto whitespace-nowrap">
+            <span class="badge badge-warning mr-1 ml-3">Stack</span>
+            {stacks?.join(', ')}
           </p>
         )
       }
-      <p class="mb-2 overflow-x-auto whitespace-nowrap">
-        <span class="badge badge-warning ml-3 mr-1">Stack</span>
-        {stacks.join(', ')}
-      </p>
-
       {
-        github && (
-          <p class="mb-2 gap-2 flex">
-            <span class="badge badge-error ml-3 mr-1">Github</span>
-            <a
-              href={github}
-              target="_blank"
-              class="link flex items-center gap-2"
-            >
-              {github?.replace('https://github.com/drewdomi/', '')}
-              <Icon
-                name="bi:box-arrow-up-right"
-                class="w-[14px]"
-              />
-            </a>
-          </p>
-        )
+        links &&
+          links.map(l => (
+            <p class="mb-2 flex gap-2">
+              <span class={'badge mr-1 ml-3 ' + l.badgeClass}>
+                {l.badgeLabel}
+              </span>
+              <a
+                href={l.url}
+                target="_blank"
+                class="link flex items-center gap-2 no-underline hover:underline"
+              >
+                {l.urlLabel || l.url}
+                <Icon
+                  name={l.icon || 'bi:box-arrow-up-right'}
+                  class="w-[14px]"
+                />
+              </a>
+            </p>
+          ))
       }
     </div>
-    <div class="text-justify mb-16">
+    <div class="mb-16 text-justify">
       <slot />
     </div>
   </section>
+
+  <ScrollToTopBtn />
 </Layout>

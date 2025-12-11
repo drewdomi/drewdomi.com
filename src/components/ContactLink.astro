@@ -14,7 +14,7 @@ const { label, href, leftIcon } = Astro.props
   role="link"
   {href}
   target="_blank"
-  class="font-medium btn btn-link text-[16px]"
+  class="btn btn-link text-[16px] font-medium"
 >
   {leftIcon && <Icon name={leftIcon} />}
   {label}
@@ -33,7 +33,6 @@ const { label, href, leftIcon } = Astro.props
   }
 
   [data-icon] {
-    @apply block
-    w-[16px];
+    @apply block w-[16px];
   }
 </style>

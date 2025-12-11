@@ -7,8 +7,8 @@ import LangToggle from './LangToggle.astro'
 import SideMenu from './SideMenu.astro'
 ---
 
-<header class="shadow-md fixed w-full top-0 backdrop-blur-xs z-2">
-  <div class="navbar p-[10px] px-5 max-w-3xl mx-auto">
+<header class="fixed top-0 z-2 w-full shadow-md backdrop-blur-xs">
+  <div class="navbar mx-auto max-w-3xl p-[10px] px-5">
     <div class="navbar-start">
       <a
         class="px-1"
@@ -18,7 +18,7 @@ import SideMenu from './SideMenu.astro'
         id="logo"
       >
         <Icon name="logo_old" />
-        <span class="py-1 px-2 font-title">Drew Domi</span>
+        <span class="font-title px-2 py-1">Drew Domi</span>
       </a>
     </div>
     <div class="navbar-center hidden md:block">
@@ -57,9 +57,7 @@ import SideMenu from './SideMenu.astro'
     }
   }
   #logo {
-    @apply flex
-    items-center
-    justify-start;
+    @apply flex items-center justify-start;
     font-size: 18px;
     transition: 1s ease;
     font-family: 'Rubik';

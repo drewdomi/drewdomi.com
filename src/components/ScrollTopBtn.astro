@@ -1,0 +1,34 @@
+---
+import { Icon } from 'astro-icon/components'
+import * as m from '@/paraglide/messages'
+---
+
+<div class="fixed right-4 bottom-4 z-50 md:right-12 md:bottom-8">
+  <span
+    class="tooltip"
+    data-tip={m.btnScrollTop()}
+  >
+    <button
+      class="btn btn-primary btn-circle"
+      id="scroll-top-btn"
+    >
+      <Icon
+        name="bi:arrow-up-short"
+        class="h-8 w-8"
+      />
+    </button>
+  </span>
+</div>
+
+<script>
+  function scrollToTop() {
+    document
+      .querySelector('#scroll-top-btn')
+      .addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+      })
+  }
+
+  document.addEventListener('DOMContentLoaded', scrollToTop)
+  document.addEventListener('astro:page-load', scrollToTop)
+</script>

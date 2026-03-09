@@ -5,24 +5,28 @@ import { Image } from 'astro:assets'
 
 <footer
   id="site-footer"
-  class="flex h-[100px] items-center justify-center gap-2 bg-[var(--color-base-400)] font-light text-white"
+  class="flex h-[100px] flex-col items-center justify-between gap-3 bg-[var(--color-base-400)] font-light text-white"
 >
-  <button
-    aria-hidden="true"
-    id="footer-logo"
-    class="mb-1 cursor-pointer"
-  >
-    <Image
-      src="/red_ace_pride.svg"
-      alt="Logo Alternative"
-      width="16"
-      height="16"
-      decoding="async"
-      loading="lazy"
-    />
-  </button>
+  <div></div>
+  <div class="flex items-center">
+    <button
+      aria-hidden="true"
+      id="footer-logo"
+      class="mb-1 cursor-pointer"
+    >
+      <Image
+        src="/red_ace_pride.svg"
+        alt="Logo Alternative"
+        width="16"
+        height="16"
+        loading="lazy"
+        fetchpriority="high"
+      />
+    </button>
+    <p class="text-xs sm:text-sm">{m.siteCopy()}</p>
+  </div>
 
-  <p class="text-xs sm:text-sm">{m.siteCopy}</p>
+  <div class="symbol-of-tolerance"></div>
 </footer>
 
 <style>
@@ -30,6 +34,28 @@ import { Image } from 'astro:assets'
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */
+  }
+
+  .symbol-of-tolerance {
+    height: 0.25em;
+    width: 100%;
+    max-width: 2000px;
+    margin: 0 auto;
+    margin-bottom: 4px;
+    background: linear-gradient(
+      90deg,
+      #ea392f 0% 9.091%,
+      #f28917 9.091% 18.182%,
+      #eecb12 18.182% 27.273%,
+      #78b82a 27.273% 36.364%,
+      #4375ca 36.364% 45.455%,
+      #c346e3 45.455% 54.545%,
+      #7bcce5 54.545% 63.636%,
+      #eaeaea 63.636% 72.727%,
+      #f4aec8 72.727% 81.818%,
+      #000 81.818% 90.909%,
+      #945516 90.909% 100%
+    );
   }
 </style>
 

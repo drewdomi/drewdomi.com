@@ -14,11 +14,11 @@ import { Image } from 'astro:assets'
   />
   <div class="drawer-content">
     <label
-      role="button"
       aria-expanded="false"
       aria-label={m.sideMenuOpen()}
       for="open-menu"
     >
+      <span class="sr-only">{m.sideMenuOpen()}</span>
       <Icon
         name="majesticons:menu"
         aria-hidden="true"
@@ -31,7 +31,9 @@ import { Image } from 'astro:assets'
       for="open-menu"
       aria-hidden="true"
       class="drawer-overlay"
-    ></label>
+    >
+      <span class="sr-only">{m.sideMenuClose()}</span>
+    </label>
     <div
       class="menu flex min-h-full w-80 flex-col justify-between gap-4 bg-[var(--color-base-400)] p-4"
     >
@@ -43,7 +45,6 @@ import { Image } from 'astro:assets'
             <button
               class="btn btn-link btn-sm btn-circle"
               id="close-menu"
-              aria-label={m.sideMenuClose()}
             >
               <Icon
                 class="border-0!"
@@ -55,7 +56,9 @@ import { Image } from 'astro:assets'
           <Image
             aria-hidden="true"
             src="/favicon.svg"
-            alt=""
+            alt="Favicon Icon"
+            loading="eager"
+            fetchpriority="high"
             width="64"
             height="64"
           />
@@ -65,17 +68,19 @@ import { Image } from 'astro:assets'
             <a
               id="focus-when-menu-opened"
               href={localizePathname('/', languageTag())}
-              >{m.linkLabelHome}</a
+              >{m.linkLabelHome()}</a
             >
           </li>
           <li>
             <a href={localizePathname('/projects', languageTag())}
-              >{m.linkLabelProjects}</a
+              >{m.linkLabelProjects()}</a
             >
           </li>
-          <li onclick="document.querySelector('.drawer-overlay').click()">
-            <a href={localizePathname('/#contact', languageTag())}
-              >{m.linkLabelContact}</a
+          <li>
+            <a
+              href={localizePathname('/#contact', languageTag())}
+              onclick="document.querySelector('.drawer-overlay').click()"
+              >{m.linkLabelContact()}</a
             >
           </li>
         </ul>
@@ -84,7 +89,7 @@ import { Image } from 'astro:assets'
       <footer
         class="flex h-[60px] items-center justify-center text-xs font-light text-white"
       >
-        <p>{m.siteCopy}</p>
+        <p>{m.siteCopy()}</p>
       </footer>
     </div>
   </div>

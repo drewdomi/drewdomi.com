@@ -16,8 +16,8 @@ const discordId = import.meta.env.DISCORD_ID || ('' as string)
 
 <section class="grid text-center sm:text-left">
   <div id="title">
-    <h1 class="font-title mb-1 text-[28px] font-medium">{m.aboutName}</h1>
-    <h2 class="mb-2 text-[18px]">{m.aboutSubtitle}</h2>
+    <h1 class="font-title mb-1 text-[28px] font-medium">{m.aboutName()}</h1>
+    <h2 class="mb-2 text-[18px]">{m.aboutSubtitle()}</h2>
   </div>
 
   <div
@@ -27,9 +27,8 @@ const discordId = import.meta.env.DISCORD_ID || ('' as string)
     <label
       for="avatar-flip"
       class="swap swap-flip animate-bump hover:animate-bump-paused"
-      class="swap-off"
-      aria-hidden="true"
     >
+      <span class="sr-only">{m.aboutName()}</span>
       <input
         id="avatar-flip"
         type="checkbox"
@@ -83,7 +82,7 @@ const discordId = import.meta.env.DISCORD_ID || ('' as string)
     <SectionTitle title={m.aboutSectionTitle()} />
 
     <p class="text-[16px]">
-      {m.aboutText}
+      {m.aboutText()}
     </p>
   </article>
 

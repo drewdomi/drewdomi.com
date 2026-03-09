@@ -1,3 +1,16 @@
 {
+  "editor.formatOnPaste": true,
+  "editor.foldingImportsByDefault": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSaveMode": "file",
+  "editor.formatOnSave": true,
+  "prettier.documentSelectors": ["**/*.astro"],
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "astro",
+    "typescript",
+    "typescriptreact"
+  ],
   "dotenv.enableAutocloaking": true
 }

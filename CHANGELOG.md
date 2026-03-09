@@ -9,6 +9,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Upcoming features and fixes will be listed here
 
+## [2.3.0] - 2026-03-09
+
+### Changed
+
+- Add footer color bar
+- Improve accessibility of footer and side menu
+
 ## [2.0.0] - 2025-03-20
 
 ### Updated

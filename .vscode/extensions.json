@@ -1,9 +1,15 @@
 {
   "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "redhat.vscode-yaml",
+    "esbenp.prettier-vscode",
+    "socheatsok78-lab.dotenv-vscode-stripped",
     "astro-build.astro-vscode",
-    "inlang.vs-code-extension",
+    "oderwat.indent-rainbow",
+    "bradlc.vscode-tailwindcss",
     "unifiedjs.vscode-mdx",
-    "ms-vscode.vscode-websearchforcopilot"
+    "shd101wyy.markdown-preview-enhanced",
+    "jock.svg"
   ],
   "unwantedRecommendations": []
 }

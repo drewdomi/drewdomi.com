@@ -24,16 +24,16 @@ import SideMenu from './SideMenu.astro'
     <div class="navbar-center hidden md:block">
       <ul class="flex flex-row">
         <li>
-          <a href={localizePathname('/', languageTag())}>{m.linkLabelHome}</a>
+          <a href={localizePathname('/', languageTag())}>{m.linkLabelHome()}</a>
         </li>
         <li>
           <a href={localizePathname('/projects', languageTag())}>
-            {m.linkLabelProjects}
+            {m.linkLabelProjects()}
           </a>
         </li>
         <li>
           <a href={localizePathname('/#contact', languageTag())}>
-            {m.linkLabelContact}
+            {m.linkLabelContact()}
           </a>
         </li>
       </ul>

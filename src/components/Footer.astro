@@ -4,11 +4,13 @@ import { Image } from 'astro:assets'
 ---
 
 <footer
-  id="site-footer"
   class="flex h-[100px] flex-col items-center justify-between gap-3 bg-[var(--color-base-400)] font-light text-white"
 >
-  <div></div>
+  <div>
+    <!-- Spacer to correct align color bar -->
+  </div>
   <div class="flex items-center">
+    <p class="mr-2 text-xs sm:text-sm">{m.siteCopy()}</p>
     <button
       aria-hidden="true"
       id="footer-logo"
@@ -23,14 +25,13 @@ import { Image } from 'astro:assets'
         fetchpriority="high"
       />
     </button>
-    <p class="text-xs sm:text-sm">{m.siteCopy()}</p>
   </div>
 
   <div class="symbol-of-tolerance"></div>
 </footer>
 
 <style>
-  p {
+  p svg {
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */

@@ -18,6 +18,10 @@ const pathnames: Record<
     en: '/en#contact',
     'pt-br': '/pt-br#contact',
   },
+  '/api/get-cv': {
+    en: '/en/api/get-cv',
+    'pt-br': '/pt-br/api/get-cv',
+  },
 }
 
 export function localizePathname(

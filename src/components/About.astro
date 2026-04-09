@@ -3,6 +3,8 @@ import * as m from '@/paraglide/messages'
 import { Picture } from 'astro:assets'
 import ButtonLink from './ButtonLink.astro'
 import SectionTitle from './SectionTitle.astro'
+import { localizePathname } from '@/linking'
+import { languageTag } from '@/paraglide/runtime'
 
 const statusMessages = {
   online: m.statusOnline(),
@@ -100,7 +102,7 @@ const discordId = import.meta.env.DISCORD_ID || ('' as string)
     <li>
       <ButtonLink
         label={m.aboutCvButton()}
-        href={m.aboutCvLink()}
+        href={localizePathname('/api/get-cv', languageTag())}
         leftIcon="ph:file-pdf-bold"
       />
     </li>

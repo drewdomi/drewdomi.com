@@ -6,8 +6,8 @@ export const GET: APIRoute = async () => {
     status: 200,
     headers: {
       'Content-Type': 'text/vcard; charset=utf-8',
-      'Content-Disposition': 'inline; filename="drewdomi_vcard.vcf"',
-      'Cache-Control': 'public, max-age=3600',
+      'Content-Disposition': 'attachment; filename="drewdomi_vcard.vcf"',
+      'Cache-Control': 'no-store',
     },
   })
 }

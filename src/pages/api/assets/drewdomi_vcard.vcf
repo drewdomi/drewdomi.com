@@ -1,15 +1,15 @@
 BEGIN:VCARD
 VERSION:4.0
 KIND:individual
-SOURCE:https://v2.drewdomi.com/api/vcard.vcf
+SOURCE:https://drewdomi.com/api/vcard.vcf
 FN:Andrew Domingues
-PHOTO:https://v2.drewdomi.com/drewdomi.jpg
-NICKNAME:Drew,drewdomi
+PHOTO:https://drewdomi.com/drewdomi.jpg
+NICKNAME:drewdomi
 GENDER:M
 TITLE:Web Software Developer
 ROLE:Full Stack Developer
 EMAIL;TYPE=work:contato@drewdomi.com
-URL;TYPE=work:https://v2.drewdomi.com
+URL;TYPE=work:https://drewdomi.com
 URL;TYPE=github:https://github.com/drewdomi
 ADR;TYPE=work:;;;Osasco;SP;;Brazil
 LANG;TYPE=work;PREF=1:pt-br

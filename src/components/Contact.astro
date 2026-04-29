@@ -2,6 +2,7 @@
 import * as m from '@/paraglide/messages'
 import ContactLink from './ContactLink.astro'
 import SectionTitle from './SectionTitle.astro'
+import { downloadVCard } from '@/utils/download-vcard'
 
 const email = m.contactEmail()
 ---
@@ -28,6 +29,13 @@ const email = m.contactEmail()
         label=`Email: ${email}`
         leftIcon="bi:envelope-fill"
         href=`mailto:${email}`
+      />
+    </li>
+    <li>
+      <ContactLink
+        label=`VCard`
+        leftIcon="bi:person-vcard-fill"
+        href="/api/vcard"
       />
     </li>
     <li>

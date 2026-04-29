@@ -1,7 +1,7 @@
 import * as m from '@/paraglide/messages'
 
-export async function redirectToCvLink() {
-  const curriculumLink = m.aboutCvLink()
+export async function redirectToCVLink() {
+  const CVLink = m.aboutCvLink()
 
-  return Response.redirect(curriculumLink, 302)
+  return Response.redirect(CVLink, 302)
 }

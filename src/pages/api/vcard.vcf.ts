@@ -5,9 +5,9 @@ export const GET: APIRoute = async () => {
   return new Response(vcardContent, {
     status: 200,
     headers: {
-      'Content-Type': 'text/vcard',
-      'Content-Disposition': 'attachment; filename="drewdomi_vcard.vcf"',
-      'Cache-Control': 'no-store',
+      'Content-Type': 'text/vcard; charset=utf-8',
+      'Content-Disposition': 'inline; filename="drewdomi_vcard.vcf"',
+      'Cache-Control': 'public, max-age=3600',
     },
   })
 }

@@ -21,13 +21,15 @@ const projects = allPosts.filter(p => p.data.lang === lang)
   <div class="mt-2 grid grid-cols-1 gap-[40px] sm:grid-cols-2">
     {
       projects.map(p => (
-        <CardPost
-          href={`projects/${p.slug}`}
-          cover={p.data.cover}
-          altCover={p.data.altCover}
-          title={p.data.title}
-          desc={p.data.desc}
-        />
+        <div>
+          <CardPost
+            href={`projects/${p.id}`}
+            cover={p.data.cover}
+            altCover={p.data.altCover}
+            title={p.data.title}
+            desc={p.data.desc}
+          />
+        </div>
       ))
     }
   </div>

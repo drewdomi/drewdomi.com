@@ -22,5 +22,5 @@
   "mounts": [
     "type=bind,source=${localEnv:HOME}${localEnv:USERPROFILE}/.ssh,target=/home/node/.ssh,readonly"
   ],
-  "postCreateCommand": "pnpm i && pnpm approve-builds"
+  "postCreateCommand": "pnpm i && pnpm approve-builds && pnpm postinstall"
 }

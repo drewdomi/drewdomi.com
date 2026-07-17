@@ -1,7 +1,7 @@
 ---
 import { locales, getLocale } from '@/paraglide/runtime'
 import { Icon } from 'astro-icon/components'
-import * as m from '@/paraglide/messages'
+import { m } from '@/paraglide/messages'
 
 const currentLang = getLocale()
 const newLang = locales.find(lang => lang !== currentLang)

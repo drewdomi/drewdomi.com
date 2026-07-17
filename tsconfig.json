@@ -11,6 +11,7 @@
   },
   "include": [".astro/types.d.ts", "**/*"],
   "exclude": [
+    ".devcontainer",
     "node_modules",
     ".vercel",
     "dist",

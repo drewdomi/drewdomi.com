@@ -13,7 +13,8 @@
         "bradlc.vscode-tailwindcss",
         "unifiedjs.vscode-mdx",
         "shd101wyy.markdown-preview-enhanced",
-        "jock.svg"
+        "jock.svg",
+        "inlang.vs-code-extension"
       ]
     }
   },

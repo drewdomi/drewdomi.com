@@ -3,7 +3,7 @@ import ScrollToTopBtn from '@/components/ScrollTopBtn.astro'
 import Layout from '@/layouts/Layout.astro'
 import { localizePathname } from '@/linking'
 import * as m from '@/paraglide/messages'
-import { languageTag } from '@/paraglide/runtime'
+import { getLocale } from '@/paraglide/runtime'
 import { Icon } from 'astro-icon/components'
 import { Image } from 'astro:assets'
 import type { CollectionEntry } from 'astro:content'
@@ -32,7 +32,7 @@ const { title, desc, cover, altCover, date, stacks, links } = Astro.props
       <ul>
         <li>
           <a
-            href={localizePathname('/projects', languageTag())}
+            href={localizePathname('/projects', getLocale())}
             class="text-secondary gap-0.5"
           >
             {m.linkLabelProjects}

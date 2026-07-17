@@ -2,7 +2,7 @@
 import * as m from '@/paraglide/messages'
 import { Icon } from 'astro-icon/components'
 import { localizePathname } from '@/linking'
-import { languageTag } from '@/paraglide/runtime'
+import { getLocale } from '@/paraglide/runtime'
 import { Image } from 'astro:assets'
 ---
 
@@ -67,18 +67,18 @@ import { Image } from 'astro:assets'
           <li>
             <a
               id="focus-when-menu-opened"
-              href={localizePathname('/', languageTag())}
+              href={localizePathname('/', getLocale())}
               >{m.linkLabelHome()}</a
             >
           </li>
           <li>
-            <a href={localizePathname('/projects', languageTag())}
+            <a href={localizePathname('/projects', getLocale())}
               >{m.linkLabelProjects()}</a
             >
           </li>
           <li>
             <a
-              href={localizePathname('/#contact', languageTag())}
+              href={localizePathname('/#contact', getLocale())}
               onclick="document.querySelector('.drawer-overlay').click()"
               >{m.linkLabelContact()}</a
             >

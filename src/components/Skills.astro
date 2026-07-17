@@ -3,7 +3,7 @@ import * as m from '@/paraglide/messages'
 import { Image } from 'astro:assets'
 
 import { localizePathname } from '@/linking'
-import { languageTag } from '@/paraglide/runtime'
+import { getLocale } from '@/paraglide/runtime'
 import ButtonLink from './ButtonLink.astro'
 import SectionTitle from './SectionTitle.astro'
 ---
@@ -129,7 +129,7 @@ import SectionTitle from './SectionTitle.astro'
 <div class="flex justify-center">
   <ButtonLink
     notBlank
-    href={localizePathname('/projects', languageTag())}
+    href={localizePathname('/projects', getLocale())}
     label={m.linkLabelProjects()}
     rightIcon="fluent:arrow-right-12-filled"
   />

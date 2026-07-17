@@ -1,10 +1,10 @@
 ---
-import { availableLanguageTags, languageTag } from '@/paraglide/runtime'
+import { locales, getLocale } from '@/paraglide/runtime'
 import { Icon } from 'astro-icon/components'
 import * as m from '@/paraglide/messages'
 
-const currentLang = languageTag()
-const newLang = availableLanguageTags.find(lang => lang !== currentLang)
+const currentLang = getLocale()
+const newLang = locales.find(lang => lang !== currentLang)
 ---
 
 <div>

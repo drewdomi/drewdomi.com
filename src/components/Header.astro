@@ -1,7 +1,7 @@
 ---
 import { localizePathname } from '@/linking'
 import * as m from '@/paraglide/messages'
-import { languageTag } from '@/paraglide/runtime'
+import { getLocale } from '@/paraglide/runtime'
 import { Icon } from 'astro-icon/components'
 import LangToggle from './LangToggle.astro'
 import SideMenu from './SideMenu.astro'
@@ -14,7 +14,7 @@ import SideMenu from './SideMenu.astro'
         class="px-1"
         aria-label="Home"
         role="button"
-        href={localizePathname('/', languageTag())}
+        href={localizePathname('/', getLocale())}
         id="logo"
       >
         <Icon name="logo_old" />
@@ -24,15 +24,15 @@ import SideMenu from './SideMenu.astro'
     <div class="navbar-center hidden md:block">
       <ul class="flex flex-row">
         <li>
-          <a href={localizePathname('/', languageTag())}>{m.linkLabelHome()}</a>
+          <a href={localizePathname('/', getLocale())}>{m.linkLabelHome()}</a>
         </li>
         <li>
-          <a href={localizePathname('/projects', languageTag())}>
+          <a href={localizePathname('/projects', getLocale())}>
             {m.linkLabelProjects()}
           </a>
         </li>
         <li>
-          <a href={localizePathname('/#contact', languageTag())}>
+          <a href={localizePathname('/#contact', getLocale())}>
             {m.linkLabelContact()}
           </a>
         </li>

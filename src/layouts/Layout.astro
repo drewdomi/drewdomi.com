@@ -2,7 +2,7 @@
 import Footer from '@/components/Footer.astro'
 import Header from '@/components/Header.astro'
 import * as m from '@/paraglide/messages'
-import { languageTag } from '@/paraglide/runtime'
+import { getLocale } from '@/paraglide/runtime'
 import '@fontsource/roboto-serif/400.css'
 import '@fontsource/roboto-serif/500.css'
 import '@fontsource/roboto/latin-300.css'
@@ -33,7 +33,7 @@ const { title = m.siteTitle(), desc = m.siteDesc() } = Astro.props
 ╚═════╝ ╚═╝  ╚═╝╚══════╝ ╚══╝╚══╝   ╚═════╝  ╚═════╝ ╚═╝     ╚═╝╚═╝
 
 You found me, thanks! -->
-<html lang={languageTag()} data-theme="dark">
+<html lang={getLocale()} data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -43,7 +43,7 @@ You found me, thanks! -->
     <meta name="copyright" content={m.aboutName()} />
     <meta name="robots" content="index, follow" />
     <meta name="googlebot" content="index, follow" />
-    <meta http-equiv="content-language" content={languageTag()} />
+    <meta http-equiv="content-language" content={getLocale()} />
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <meta name="keywords" content={m.siteKeywords()} />
     <meta name="rating" content="general" />
@@ -63,7 +63,7 @@ You found me, thanks! -->
     <meta property="og:image:height" content="470" />
     <meta property="og:url" content={m.siteUrl()} />
     <meta property="og:description" content={desc} />
-    <meta property="og:locale" content={languageTag().replace('-', '_')} />
+    <meta property="og:locale" content={getLocale().replace('-', '_')} />
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@drewdomi_" />

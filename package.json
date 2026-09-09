@@ -5,7 +5,7 @@
   "version": "2.5.0",
   "author": "Andrew Domingues <contact@drewdomi.com>",
   "homepage": "https://drewdomi.com",
-  "description": "Personal homepage/portfolio of Drew Domi (Andrew Domingues). My contact information and resume.",
+  "description": "Personal homepage of Drew Domi (Andrew Domingues). My contact information and resume.",
   "scripts": {
     "dev": "astro dev",
     "dev:host": "astro dev --host",
@@ -45,7 +45,7 @@
     "@iconify-json/simple-icons": "^1.2.90",
     "@tailwindcss/vite": "^4.3.2",
     "@typescript-eslint/parser": "^8.64.0",
-    "daisyui": "5.0.0",
+    "daisyui": "^5.7.0",
     "eslint": "^9.39.5",
     "eslint-plugin-astro": "^1.7.0",
     "husky": "^9.1.7",

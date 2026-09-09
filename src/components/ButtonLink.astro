@@ -10,20 +10,13 @@ interface Props {
   role?: astroHTML.JSX.AriaRole
 }
 
-const {
-  label,
-  href,
-  notBlank = false,
-  leftIcon,
-  rightIcon,
-  role = 'link',
-} = Astro.props
+const { label, href, notBlank = false, leftIcon, rightIcon, role } = Astro.props
 ---
 
 <a
   {href}
   target={notBlank ? '_self' : '_blank'}
-  class="font-title no-animation btn btn-primary text-[18px] font-medium text-[#EFEFEF] shadow-md"
+  class="font-title no-animation btn btn-lg btn-primary font-medium text-[#EFEFEF] shadow-md"
   {role}
 >
   {
@@ -47,8 +40,7 @@ const {
 
 <style>
   .btn {
-    min-height: 2.8rem;
-    min-width: 140px;
+    min-width: 144px;
     height: 2.8rem;
     padding: 0 18px;
   }

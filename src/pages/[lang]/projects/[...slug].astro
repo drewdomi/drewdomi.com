@@ -3,14 +3,16 @@ import ProjectPost from '@/layouts/ProjectPost.astro'
 import { render } from 'astro:content'
 import { getEntry } from 'astro:content'
 
-const { slug } = Astro.params
-const projects = await getEntry('projects', `${slug}`)
+const { slug, lang } = Astro.params
+const projects = await getEntry('projects', `${lang}/${slug}`)
 
-if (!projects) return Astro.redirect('/404')
+if (!projects) {
+  return Astro.redirect('/404')
+}
 
 const { Content } = await render(projects)
 ---
 
-<ProjectPost {...projects.data}>
+<ProjectPost {...projects?.data}>
   <Content />
 </ProjectPost>

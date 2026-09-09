@@ -11,7 +11,7 @@ function createConfettiHandler(
   }
   const selectedTag = document.querySelector(cssSelector)
 
-  selectedTag.classList.add('confetti-enabled', 'interactive-element')
+  selectedTag?.classList.add('confetti-enabled', 'interactive-element')
 
   if (selectedTag) {
     const click$ = fromEvent(selectedTag, 'click')

@@ -1,6 +1,6 @@
 import type { Locale } from './paraglide/runtime.js'
 
-type AbsolutePathname = `/${string}`
+type AbsolutePathname = `/${string}` | string
 
 const pathnames: Record<AbsolutePathname, Record<Locale, AbsolutePathname>> = {
   '/': {
@@ -18,6 +18,10 @@ const pathnames: Record<AbsolutePathname, Record<Locale, AbsolutePathname>> = {
   '/api/get-cv': {
     en: '/en/api/get-cv',
     'pt-br': '/pt-br/api/get-cv',
+  },
+  '/api/resume': {
+    en: '/en/api/resume',
+    'pt-br': '/pt-br/api/resume',
   },
 }
 

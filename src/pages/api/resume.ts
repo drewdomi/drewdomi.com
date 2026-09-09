@@ -1,6 +1,6 @@
 import type { APIRoute } from 'astro'
-import { redirectToCVLink } from '@/utils/redirect-cv-link'
+import { redirectToResume } from '@/utils/redirect-resume-link'
 
 export const GET = (async () => {
-  return redirectToCVLink()
+  return redirectToResume()
 }) satisfies APIRoute

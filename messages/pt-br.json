@@ -17,8 +17,6 @@
   "linkLabelContact": "Contato",
   "aboutSectionTitle": "Sobre",
   "aboutText": "Um desenvolvedor que transforma requisitos complexos em soluções elegantes. Minha experiência na construção de aplicativos e sistemas garante que os requisitos técnicos e as regras de negócios estejam alinhados. Combinando inovação com boas práticas de desenvolvimento para entregar ótimos resultados. Vamos construir algo incrível juntos!",
-  "aboutCvButton": "Meu CV",
-  "aboutCvLink": "https://drive.google.com/file/d/1fEwT6BUk3r6_QoHGTaqNSi6K9D5gSB_x",
   "contactDiscordCommunity": "Comunidade do Discord",
   "contactGpg": "Chave GPG",
   "otherLinks": "Mais Links",
@@ -31,5 +29,7 @@
   "statusOffline": "Offline",
   "statusIdle": "Ausente",
   "statusDnd": "Ocupado",
-  "btnScrollTop": "Ir para o topo"
+  "btnScrollTop": "Ir para o topo",
+  "aboutResumeButton": "Currículo",
+  "aboutResumeLink": "https://drive.google.com/file/d/1fEwT6BUk3r6_QoHGTaqNSi6K9D5gSB_x"
 }

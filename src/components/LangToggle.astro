@@ -30,8 +30,15 @@ const newLang = locales.find(lang => lang !== currentLang)
     const { currentLang, newLang } = document.querySelector('button').dataset
 
     const url = new URL(window.location.href)
-    const newUrl = url.pathname.replace(new RegExp(currentLang, 'g'), newLang)
 
-    window.location.href = `${url.origin}${newUrl}`
+    // Only replace the first path segment (the locale prefix).
+    // e.g. /en/projects/my-en-slug → /pt-br/projects/my-slug
+    const segments = url.pathname.split('/')
+    if (segments[1] === currentLang) {
+      segments[1] = newLang
+    }
+    url.pathname = segments.join('/')
+
+    window.location.href = url.href
   }
 </script>

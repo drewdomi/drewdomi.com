@@ -23,7 +23,7 @@ const projects = allPosts.filter(p => p.data.lang === lang)
       projects.map(p => (
         <div>
           <CardPost
-            href={`projects/${p.id}`}
+            href={`projects/${p.id.replace(`${lang}/`, '')}`}
             cover={p.data.cover}
             altCover={p.data.altCover}
             title={p.data.title}

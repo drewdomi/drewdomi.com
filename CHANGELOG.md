@@ -9,6 +9,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Upcoming features and fixes will be listed here
 
+## [2.5.0] - 2026-07-17
+
+- Update astro to version 7.0
+- Update package.json
+- Update breaking changes of paraglide.js
+
 ## [2.4.0] - 2026-04-30
 
 - Add vCard informations [vCard Format Specification](https://datatracker.ietf.org/doc/html/rfc6350)

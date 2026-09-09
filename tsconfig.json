@@ -4,7 +4,7 @@
     "noUnusedParameters": false,
     "noImplicitAny": false,
     "strict": false,
-    "allowJs": true,
+    "allowJs": false,
     "paths": {
       "@/*": ["./src/*"]
     }
@@ -17,6 +17,7 @@
     "dist",
     ".astro",
     "public",
-    "CHANGELOG.md"
+    "CHANGELOG.md",
+    "./src/paraglide"
   ]
 }

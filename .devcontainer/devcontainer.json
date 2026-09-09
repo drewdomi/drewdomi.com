@@ -1,6 +1,6 @@
 {
   "name": "drewdomi.com",
-  "image": "mcr.microsoft.com/devcontainers/typescript-node:24-bookworm",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:26-bookworm",
   "customizations": {
     "vscode": {
       "extensions": [
@@ -14,11 +14,15 @@
         "unifiedjs.vscode-mdx",
         "shd101wyy.markdown-preview-enhanced",
         "jock.svg",
-        "inlang.vs-code-extension"
+        "inlang.vs-code-extension",
+        "google.google-antigravity",
+        "streetsidesoftware.code-spell-checker-portuguese-brazilian",
+        "streetsidesoftware.code-spell-checker"
       ]
     }
   },
   "forwardPorts": [4321],
+  "runArgs": ["--network=host"],
   "mounts": [
     "type=bind,source=${localEnv:HOME}${localEnv:USERPROFILE}/.ssh,target=/home/node/.ssh,readonly"
   ],

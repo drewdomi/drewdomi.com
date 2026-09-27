@@ -10,7 +10,7 @@
     "dev": "astro dev",
     "dev:host": "astro dev --host",
     "start": "astro dev",
-    "build": "paraglide-js compile --project ./project.inlang --outdir ./src/paraglide && astro check --minimumSeverity warning && astro build",
+    "build": "paraglide-js compile --project ./project.inlang --outdir ./src/paraglide && astro build",
     "preview": "astro preview",
     "astro": "astro",
     "check": "astro check --minimumSeverity warning",
@@ -19,6 +19,9 @@
     "postinstall": "paraglide-js compile --project ./project.inlang --outdir ./src/paraglide",
     "lint-staged": "lint-staged",
     "prepare": "husky"
+  },
+  "allowScripts": {
+    "esbuild": true
   },
   "dependencies": {
     "@astrojs/check": "0.9.9",

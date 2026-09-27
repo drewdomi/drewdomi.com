@@ -21,6 +21,7 @@ export default defineConfig({
     defaultLocale: 'en',
     routing: {
       prefixDefaultLocale: true,
+      redirectToDefaultLocale: true,
     },
   },
 
@@ -34,8 +35,8 @@ export default defineConfig({
       paraglideVitePlugin({
         project: './project.inlang',
         outdir: './src/paraglide',
+        emitTsDeclarations: true,
         strategy: ['url'],
-        baseLocale: 'en',
       }),
     ],
   },

@@ -14,6 +14,7 @@ const statusMessages = {
 }
 
 const discordId: string = import.meta.env.DISCORD_ID ?? ''
+const pictureSize = 140
 ---
 
 <section class="grid text-center sm:text-left">
@@ -29,12 +30,12 @@ const discordId: string = import.meta.env.DISCORD_ID ?? ''
     <span class="sr-only">{m.aboutName()}</span>
     <div class="aura aura-rainbow rounded-full">
       <Picture
-        class="h-[140px] w-[140px] justify-self-center rounded-full border-2 shadow-md"
-        width={140}
-        height={140}
+        class=`h-[${pictureSize}px] w-[${pictureSize}px] justify-self-center rounded-full border-2 shadow-md`
+        width={pictureSize}
+        height={pictureSize}
         loading="eager"
         src="/drewdomi.jpg"
-        formats={['png', 'webp']}
+        formats={['jpg', 'jpeg']}
         alt={m.aboutName()}
       />
     </div>

@@ -1,6 +1,6 @@
 {
   "name": "drewdomi.com",
-  "image": "mcr.microsoft.com/devcontainers/typescript-node:26-bookworm",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:24-bookworm",
   "customizations": {
     "vscode": {
       "extensions": [
@@ -26,5 +26,8 @@
   "mounts": [
     "type=bind,source=${localEnv:HOME}${localEnv:USERPROFILE}/.ssh,target=/home/node/.ssh,readonly"
   ],
+  "remoteEnv": {
+    "NODE_OPTIONS": "--max-old-space-size=4096"
+  },
   "postCreateCommand": "pnpm i && pnpm approve-builds && pnpm postinstall"
 }

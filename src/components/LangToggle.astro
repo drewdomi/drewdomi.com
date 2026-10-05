@@ -15,7 +15,7 @@ const newLang = locales.find(lang => lang !== currentLang)
     data-new-lang={newLang}
     aria-label={m.langToggleDesc()}
   >
-    <Icon name={currentLang === 'en' ? 'br-flag' : 'us-flag'} />
+    <Icon name={currentLang === 'en' ? 'br-flag' : 'uk-flag'} />
   </button>
 </div>
 
@@ -34,8 +34,9 @@ const newLang = locales.find(lang => lang !== currentLang)
     // Only replace the first path segment (the locale prefix).
     // e.g. /en/projects/my-en-slug → /pt-br/projects/my-slug
     const segments = url.pathname.split('/')
-    if (segments[1] === currentLang) {
-      segments[1] = newLang
+    let lang = segments[1]
+    if (lang === currentLang) {
+      lang = newLang
     }
     url.pathname = segments.join('/')
 

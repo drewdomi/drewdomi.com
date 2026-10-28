@@ -12,5 +12,5 @@
     "typescript",
     "typescriptreact"
   ],
-  "dotenv.enableAutocloaking": true
+  "dotenv.enableAutocloaking": false
 }
